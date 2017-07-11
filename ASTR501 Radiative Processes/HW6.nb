@@ -1,0 +1,1105 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33032,       1097]
+NotebookOptionsPosition[     28830,        945]
+NotebookOutlinePosition[     29380,        967]
+CellTagsIndexPosition[     29337,        964]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 6 - ASTR501\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0 on March 10, 2017",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title",ExpressionUUID->"bf425aef-5483-4570-a832-6cf19ce7f6ce"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter",ExpressionUUID->"f43a05c4-fb03-4e0a-b69a-f6fdb6e6580e"],
+
+Cell[CellGroupData[{
+
+Cell["Q1", "Chapter",ExpressionUUID->"0c7cc89e-ccff-4998-be9a-6f977ee8a314"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section",ExpressionUUID->"f3f4c548-d624-4b9e-90da-4298812d09a2"],
+
+Cell["Using relativistic Doppler shift equation", "Text",ExpressionUUID->"6cb631b3-0770-4e34-a759-5467d22732e5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Nu]", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\[Nu]Source1", ",", "\[Nu]Source2"}], "}"}], "\[Rule]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Nu]Obs", " ", 
+        RowBox[{
+         RowBox[{"Sqrt", "[", 
+          RowBox[{"1", "+", "\[Beta]"}], "]"}], "/", 
+         RowBox[{"Sqrt", "[", 
+          RowBox[{"1", "-", "\[Beta]"}], "]"}]}]}], "/.", 
+       RowBox[{"\[Beta]", "\[Rule]", 
+        RowBox[{"v", " ", 
+         RowBox[{
+          RowBox[{"Cos", "[", "\[Theta]", "]"}], "/", 
+          
+          TemplateBox[{
+           InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+            "\"c\"", Italic, StripOnInput -> False],
+            "speed of light in vacuum","\"SpeedOfLight\""},
+           "Quantity"]}]}]}]}], "/.", 
+      RowBox[{"Solve", "[", 
+       RowBox[{
+        RowBox[{"\[Gamma]", "\[Equal]", 
+         FractionBox["1", 
+          SqrtBox[
+           RowBox[{"1", "-", 
+            RowBox[{
+             RowBox[{"(", 
+              TemplateBox[{"1",RowBox[{"\"/\"", "\[InvisibleSpace]", 
+                  SuperscriptBox[
+                   StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}],
+                "per speed of light in vacuum squared",FractionBox["1", 
+                 SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+               "QuantityPostfix"], ")"}], " ", 
+             SuperscriptBox["v", "2"]}]}]]]}], ",", "v"}], "]"}]}], ")"}]}], "//",
+    "Thread"}]}]], "Input",ExpressionUUID->"1529448e-1251-41c5-be3a-\
+f898b2e2d4d0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[Nu]Source1", "\[Rule]", 
+    FractionBox[
+     RowBox[{"\[Nu]Obs", " ", 
+      SqrtBox[
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{
+          SqrtBox[
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+          RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}]]}], 
+     SqrtBox[
+      RowBox[{"1", "+", 
+       FractionBox[
+        RowBox[{
+         SqrtBox[
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+         RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}]]]}], ",", 
+   RowBox[{"\[Nu]Source2", "\[Rule]", 
+    FractionBox[
+     RowBox[{"\[Nu]Obs", " ", 
+      SqrtBox[
+       RowBox[{"1", "+", 
+        FractionBox[
+         RowBox[{
+          SqrtBox[
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+          RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}]]}], 
+     SqrtBox[
+      RowBox[{"1", "-", 
+       FractionBox[
+        RowBox[{
+         SqrtBox[
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+         RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}]]]}]}], 
+  "}"}]], "Output",ExpressionUUID->"4166b9c9-4f18-4157-8517-df3691d67568"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section",ExpressionUUID->"ed4272ca-6ad1-4314-afbc-8da1e1bbc7ae"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqj", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"jSource1", "/", "jSource2"}], "\[Equal]", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"\[Nu]Source1", "/", "\[Nu]Source2"}], ")"}], "^", 
+      RowBox[{"-", "s"}]}]}], "/.", "s\[Nu]"}], "//", 
+   "PowerExpand"}]}]], "Input",ExpressionUUID->"c535661e-0d38-4514-a404-\
+981e56c9632f"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["jSource1", "jSource2"], "\[Equal]", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}], ")"}], 
+    RowBox[{"-", "s"}]], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      FractionBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}], ")"}], 
+    "s"]}]}]], "Output",ExpressionUUID->"2b030761-887a-4c63-a07c-\
+115d96a500a3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section",ExpressionUUID->"60ad33dc-f6c5-4488-9094-65563208d547"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sj", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"jObs1", "/", 
+          RowBox[{"\[Nu]Obs", "^", "2"}]}], "\[Equal]", 
+         RowBox[{"jSource1", "/", 
+          RowBox[{"\[Nu]Source1", "^", "2"}]}]}], ",", 
+        RowBox[{
+         RowBox[{"jObs2", "/", 
+          RowBox[{"\[Nu]Obs", "^", "2"}]}], "\[Equal]", 
+         RowBox[{"jSource2", "/", 
+          RowBox[{"\[Nu]Source2", "^", "2"}]}]}], ",", "eqj"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"jObs1", ",", "jSource1", ",", "jSource2"}], "}"}]}], "]"}], 
+    "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1"}], "]"}], "]"}], "/.", "s\[Nu]"}]}]], "Input",Expre\
+ssionUUID->"eaab43e2-c050-4b37-b11c-cbf82f3050ff"],
+
+Cell[BoxData[
+ RowBox[{"jObs1", "\[Rule]", 
+  RowBox[{"jObs2", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}], ")"}], 
+    RowBox[{
+     RowBox[{"-", "2"}], "-", "s"}]], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      FractionBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}], ")"}], 
+    RowBox[{"2", "+", "s"}]]}]}]], "Output",ExpressionUUID->"02ef7492-33cc-\
+4777-88d4-318cff6e7b87"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section",ExpressionUUID->"c383a416-34a1-4096-8519-701f72b5b8a8"],
+
+Cell["\<\
+Assuming intensity is proportional to emissivity at the point of emission.\
+\>", "Text",ExpressionUUID->"92c73aac-56e4-4d08-9bfb-8f646d6daf19"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sI", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"IObs1", "/", 
+           RowBox[{"\[Nu]Obs", "^", "3"}]}], "\[Equal]", 
+          RowBox[{"ISource1", "/", 
+           RowBox[{"\[Nu]Source1", "^", "3"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"IObs2", "/", 
+           RowBox[{"\[Nu]Obs", "^", "3"}]}], "\[Equal]", 
+          RowBox[{"ISource2", "/", 
+           RowBox[{"\[Nu]Source2", "^", "3"}]}]}], ",", "eqj"}], "}"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ISource1", "\[Rule]", 
+          RowBox[{"k", " ", "jSource1"}]}], ",", 
+         RowBox[{"ISource2", "\[Rule]", 
+          RowBox[{"k", " ", "jSource2"}]}]}], "}"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"IObs1", ",", "jSource1", ",", "jSource2"}], "}"}]}], "]"}], 
+    "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1"}], "]"}], "]"}], "/.", "s\[Nu]"}]}]], "Input",Expre\
+ssionUUID->"3f87f2f4-f5ed-41bd-b4d6-5dab1d9d76e1"],
+
+Cell[BoxData[
+ RowBox[{"IObs1", "\[Rule]", 
+  RowBox[{"IObs2", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}], ")"}], 
+    RowBox[{
+     RowBox[{"-", "3"}], "-", "s"}]], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      FractionBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "\[Gamma]"]}], ")"}], 
+    RowBox[{"3", "+", "s"}]]}]}]], "Output",ExpressionUUID->"38ed888c-5b29-\
+47ec-baf9-63d40ffba59d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sI", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Gamma]", "\[Rule]", "10."}], ",", 
+    RowBox[{"s", "\[Rule]", ".7"}], ",", 
+    RowBox[{"\[Theta]", "->", 
+     TemplateBox[{
+      "20",RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}],"degrees",
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]}]}], "}"}]}]], "Input",ExpressionUUID->"5918b74a-\
+a547-4640-81a2-c16be3f14250"],
+
+Cell[BoxData[
+ RowBox[{"IObs1", "\[Rule]", 
+  RowBox[{"283458.3786172559`", " ", "IObs2"}]}]], "Output",ExpressionUUID->\
+"bdebf711-dd7d-4a2e-b667-8b1af4f928bf"]
+}, Open  ]],
+
+Cell["Therefore the ratio is 283458.", "Text",ExpressionUUID->"9bc31bed-e73d-480a-ba0a-468ae0e921d1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section",ExpressionUUID->"72d155cb-c16b-4544-9920-7b35b6d0cd21"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"p", "-", "1"}], ")"}], "/", "2"}], "==", "s"}], ",", "p"}], 
+   "]"}], "/.", 
+  RowBox[{"s", "\[Rule]", "1"}]}]], "Input",ExpressionUUID->"dcc0439f-3fb2-\
+41d6-95ee-506dbac56c7e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"p", "\[Rule]", "3"}], "}"}], "}"}]], "Output",ExpressionUUID->\
+"62ed11e0-1e9d-4896-b79c-5a9f4bbe09eb"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section",ExpressionUUID->"904042a6-07f8-4d6f-b976-8f8a01a675bd"],
+
+Cell[TextData[{
+ "Let  ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    SubscriptBox["n", "e"], "NT"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e4e50f09-1301-4d84-9e67-876a2b8df117"],
+ " = neNT, integrating to find the constant N"
+}], "Text",ExpressionUUID->"ad8a5f0c-47eb-474f-ad5c-af12d94c0ddc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sN", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"neNT", "==", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[CapitalNu]", " ", 
+         RowBox[{"\[Gamma]", "^", 
+          RowBox[{"-", "p"}]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Gamma]", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}],
+      ",", "\[CapitalNu]"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input",ExpressionUUID->\
+"991acd98-1218-4b77-97b1-cc84c969a963"],
+
+Cell[BoxData[
+ RowBox[{"\[CapitalNu]", "\[Rule]", 
+  RowBox[{"ConditionalExpression", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "neNT"}], "+", 
+     RowBox[{"neNT", " ", "p"}]}], ",", 
+    RowBox[{
+     RowBox[{"Re", "[", "p", "]"}], ">", "1"}]}], "]"}]}]], "Output",Expressio\
+nUUID->"fbad2366-996e-43bf-b959-ef1368dbe84c"]
+}, Open  ]],
+
+Cell["Assuming thermal energy is given by dE = (\[Gamma]-1) m c^2 dn", "Text",ExpressionUUID->"f6da0690-3b97-487c-ba06-89447b67b967"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"\[Gamma]", "-", "1"}], ")"}], " ", "m", " ", 
+      RowBox[{"c", "^", "2"}], " ", "\[CapitalNu]", " ", 
+      RowBox[{"\[Gamma]", "^", 
+       RowBox[{"-", "p"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}], "/.",
+    "sN"}], "//", "Simplify"}]], "Input",ExpressionUUID->"93ee52bb-a51c-4bd9-\
+87dd-ed7160437a4c"],
+
+Cell[BoxData[
+ RowBox[{"ConditionalExpression", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["c", "2"], " ", "m", " ", "neNT"}], 
+    RowBox[{
+     RowBox[{"-", "2"}], "+", "p"}]], ",", 
+   RowBox[{
+    RowBox[{"Re", "[", "p", "]"}], ">", "2"}]}], "]"}]], "Output",ExpressionUU\
+ID->"6d847dc8-356b-42c8-8e19-0d9ea1c1d05e"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Therefore the thermal energy is ",
+ Cell[BoxData[
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["c", "2"], " ", "m", " ", "neNT"}], 
+   RowBox[{
+    RowBox[{"-", "2"}], "+", "p"}]]],ExpressionUUID->
+  "a325194b-ec2e-49dd-9b22-dc5c7639b289"],
+ "."
+}], "Text",ExpressionUUID->"016b2334-c62b-47c9-b018-ec9272f7b9ee"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["e)", "Section",ExpressionUUID->"6d34c505-9f6e-4541-b177-d919c0e3bf90"],
+
+Cell["Finding energy density", "Text",ExpressionUUID->"6ad51072-c10f-40b9-a10e-086d21d7ab37"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"su", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"u", "->", 
+      RowBox[{
+       RowBox[{"B", "^", "2"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"2.", " ", 
+         TemplateBox[{
+          InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+           "\"\[Mu]\"", "0"],"magnetic constants","\"MagneticConstant\""},
+          "Quantity"]}], ")"}]}]}], "/.", 
+     RowBox[{"B", "->", 
+      TemplateBox[{FractionBox["1", 
+         SuperscriptBox["10", "6"]],"\"G\"","gauss","\"Gauss\""},
+       "Quantity"]}]}], "//", "UnitConvert"}]}], 
+  "\[IndentingNewLine]"}]], "Input",ExpressionUUID->"15f4f12c-66ea-4594-be31-\
+77508ee4de7c"],
+
+Cell[BoxData[
+ RowBox[{"u", "\[Rule]", 
+  TemplateBox[{
+   "3.978873577297384`*^-15",
+    RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+      "\"m\"", "\[ThinSpace]", 
+      SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\")\""}],
+    "kilograms per meter second squared",FractionBox["\"Kilograms\"", 
+     RowBox[{"\"Meters\"", " ", 
+       SuperscriptBox["\"Seconds\"", "2"]}]]},
+   "Quantity"]}]], "Output",ExpressionUUID->"f70a18dd-49b9-4b01-909a-\
+30a446887f23"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Substituting in equation in part d) and solving for ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    SubscriptBox["n", "e"], "NT"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f0c5dfa3-89ad-4bbc-9f17-cd8c349d85f8"],
+ " = neNT"
+}], "Text",ExpressionUUID->"83a47993-40cb-4b6a-80c6-ad7475d99f71"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"u", "==", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        TemplateBox[{
+         InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+          "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+          "\"SpeedOfLight\""},
+         "Quantity"], "2"], " ", 
+       TemplateBox[{"1",SubscriptBox[
+          StyleBox["\"m\"", Italic, StripOnInput -> False], 
+          StyleBox["\"e\"", Plain, StripOnInput -> False]],"electron masses",
+         "\"ElectronMass\""},
+        "Quantity"], " ", "neNT"}], 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", "p"}]]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{"su", ",", 
+      RowBox[{"p", "\[Rule]", "3"}]}], "}"}]}], ",", "neNT"}], "]"}]], "Input",\
+ExpressionUUID->"27e3f654-aa3d-4741-9ef5-29137ea645a6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"neNT", "\[Rule]", 
+    TemplateBox[{
+     "0.048599269968715594`",RowBox[{"\"per \"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"meter\"", "3"]}],"per meters cubed",FractionBox["1", 
+       SuperscriptBox["\"Meters\"", "3"]]},
+     "Quantity"]}], "}"}], "}"}]], "Output",ExpressionUUID->"d420471f-3c7c-\
+4843-a6a5-949d18f6dc6c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["f)", "Section",ExpressionUUID->"bc4b681f-ccc3-461f-be1a-388cc6d4ca54"],
+
+Cell["Finding \[Gamma] using synchrotron frequency equation (in SI units)", \
+"Text",ExpressionUUID->"2ab36d56-89e0-42a1-91bb-bfdcfd3bdbeb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Gamma]", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       TemplateBox[{"1","\"GHz\"","gigahertz","\"Gigahertz\""},
+        "Quantity"], "\[Equal]", 
+       RowBox[{
+        RowBox[{"3", "/", "2"}], "  ", 
+        RowBox[{"\[Gamma]", "^", "2"}], " ", 
+        TemplateBox[{
+         "1",StyleBox["\"e\"", Italic, StripOnInput -> False],
+          "elementary charges","\"ElementaryCharge\""},
+         "Quantity"], " ", 
+        RowBox[{"B", "/", 
+         RowBox[{"(", 
+          TemplateBox[{"1",SubscriptBox[
+             StyleBox["\"m\"", Italic, StripOnInput -> False], 
+             StyleBox["\"e\"", Plain, StripOnInput -> False]],
+            "electron masses","\"ElectronMass\""},
+           "Quantity"], ")"}]}]}]}], "/.", 
+      RowBox[{"B", "->", 
+       TemplateBox[{FractionBox["1", 
+          SuperscriptBox["10", "6"]],"\"G\"","gauss","\"Gauss\""},
+        "Quantity"]}]}], ",", "\[Gamma]"}], "]"}], "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}]], "Input",ExpressionUUID->"6991794e-b8b4-\
+4121-b0d4-9f8b3e43a9a7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "\[Gamma]", "\[Rule]", "6156.6387269305164470765`7.439086215779546"}], 
+  "}"}]], "Output",ExpressionUUID->"279faa92-f110-4445-bb73-bbb151722445"]
+}, Open  ]],
+
+Cell["Substituting in the cooling time equation", "Text",ExpressionUUID->"0df844f6-3a8b-4a70-9a54-eb36e38f4fde"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"6.5", " ", 
+    RowBox[{"10", "^", "7"}], " ", 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],"\"yr\"","years","\"Years\""},
+     "Quantity"], " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"B", "/", 
+       RowBox[{"(", 
+        TemplateBox[{FractionBox["5", 
+           SuperscriptBox["10", "6"]],"\"G\"","gauss","\"Gauss\""},
+         "Quantity"], ")"}]}], ")"}], "^", 
+     RowBox[{"-", "2"}]}], " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"\[Gamma]", "/", 
+       RowBox[{"10", "^", "4"}]}], ")"}], "^", 
+     RowBox[{"-", "1"}]}]}], "/.", 
+   RowBox[{"B", "->", 
+    TemplateBox[{FractionBox["1", 
+       SuperscriptBox["10", "6"]],"\"G\"","gauss","\"Gauss\""},
+     "Quantity"]}]}], "/.", "s\[Gamma]"}]], "Input",ExpressionUUID->"a1b295bd-\
+6312-4db7-8acf-e50aae5d72fe"],
+
+Cell[BoxData[
+ TemplateBox[{"2.63942724605861`*^9","\"yr\"","years","\"Years\""},
+  "Quantity"]], "Output",ExpressionUUID->"7415a197-4279-4d99-80f6-\
+5e702392e68a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2", "Chapter",ExpressionUUID->"ea607fb2-e083-4d3c-b419-1d83cf33657a"],
+
+Cell["Equation 8.20", "Text",ExpressionUUID->"d6a048ee-7736-49e8-a984-06f21b514725"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eq1", "=", 
+  RowBox[{
+   RowBox[{"dt", "/", "dw"}], "\[Equal]", 
+   TemplateBox[{FractionBox["1.1", 
+      SuperscriptBox["10", "5"]],RowBox[{
+       SuperscriptBox["\"s\"", "2"]}],"seconds squared",SuperscriptBox[
+     "\"Seconds\"", "2"]},
+    "Quantity"], "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", "Pi", "  ", 
+    RowBox[{
+     RowBox[{"e", "^", "2"}], " ", "/", 
+     RowBox[{"(", 
+      RowBox[{"c", " ", "m", " ", 
+       RowBox[{"w", "^", "3"}]}], ")"}]}], " ", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"n", "[", "s", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"s", ",", "0", ",", "d"}], "}"}]}], "]"}]}]}]}]], "Input",Expre\
+ssionUUID->"5f3ce5db-4d63-432f-be14-e5daf67f3364"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["dt", "dw"], "\[Equal]", 
+  TemplateBox[{"0.000011000000000000001`",RowBox[{
+      SuperscriptBox["\"s\"", "2"]}],"seconds squared",SuperscriptBox[
+    "\"Seconds\"", "2"]},
+   "Quantity"], "\[Equal]", 
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"4", " ", 
+     SuperscriptBox["e", "2"], " ", "\[Pi]", " ", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "d"], 
+      RowBox[{
+       RowBox[{"n", "[", "s", "]"}], 
+       RowBox[{"\[DifferentialD]", "s"}]}]}]}], 
+    RowBox[{"c", " ", "m", " ", 
+     SuperscriptBox["w", "3"]}]]}]}]], "Output",ExpressionUUID->"4e29e335-\
+366b-4c7b-9053-f9ef88779561"]
+}, Open  ]],
+
+Cell["Derivative of Equation 8.31", "Text",ExpressionUUID->"f0e139d5-bed1-461c-8d8b-54d830d42414"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eq2", "=", 
+  RowBox[{
+   RowBox[{"d\[Theta]", " ", "/", "dw"}], "\[Equal]", 
+   TemplateBox[{FractionBox["1.9", 
+      SuperscriptBox["10", "4"]],"\"s\"","seconds","\"Seconds\""},
+    "Quantity"], "==", 
+   RowBox[{"D", "[", " ", 
+    RowBox[{
+     RowBox[{"2", " ", "Pi", "  ", 
+      RowBox[{
+       RowBox[{"e", "^", "3"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"m", "^", "2"}], " ", 
+         RowBox[{"c", "^", "2"}], " ", 
+         RowBox[{"w", "^", "2"}]}], ")"}]}], "Bparallel", " ", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"n", "[", "s", "]"}], " ", ",", 
+        RowBox[{"{", 
+         RowBox[{"s", ",", "0", ",", "d"}], "}"}]}], "]"}]}], ",", "w"}], 
+    "]"}]}]}]], "Input",ExpressionUUID->"b7b1afcd-0231-4a60-a7a5-\
+af20c33243d5"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["d\[Theta]", "dw"], "\[Equal]", 
+  TemplateBox[{"0.00019`","\"s\"","seconds","\"Seconds\""},
+   "Quantity"], "\[Equal]", 
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"4", " ", "Bparallel", " ", 
+     SuperscriptBox["e", "3"], " ", "\[Pi]", " ", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "d"], 
+      RowBox[{
+       RowBox[{"n", "[", "s", "]"}], 
+       RowBox[{"\[DifferentialD]", "s"}]}]}]}], 
+    RowBox[{
+     SuperscriptBox["c", "2"], " ", 
+     SuperscriptBox["m", "2"], " ", 
+     SuperscriptBox["w", "3"]}]]}]}]], "Output",ExpressionUUID->"4031cf58-\
+731e-489a-b99b-c695a8ed253d"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Dividing this by the first equation and solving for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "||"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6b1d7a96-0810-4c08-b417-74582cd39188"]
+}], "Text",ExpressionUUID->"8dada7df-16e0-4079-86f6-287b5663983c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"eq2", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "/", 
+      RowBox[{"eq1", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "==", 
+     RowBox[{
+      RowBox[{"eq2", "[", 
+       RowBox[{"[", "3", "]"}], "]"}], "/", 
+      RowBox[{"eq1", "[", 
+       RowBox[{"[", "3", "]"}], "]"}]}]}], "//", "PowerExpand"}], ",", 
+   "Bparallel"}], "]"}]], "Input",ExpressionUUID->"24a3bbcd-a34e-450b-a872-\
+a02a75d9c4a9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"Bparallel", "\[Rule]", 
+    FractionBox[
+     RowBox[{"c", " ", "m", " ", 
+      RowBox[{"(", 
+       TemplateBox[{
+        "17.27272727272727`",
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}],
+         "reciprocal seconds",FractionBox["1", "\"Seconds\""]},
+        "Quantity"], ")"}]}], "e"]}], "}"}], "}"}]], "Output",ExpressionUUID->\
+"3108f638-69fc-46bc-bc61-98dc2ee656d5"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Plugging in the values we get, in CGS units, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "||"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e487cc7e-716a-4b3e-977f-ece161cd472d"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", 
+    RowBox[{"-", "6"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "78097779-16a2-4b3e-85c2-59084db04189"]
+}], "Text",ExpressionUUID->"3c9999f3-c576-4cea-a065-8d040b349f24"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3", "Chapter",ExpressionUUID->"01fb2508-9dee-4f13-acde-4da4f80de5e0"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section",ExpressionUUID->"27b8102a-3738-4df3-a9f9-d7ebacb6f647"],
+
+Cell[TextData[{
+ "Here ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["E", "."], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3d0c2c22-4ed7-43ed-866f-ae0d3d4e2213"],
+ " is proportional to power, which in turn is proportional to ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[Gamma]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "76af0ef5-d83c-4e15-acee-0e2cd8ebb548"],
+ ". Therefore a = 2, since E is proportional to \[Gamma]"
+}], "Text",ExpressionUUID->"4f901dbe-205e-4c84-a48d-4b61d79d1241"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section",ExpressionUUID->"fa5fad50-b629-4969-a557-25ca9e0b152f"],
+
+Cell[TextData[{
+ "Substituting the values of ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["E", "."], TraditionalForm]],ExpressionUUID->
+  "a6908c7c-af33-4ef2-b3d2-9f84f59dfd61"],
+ " in the given equation and setting the first term to zero."
+}], "Text",ExpressionUUID->"7e082bca-6480-475f-bf7b-cfdffbcb5fe7"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{"\[PartialD]", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "b"}], " ", 
+       SuperscriptBox["\[CapitalEpsilon]", "2"], " ", 
+       RowBox[{"\[CapitalNu]", "(", "\[CapitalEpsilon]", ")"}]}], ")"}]}], 
+    RowBox[{"\[PartialD]", "\[CapitalEpsilon]"}],
+    MultilineFunction->None], "\[LongEqual]", 
+   RowBox[{"q", "(", "\[CapitalEpsilon]", ")"}]}], TraditionalForm]], "Input",\
+ExpressionUUID->"b5b3e924-ab0c-4e0c-b1e4-5d69b3563035"],
+
+Cell[TextData[{
+ "This implies N(E) is proportional to ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{"q", 
+      RowBox[{"(", "E", ")"}]}]}], 
+    SuperscriptBox["E", "2"]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0847d9ae-7b17-4b6a-87b0-4fccf53dec3f"]
+}], "Text",ExpressionUUID->"4974090b-2cbf-4493-aaac-4c478d90b19b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section",ExpressionUUID->"017ab458-3e48-4c9e-bcc9-7cc7f275d510"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{"A", " ", 
+     RowBox[{"\[CapitalEpsilon]1", "^", 
+      RowBox[{"-", "\[Alpha]"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\[CapitalEpsilon]1", ",", "\[CapitalEpsilon]", ",", "\[Infinity]"}], 
+     "}"}]}], "]"}], "/", 
+  SuperscriptBox["\[CapitalEpsilon]", "2"]}]], "Input",ExpressionUUID->\
+"e10a8a6b-12e2-419e-95a4-fa045d4e3097"],
+
+Cell[BoxData[
+ RowBox[{"ConditionalExpression", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"A", " ", 
+     SuperscriptBox["\[CapitalEpsilon]", 
+      RowBox[{
+       RowBox[{"-", "1"}], "-", "\[Alpha]"}]]}], 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[Alpha]"}]], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Re", "[", "\[Alpha]", "]"}], ">", "1"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Im", "[", "\[CapitalEpsilon]", "]"}], "\[Equal]", "0"}], "&&", 
+        RowBox[{
+         RowBox[{"Re", "[", "\[CapitalEpsilon]", "]"}], ">", "0"}]}], ")"}], "||", 
+      RowBox[{"\[CapitalEpsilon]", "\[NotElement]", "Reals"}]}], ")"}]}]}], 
+  "]"}]], "Output",ExpressionUUID->"82bcfef0-da33-4e58-a2bf-9a4c0d9d581e"]
+}, Open  ]],
+
+Cell["Therefore the power index is \[Alpha] + 1", "Text",ExpressionUUID->"7f530688-9144-4da9-8127-1d877e63d949"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section",ExpressionUUID->"3dee8864-decc-411e-97f6-75093c8eee61"],
+
+Cell["\<\
+The newest electron seems to be from the edge of the jet (hot spots). High \
+energy electrons cool faster initially as the jet moves outwards but are \
+later accelerated by shocks in the hot spots causing the spectrum to flatten.\
+\>", "Text",ExpressionUUID->"e7d9d286-c470-47b8-b3e3-36574e103097"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1600, 827},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PrintingMargins"->54},
+Magnification:>1.6 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (February 5, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 362, 11, 192, "Title"],
+Cell[945, 35, 383, 10, 127, "Chapter"],
+Cell[CellGroupData[{
+Cell[1353, 49, 76, 0, 94, "Chapter"],
+Cell[CellGroupData[{
+Cell[1454, 53, 76, 0, 113, "Section"],
+Cell[1533, 55, 112, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[1670, 59, 1550, 41, 167, "Input"],
+Cell[3223, 102, 1403, 45, 161, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4675, 153, 76, 0, 113, "Section"],
+Cell[CellGroupData[{
+Cell[4776, 157, 378, 11, 48, "Input"],
+Cell[5157, 170, 781, 26, 104, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5987, 202, 76, 0, 113, "Section"],
+Cell[CellGroupData[{
+Cell[6088, 206, 805, 23, 109, "Input"],
+Cell[6896, 231, 809, 26, 104, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7754, 263, 76, 0, 113, "Section"],
+Cell[7833, 265, 153, 2, 47, "Text"],
+Cell[CellGroupData[{
+Cell[8011, 271, 1064, 30, 109, "Input"],
+Cell[9078, 303, 809, 26, 104, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9924, 334, 410, 11, 58, "Input"],
+Cell[10337, 347, 161, 3, 48, "Output"]
+}, Open  ]],
+Cell[10513, 353, 101, 0, 47, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10651, 358, 76, 0, 113, "Section"],
+Cell[CellGroupData[{
+Cell[10752, 362, 303, 10, 48, "Input"],
+Cell[11058, 374, 160, 4, 48, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11267, 384, 76, 0, 113, "Section"],
+Cell[11346, 386, 330, 9, 50, "Text"],
+Cell[CellGroupData[{
+Cell[11701, 399, 546, 16, 48, "Input"],
+Cell[12250, 417, 331, 9, 48, "Output"]
+}, Open  ]],
+Cell[12596, 429, 133, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[12754, 433, 498, 14, 48, "Input"],
+Cell[13255, 449, 343, 10, 77, "Output"]
+}, Open  ]],
+Cell[13613, 462, 331, 10, 62, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13981, 477, 76, 0, 113, "Section"],
+Cell[14060, 479, 93, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[14178, 483, 676, 19, 125, "Input"],
+Cell[14857, 504, 497, 11, 63, "Output"]
+}, Open  ]],
+Cell[15369, 518, 341, 9, 50, "Text"],
+Cell[CellGroupData[{
+Cell[15735, 531, 854, 23, 92, "Input"],
+Cell[16592, 556, 390, 9, 66, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17031, 571, 76, 0, 113, "Section"],
+Cell[17110, 573, 140, 1, 47, "Text"],
+Cell[CellGroupData[{
+Cell[17275, 578, 1094, 28, 90, "Input"],
+Cell[18372, 608, 188, 4, 48, "Output"]
+}, Open  ]],
+Cell[18575, 615, 112, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[18712, 619, 856, 25, 90, "Input"],
+Cell[19571, 646, 164, 3, 63, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19796, 656, 76, 0, 114, "Chapter"],
+Cell[19875, 658, 84, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[19984, 662, 745, 21, 90, "Input"],
+Cell[20732, 685, 652, 18, 83, "Output"]
+}, Open  ]],
+Cell[21399, 706, 98, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[21522, 710, 816, 23, 90, "Input"],
+Cell[22341, 735, 643, 18, 83, "Output"]
+}, Open  ]],
+Cell[22999, 756, 303, 7, 51, "Text"],
+Cell[CellGroupData[{
+Cell[23327, 767, 511, 16, 48, "Input"],
+Cell[23841, 785, 452, 12, 82, "Output"]
+}, Open  ]],
+Cell[24308, 800, 491, 14, 54, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24836, 819, 76, 0, 114, "Chapter"],
+Cell[CellGroupData[{
+Cell[24937, 823, 76, 0, 113, "Section"],
+Cell[25016, 825, 553, 14, 50, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25606, 844, 76, 0, 113, "Section"],
+Cell[25685, 846, 308, 7, 50, "Text"],
+Cell[25996, 855, 509, 13, 80, "Input"],
+Cell[26508, 870, 390, 11, 71, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26935, 886, 76, 0, 113, "Section"],
+Cell[CellGroupData[{
+Cell[27036, 890, 419, 12, 54, "Input"],
+Cell[27458, 904, 781, 22, 73, "Output"]
+}, Open  ]],
+Cell[28254, 929, 112, 0, 47, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28403, 934, 76, 0, 113, "Section"],
+Cell[28482, 936, 308, 4, 77, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

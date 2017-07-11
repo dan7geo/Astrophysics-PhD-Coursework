@@ -1,0 +1,407 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11496,        398]
+NotebookOptionsPosition[      9567,        323]
+NotebookOutlinePosition[     10078,        343]
+CellTagsIndexPosition[     10035,        340]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Q4", "Subchapter",
+ CellChangeTimes->{{3.6544539912678337`*^9, 3.654453999706316*^9}, {
+  3.6544594789697123`*^9, 3.6544594839849987`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["The energy Ez is given as a function of z and vz:", "Section",
+ CellChangeTimes->{{3.654459487521201*^9, 3.654459506473285*^9}, {
+  3.654459571103982*^9, 3.654459571672014*^9}, {3.6544614082770624`*^9, 
+  3.6544614274921613`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Ez", "[", 
+   RowBox[{"vz_", ",", "z_"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"vz", "^", "2"}], "/", "2"}], "+", 
+   RowBox[{
+    RowBox[{"\[Sigma]", "^", "2"}], 
+    RowBox[{"Log", "[", 
+     RowBox[{
+      FractionBox["1", "4"], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "z"}], "/", "z0"}], "]"}], " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"Exp", "[", 
+          RowBox[{"z", "/", "z0"}], "]"}]}], ")"}], "^", "2"}]}], 
+     "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6544526570215187`*^9, 3.6544527040352077`*^9}, {
+   3.6544527579932947`*^9, 3.65445277138406*^9}, 3.654453856325115*^9, {
+   3.6544540246127405`*^9, 3.6544540523553276`*^9}, {3.654459354717605*^9, 
+   3.6544593701014853`*^9}, {3.6544594061255455`*^9, 3.654459461522714*^9}, {
+   3.6544595736261263`*^9, 3.654459574129155*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox["vz", "2"], "2"], "+", 
+  RowBox[{
+   SuperscriptBox["\[Sigma]", "2"], " ", 
+   RowBox[{"Log", "[", 
+    RowBox[{
+     FractionBox["1", "4"], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       FractionBox["z", "z0"]}]], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"z", "/", "z0"}]]}], ")"}], "2"]}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.654459461885735*^9, 3.654459578535407*^9},
+ FontSize->16]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The distribution function f is defined as:", "Section",
+ CellChangeTimes->{{3.6544595215771494`*^9, 3.6544595293925962`*^9}, {
+  3.6544613991325393`*^9, 3.6544614035247903`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "Ez_", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Rho]", "0"], " ", "/", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"2", " ", "Pi", " ", 
+      RowBox[{"\[Sigma]", "^", "2"}]}], "]"}]}], " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{"-", "Ez"}], "/", 
+     RowBox[{"\[Sigma]", "^", "2"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.654454252045749*^9, 3.6544542826885023`*^9}, {
+  3.6544595195450325`*^9, 3.654459581832596*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox["Ez", 
+      SuperscriptBox["\[Sigma]", "2"]]}]], " ", 
+   SubscriptBox["\[Rho]", "0"]}], 
+  RowBox[{
+   SqrtBox[
+    RowBox[{"2", " ", "\[Pi]"}]], " ", 
+   SqrtBox[
+    SuperscriptBox["\[Sigma]", "2"]]}]]], "Output",
+ CellChangeTimes->{3.6544595849587746`*^9},
+ FontSize->16]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Minimum energy to reach height z is the potential energy at z:\
+\>", "Section",
+ CellChangeTimes->{{3.6544596280072365`*^9, 3.654459652847657*^9}, 
+   3.6544614365886817`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EzMin", "[", "z_", "]"}], "=", 
+  RowBox[{"Ez", "[", 
+   RowBox[{"0", ",", "z"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6544595995946116`*^9, 3.654459619601756*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["\[Sigma]", "2"], " ", 
+  RowBox[{"Log", "[", 
+   RowBox[{
+    FractionBox["1", "4"], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox["z", "z0"]}]], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"z", "/", "z0"}]]}], ")"}], "2"]}], "]"}]}]], "Output",
+ CellChangeTimes->{3.65445962106384*^9},
+ FontSize->16]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Setting constants to numerical values:", "Section",
+ CellChangeTimes->{{3.654459680271226*^9, 3.654459704438608*^9}, 
+   3.6544614381407704`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Sigma]", "=", "1"}], ";", 
+  RowBox[{
+   SubscriptBox["\[Rho]", "0"], "=", "1"}], ";", 
+  RowBox[{"G", "=", "1"}], ";", 
+  RowBox[{"z0", "=", 
+   RowBox[{"\[Sigma]", "/", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"8", "Pi", " ", "G", " ", 
+      SubscriptBox["\[Rho]", "0"]}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.654459710046929*^9, 3.6544597404396677`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Integrating the distribution function over all phase space to find the \
+normalization constant:\
+\>", "Section",
+ CellChangeTimes->{{3.654459745589962*^9, 3.6544597714464407`*^9}, {
+   3.6544605997408166`*^9, 3.654460611469487*^9}, 3.6544614510285077`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"n", "=", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"Ez", "[", 
+      RowBox[{"vz", ",", "z"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"vz", ",", 
+      RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"z", ",", 
+      RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.654459774321605*^9, 3.654459824598481*^9}}],
+
+Cell[BoxData[
+ SqrtBox[
+  FractionBox["2", "\[Pi]"]]], "Output",
+ CellChangeTimes->{{3.6544598078895254`*^9, 3.6544598266956005`*^9}},
+ FontSize->16]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculating the fraction of stars crossing height x:", "Section",
+ CellChangeTimes->{{3.654460563821762*^9, 3.6544605833178773`*^9}, 
+   3.6544614535316505`*^9, {3.654461853784544*^9, 3.6544618583278036`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Fraction of stars crossing height x if given by the integral of f over all \
+values of vz and z satisfying the condition Ez(vz,z) >= EzMin(x) :\
+\>", "Subsection",
+ CellChangeTimes->{{3.6544598347700624`*^9, 3.654459917980822*^9}, {
+  3.6544602791934824`*^9, 3.654460279384493*^9}, {3.6544605113177595`*^9, 
+  3.6544605217423553`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "/", "n"}], ")"}], " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Boole", "[", 
+       RowBox[{
+        RowBox[{"Ez", "[", 
+         RowBox[{"vz", ",", "z"}], "]"}], ">", 
+        RowBox[{"EzMin", "[", "x", "]"}]}], "]"}], 
+      RowBox[{"f", "[", 
+       RowBox[{"Ez", "[", 
+        RowBox[{"vz", ",", "z"}], "]"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"vz", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6544598600155067`*^9, 3.654459865229805*^9}, {
+   3.654459921413018*^9, 3.654459987060773*^9}, {3.6544600717796187`*^9, 
+   3.6544600759868593`*^9}, {3.654460144986806*^9, 3.6544601618587713`*^9}, {
+   3.654460201154019*^9, 3.654460235649992*^9}, {3.654460267841833*^9, 
+   3.6544602861618805`*^9}, 3.654460327793262*^9, {3.654462598673147*^9, 
+   3.654462635648262*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fraction of stars crossing height z0", "Section",
+ CellChangeTimes->{{3.6544601168111944`*^9, 3.6544601183462825`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F", "[", "z0", "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.654460915237862*^9, 3.6544609182260327`*^9}, {
+  3.6544625925537972`*^9, 3.654462617056199*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{
+  3.6544609658097544`*^9, {3.654462609453764*^9, 3.654462623933592*^9}, 
+   3.6544630225613923`*^9},
+ FontSize->16]
+}, Open  ]],
+
+Cell["\<\
+Thus F[z0] is equal to 0.8080034704 (up to 10 digits of precision).\
+\>", "Subsection",
+ CellChangeTimes->{{3.6544614845074224`*^9, 3.6544615272758684`*^9}, 
+   3.654461589290416*^9},
+ FontSize->24]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fraction of stars crossing height 2*z0", "Section",
+ CellChangeTimes->{{3.6544601168111944`*^9, 3.6544601183462825`*^9}, {
+  3.6544609798175554`*^9, 3.654460980473593*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F", "[", 
+   RowBox[{"2", "z0"}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.654460915237862*^9, 3.6544609182260327`*^9}, 
+   3.654461057817017*^9, {3.654463033813036*^9, 3.654463035372125*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.6544609658097544`*^9, 3.6544615341462617`*^9, 
+  3.6544630378172646`*^9},
+ FontSize->16]
+}, Open  ]],
+
+Cell["\<\
+Thus F[2*z0] is equal to 0.461727212 (up to 9 digits of precision).\
+\>", "Subsection",
+ CellChangeTimes->{{3.6544614845074224`*^9, 3.65446158797034*^9}, {
+  3.654461673690243*^9, 3.654461678377511*^9}},
+ FontSize->24]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1296, 726},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{594.9599999999999, 842.04}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 29, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 145, 2, 67, "Subchapter"],
+Cell[CellGroupData[{
+Cell[750, 28, 236, 3, 70, "Section"],
+Cell[CellGroupData[{
+Cell[1011, 35, 917, 25, 46, "Input"],
+Cell[1931, 62, 568, 18, 54, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2548, 86, 184, 2, 70, "Section"],
+Cell[CellGroupData[{
+Cell[2757, 92, 494, 14, 31, "Input"],
+Cell[3254, 108, 388, 14, 71, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3691, 128, 185, 4, 70, "Section"],
+Cell[CellGroupData[{
+Cell[3901, 136, 203, 5, 31, "Input"],
+Cell[4107, 143, 463, 15, 51, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4619, 164, 151, 2, 70, "Section"],
+Cell[4773, 168, 407, 11, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5217, 184, 267, 5, 70, "Section"],
+Cell[CellGroupData[{
+Cell[5509, 193, 470, 13, 31, "Input"],
+Cell[5982, 208, 149, 4, 64, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6180, 218, 215, 2, 70, "Section"],
+Cell[CellGroupData[{
+Cell[6420, 224, 345, 6, 49, "Subsection"],
+Cell[6768, 232, 1108, 29, 31, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7925, 267, 125, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[8075, 272, 198, 4, 31, "Input"],
+Cell[8276, 278, 171, 4, 33, "Output"]
+}, Open  ]],
+Cell[8462, 285, 208, 5, 54, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8707, 295, 178, 2, 70, "Section"],
+Cell[CellGroupData[{
+Cell[8910, 301, 238, 5, 31, "Input"],
+Cell[9151, 308, 145, 3, 33, "Output"]
+}, Open  ]],
+Cell[9311, 314, 228, 5, 54, "Subsection"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

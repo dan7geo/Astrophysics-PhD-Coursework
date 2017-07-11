@@ -1,0 +1,1244 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     39137,       1235]
+NotebookOptionsPosition[     33835,       1037]
+NotebookOutlinePosition[     34361,       1058]
+CellTagsIndexPosition[     34318,       1055]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["HW 8 - AstroDynamics", "Title",
+ CellChangeTimes->{{3.6564517816324267`*^9, 3.6564517912629776`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Q2", "Chapter",
+ CellChangeTimes->{{3.6564517709838176`*^9, 3.65645177119983*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section",
+ CellChangeTimes->{{3.656451053934805*^9, 3.6564510542318215`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Potential energy", "Subsection",
+ CellChangeTimes->{{3.656449208081024*^9, 3.6564492095709066`*^9}, {
+  3.656449315738534*^9, 3.656449316849598*^9}, {3.6564603268916483`*^9, 
+  3.656460326978653*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"U", "[", "R_", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "3"}], "/", "5"}], " ", "G", " ", 
+   RowBox[{
+    RowBox[{"M", "^", "2"}], "/", "R"}]}]}]], "Input",
+ CellChangeTimes->{{3.6564492141841574`*^9, 3.65644926059632*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"3", " ", "G", " ", 
+    SuperscriptBox["M", "2"]}], 
+   RowBox[{"5", " ", "R"}]]}]], "Output",
+ CellChangeTimes->{{3.656449246208933*^9, 3.6564492611991525`*^9}, 
+   3.6564504788549285`*^9, {3.656460336350569*^9, 3.656460349705121*^9}, 
+   3.656460466214806*^9, 3.6564673332922244`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Kinetic energy at virial equilibrium", "Subsection",
+ CellChangeTimes->{{3.656449208081024*^9, 3.6564492095709066`*^9}, {
+  3.656449315738534*^9, 3.656449316849598*^9}, {3.656460303355328*^9, 
+  3.6564603250827475`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"KE", "[", "R_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{"U", "[", "R", "]"}]}], "/", "2"}]}]], "Input",
+ CellChangeTimes->{{3.6564492141841574`*^9, 3.65644926059632*^9}, {
+  3.6564602994609156`*^9, 3.6564602996199245`*^9}, {3.6564603311480813`*^9, 
+  3.656460334090844*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"3", " ", "G", " ", 
+   SuperscriptBox["M", "2"]}], 
+  RowBox[{"10", " ", "R"}]]], "Output",
+ CellChangeTimes->{{3.656449246208933*^9, 3.6564492611991525`*^9}, 
+   3.6564504788549285`*^9, 3.6564603512990093`*^9, 3.656460467049651*^9, 
+   3.6564673341652746`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Total energy radiated ", "Subsection",
+ CellChangeTimes->{{3.656449366489518*^9, 3.6564493682332134`*^9}, {
+  3.656450237576078*^9, 3.6564502391437626`*^9}, {3.656450335663269*^9, 
+  3.65645035668642*^9}, {3.6564510013037944`*^9, 3.6564510021358423`*^9}, {
+  3.656460314418948*^9, 3.656460323099039*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"En", "[", "R_", "]"}], "=", 
+  RowBox[{"-", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"KE", "[", "R", "]"}], "+", 
+     RowBox[{"U", "[", "R", "]"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.6564493702709246`*^9, 3.65644938152934*^9}, {
+  3.656450244713068*^9, 3.656450251408033*^9}, {3.656450329568136*^9, 
+  3.6564503324396925`*^9}, {3.6564603568275156`*^9, 3.656460362571831*^9}, {
+  3.65646046006586*^9, 3.656460462506797*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"3", " ", "G", " ", 
+   SuperscriptBox["M", "2"]}], 
+  RowBox[{"10", " ", "R"}]]], "Output",
+ CellChangeTimes->{
+  3.65644938205237*^9, {3.6564504621188116`*^9, 3.6564504799377875`*^9}, 
+   3.656460363071657*^9, {3.6564604634408503`*^9, 3.6564604678967*^9}, 
+   3.6564673351783323`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituting variables:", "Subsection",
+ CellChangeTimes->{{3.6564497509890566`*^9, 3.6564497739011126`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"L", "=", 
+  RowBox[{
+   TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+     "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+    "Entity"], "[", "\"\<Luminosity\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.656449817261489*^9, 3.656449837811612*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "3.82696939160662768765435461`3.133794300604512*^26","\"W\"","watts",
+   "\"Watts\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.656449859878219*^9, 3.656449989057081*^9, 
+  3.6564505108744793`*^9, 3.6564603664064426`*^9, 3.6564604700196185`*^9, 
+  3.65646733792649*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"M", "=", 
+  RowBox[{
+   TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+     "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+    "Entity"], "[", "\"\<Mass\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.656450149422851*^9, 3.656450151102745*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"1.988435`7.*^30","\"kg\"","kilograms","\"Kilograms\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.656450154508129*^9, 3.6564505119533386`*^9, 
+  3.6564603679443283`*^9, 3.656460470826665*^9, 3.656467338997551*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Rs", "=", " ", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+       "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+      "Entity"], "[", "\"\<Radius\>\"", "]"}], ",", " ", "\"\<SI\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6564498620831385`*^9, 3.6564498649058948`*^9}, 
+   3.6564499738372498`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"695500.`4.","\"km\"","kilometers","\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.6564498701919813`*^9, 3.6564498989719553`*^9}, 
+   3.6564499902189445`*^9, 3.656450513790038*^9, {3.656451076461093*^9, 
+   3.6564510860136395`*^9}, 3.6564603695922194`*^9, 3.6564604722885456`*^9, 
+   3.6564673404256325`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"G", "=", 
+  TemplateBox[{
+   InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+    "\"G\"", Italic, StripOnInput -> False],
+    "Newtonian gravitational constants","\"GravitationalConstant\""},
+   "Quantity"]}]], "Input",
+ CellChangeTimes->{{3.656450130943842*^9, 3.656450136977773*^9}, {
+  3.6564505533243985`*^9, 3.656450557672039*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "1",StyleBox["\"G\"", Italic, StripOnInput -> False],
+   "Newtonian gravitational constants","\"GravitationalConstant\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.6564509894101143`*^9, 3.6564603704272676`*^9, 
+  3.6564604729745846`*^9, 3.6564673416827044`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lifespan = Total energy radiated / Luminosity", "Subsection",
+ CellChangeTimes->{{3.6564500133208094`*^9, 3.6564500246262274`*^9}, {
+  3.656450903752646*^9, 3.656450913609184*^9}, {3.6564512627487483`*^9, 
+  3.6564512674610176`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"En", "[", "Rs", "]"}], "/", "L"}], ",", "\"\<years\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6564500319072256`*^9, 3.656450052170333*^9}, {
+   3.656450866921833*^9, 3.6564508982583447`*^9}, {3.6564509362170715`*^9, 
+   3.6564509366330957`*^9}, 3.6564604101384826`*^9, 3.656460477010208*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "9.4310731440402495220467513`2.9686707730193143*^6","\"yr\"","years",
+   "\"Years\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.6564500457241793`*^9, 3.6564500525711527`*^9}, {
+   3.656450139343301*^9, 3.656450156930065*^9}, 3.656450517641448*^9, 
+   3.6564506010020084`*^9, 3.6564506884680405`*^9, 3.6564507606205854`*^9, {
+   3.656450847740585*^9, 3.6564508673578577`*^9}, 3.656450899282201*^9, 
+   3.656450938422198*^9, 3.65645099161524*^9, 3.6564603721333647`*^9, 
+   3.6564604108155212`*^9, {3.6564604748104877`*^9, 3.656460477386027*^9}, 
+   3.6564673437898245`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section",
+ CellChangeTimes->{{3.656451057911032*^9, 3.656451058311055*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Rate of change of energy", "Subsection",
+ CellChangeTimes->{{3.6564513762842417`*^9, 3.6564513861718073`*^9}, {
+  3.6564514737228155`*^9, 3.656451476042948*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dE", "=", 
+  RowBox[{
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"En", "[", "R", "]"}], ",", "R"}], "]"}], " ", "dR"}]}]], "Input",
+ CellChangeTimes->{{3.65645138797091*^9, 3.6564514298673067`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"dR", " ", 
+   RowBox[{"(", 
+    TemplateBox[{
+     RowBox[{"-", "1.1861621247675`6.698970004336019*^60"}],RowBox[{
+        SuperscriptBox["\"kg\"", "2"], "\[InvisibleSpace]", 
+        StyleBox["\"G\"", Italic, StripOnInput -> False]}],
+      "kilogram squared Newtonian gravitational constants",
+      RowBox[{"\"GravitationalConstant\"", " ", 
+        SuperscriptBox["\"Kilograms\"", "2"]}]},
+     "Quantity"], ")"}]}], 
+  SuperscriptBox["R", "2"]]], "Output",
+ CellChangeTimes->{3.656451431998429*^9, 3.656451478750103*^9, 
+  3.6564604799817705`*^9, 3.656467347146017*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Luminosity = dE/dt", "Subsection",
+ CellChangeTimes->{{3.6564515722844524`*^9, 3.656451580521924*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eq", "=", 
+  RowBox[{"L", "==", 
+   RowBox[{"dE", "/", "dt"}]}]}]], "Input",
+ CellChangeTimes->{{3.6564514825363193`*^9, 3.6564514984122276`*^9}, {
+  3.6564515419467173`*^9, 3.6564515902574806`*^9}, {3.656451629897748*^9, 
+  3.6564516302977705`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{
+   "3.82696939160662768765435461`3.133794300604512*^26","\"W\"","watts",
+    "\"Watts\""},
+   "Quantity"], "\[Equal]", 
+  FractionBox[
+   RowBox[{"dR", " ", 
+    RowBox[{"(", 
+     TemplateBox[{
+      RowBox[{"-", "1.1861621247675`6.698970004336019*^60"}],RowBox[{
+         SuperscriptBox["\"kg\"", "2"], "\[InvisibleSpace]", 
+         StyleBox["\"G\"", Italic, StripOnInput -> False]}],
+       "kilogram squared Newtonian gravitational constants",
+       RowBox[{"\"GravitationalConstant\"", " ", 
+         SuperscriptBox["\"Kilograms\"", "2"]}]},
+      "Quantity"], ")"}]}], 
+   RowBox[{"dt", " ", 
+    SuperscriptBox["R", "2"]}]]}]], "Output",
+ CellChangeTimes->{{3.6564514876336107`*^9, 3.6564514988602533`*^9}, {
+   3.6564515431897883`*^9, 3.656451590567498*^9}, 3.6564516307067943`*^9, 
+   3.656460481683462*^9, 3.656467348473093*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rate of change of radius", "Subsection",
+ CellChangeTimes->{{3.656451618833115*^9, 3.656451623921406*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"dR", "/", "dt"}], "/.", 
+   RowBox[{"Solve", "[", 
+    RowBox[{"eq", ",", "dR"}], "]"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{"R", "\[Rule]", "Rs"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6564516254684944`*^9, 3.6564516918012886`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{
+   RowBox[{"-", "2.33845713927527865343917879981`2.7773553905239416*^-9"}],
+    RowBox[{"\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+      "\"s\""}],"kilometers per second",FractionBox[
+    "\"Kilometers\"", "\"Seconds\""]},
+   "Quantity"], "}"}]], "Output",
+ CellChangeTimes->{{3.656451683155794*^9, 3.656451692385322*^9}, 
+   3.6564604836403713`*^9, 3.6564673500451827`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3", "Chapter",
+ CellChangeTimes->{{3.6564641072894936`*^9, 3.6564641084573574`*^9}, {
+  3.6564708652702417`*^9, 3.656470865503255*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Pressure for a polytrope :", "Subsection",
+ CellChangeTimes->{{3.656464361837051*^9, 3.6564643743823586`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"P", "[", "z_", "]"}], "=", 
+  RowBox[{"k", " ", 
+   RowBox[{
+    RowBox[{"\[Rho]", "[", "z", "]"}], "^", "\[CapitalGamma]"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.6564643961023903`*^9, {3.65646453891786*^9, 3.65646454817298*^9}, {
+   3.6564646316360464`*^9, 3.656464634940425*^9}, 3.6564648842009697`*^9, {
+   3.6564651762304955`*^9, 3.6564651781466055`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"k", " ", 
+  SuperscriptBox[
+   RowBox[{"\[Rho]", "[", "z", "]"}], "\[CapitalGamma]"]}]], "Output",
+ CellChangeTimes->{{3.656464390783086*^9, 3.6564643964794116`*^9}, 
+   3.656464562345381*^9, {3.65646463538245*^9, 3.65646464080795*^9}, 
+   3.656464702123168*^9, 3.656464911450097*^9, 3.6564650119783983`*^9, 
+   3.656465180927764*^9, 3.6564673541364164`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler equation at hydrostatic equilibrium:", "Subsection",
+ CellChangeTimes->{{3.656464434381752*^9, 3.6564644471976748`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"1", "/", 
+    RowBox[{"\[Rho]", "[", "z", "]"}]}], " ", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"P", "[", "z", "]"}], ",", "z"}], "]"}]}], "\[Equal]", 
+  RowBox[{"-", "g"}]}]], "Input",
+ CellChangeTimes->{{3.6564646445563545`*^9, 3.6564646539720697`*^9}, 
+   3.656464886664503*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"k", " ", "\[CapitalGamma]", " ", 
+   SuperscriptBox[
+    RowBox[{"\[Rho]", "[", "z", "]"}], 
+    RowBox[{
+     RowBox[{"-", "2"}], "+", "\[CapitalGamma]"}]], " ", 
+   RowBox[{
+    SuperscriptBox["\[Rho]", "\[Prime]",
+     MultilineFunction->None], "[", "z", "]"}]}], "\[Equal]", 
+  RowBox[{"-", "g"}]}]], "Output",
+ CellChangeTimes->{
+  3.656464451613927*^9, 3.656464563532048*^9, {3.6564646462780476`*^9, 
+   3.656464654978127*^9}, {3.6564647021861715`*^9, 3.656464702240175*^9}, 
+   3.6564649129321823`*^9, 3.656465013334075*^9, 3.6564651820186243`*^9, 
+   3.6564673560365252`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solving:", "Subsection",
+ CellChangeTimes->{{3.6564644550531235`*^9, 3.656464456581211*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"1", "/", 
+      RowBox[{"\[Rho]", "[", "z", "]"}]}], " ", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"P", "[", "z", "]"}], ",", "z"}], "]"}]}], "\[Equal]", 
+    RowBox[{"-", "g"}]}], ",", 
+   RowBox[{"\[Rho]", "[", "z", "]"}], ",", "z"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656464127136982*^9, 3.65646412842465*^9}, {
+   3.656464225680372*^9, 3.6564642527036543`*^9}, {3.6564643991105623`*^9, 
+   3.656464399862605*^9}, {3.656464466141758*^9, 3.6564644721090994`*^9}, 
+   3.65646451489293*^9, {3.6564646614354877`*^9, 3.6564646657873316`*^9}, {
+   3.6564647964588346`*^9, 3.6564647967628527`*^9}, {3.656464890921936*^9, 
+   3.656464894305129*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Rho]", "[", "z", "]"}], "\[Rule]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", "\[CapitalGamma]"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"g", " ", "z"}], 
+          RowBox[{"k", " ", "\[CapitalGamma]"}]], "-", 
+         RowBox[{"C", "[", "1", "]"}]}], ")"}]}], ")"}], 
+     FractionBox["1", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.6564642351604958`*^9, 3.6564642534246955`*^9}, {
+   3.6564644588993435`*^9, 3.65646447246912*^9}, 3.656464515360957*^9, 
+   3.656464666229357*^9, 3.6564647046219063`*^9, 3.6564647971378736`*^9, 
+   3.6564649136922255`*^9, 3.656465014516143*^9, 3.6564651840665383`*^9, 
+   3.656467357394603*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solving with initial conditions:", "Subsection",
+ CellChangeTimes->{{3.6564644933973126`*^9, 3.656464504364729*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sr", "=", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"1", "/", 
+         RowBox[{"\[Rho]", "[", "z", "]"}]}], " ", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"P", "[", "z", "]"}], ",", "z"}], "]"}]}], "\[Equal]", 
+       RowBox[{"-", "g"}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Rho]", "[", "0", "]"}], "==", "\[Rho]0"}]}], "}"}], ",", 
+    RowBox[{"\[Rho]", "[", "z", "]"}], ",", "z"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.656464512013166*^9, 3.6564645212622814`*^9}, {
+   3.6564645671478496`*^9, 3.6564645889804773`*^9}, {3.6564646694529333`*^9, 
+   3.656464721835076*^9}, 3.6564648390098114`*^9, {3.6564648971128845`*^9, 
+   3.656464900216657*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Rho]", "[", "z", "]"}], "\[Rule]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", "\[CapitalGamma]"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"g", " ", "z"}], 
+          RowBox[{"k", " ", "\[CapitalGamma]"}]], "-", 
+         FractionBox[
+          SuperscriptBox["\[Rho]0", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]], 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]}], ")"}]}], ")"}], 
+     FractionBox["1", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.6564646838183413`*^9, 3.6564647223761067`*^9}, 
+   3.6564648395368423`*^9, 3.6564649150223017`*^9, 3.656465015549999*^9, 
+   3.656465185603424*^9, 3.6564673587736816`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Defining density from the above solution:", "Subsection",
+ CellChangeTimes->{{3.6564648598083935`*^9, 3.6564648643448515`*^9}, {
+  3.6564649336563587`*^9, 3.6564649564240575`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rho", "[", "z_", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Rho]", "[", "z", "]"}], "/.", 
+    RowBox[{"sr", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "//", "PowerExpand"}]}]], "Input",
+ CellChangeTimes->{{3.656464918942526*^9, 3.6564649282978535`*^9}, {
+  3.656465084791498*^9, 3.6564650861833754`*^9}, {3.656477475387722*^9, 
+  3.6564774847579412`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"1", "-", "\[CapitalGamma]"}], ")"}], 
+   FractionBox["1", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]], " ", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"g", " ", "z"}], 
+      RowBox[{"k", " ", "\[CapitalGamma]"}]], "-", 
+     FractionBox[
+      SuperscriptBox["\[Rho]0", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]], 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]}], ")"}], 
+   FractionBox["1", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]]}]], "Output",
+ CellChangeTimes->{{3.6564649287018766`*^9, 3.6564649581771574`*^9}, 
+   3.6564650168460736`*^9, 3.65646508678541*^9, 3.656465187588335*^9, 
+   3.6564673602377653`*^9, {3.6564774775007257`*^9, 3.6564774883967485`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solving for k given P[0] = P0:", "Subsection",
+ CellChangeTimes->{{3.65646496607961*^9, 3.6564649735442348`*^9}, {
+  3.656465093565987*^9, 3.6564650984062643`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sk", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"P", "[", "0", "]"}], "\[Equal]", "P0"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"\[Rho]", "\[Rule]", "rho"}], "}"}]}], ",", "k"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.656464975763362*^9, 3.656464985831925*^9}, {
+  3.6564650387357006`*^9, 3.656465065095402*^9}, {3.6564651532385855`*^9, 
+  3.6564651538536205`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"k", "\[Rule]", 
+    RowBox[{"P0", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         SuperscriptBox["\[Rho]0", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]], ")"}], 
+        FractionBox["1", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]], ")"}], 
+      RowBox[{"-", "\[CapitalGamma]"}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6564650658762445`*^9, 3.6564651056876802`*^9, 
+  3.656465154141637*^9, 3.656465188801202*^9, 3.6564673617048492`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Subsituting for k from the above solution:", "Subsection",
+ CellChangeTimes->{{3.656465127085495*^9, 3.6564651369420586`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rho", "[", "z_", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"rho", "[", "z", "]"}], "/.", 
+    RowBox[{"sk", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], "//",
+    "PowerExpand"}]}]], "Input",
+ CellChangeTimes->{{3.6564651388813677`*^9, 3.6564651640064*^9}, {
+  3.656467366924148*^9, 3.656467378828829*^9}, {3.656477339917261*^9, 
+  3.656477342045865*^9}}],
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox["\[Rho]0", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]], "-", 
+    FractionBox[
+     RowBox[{"g", " ", "z", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}], ")"}], " ", 
+      SuperscriptBox["\[Rho]0", "\[CapitalGamma]"]}], 
+     RowBox[{"P0", " ", "\[CapitalGamma]"}]]}], ")"}], 
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]]], "Output",
+ CellChangeTimes->{{3.6564651578640485`*^9, 3.6564651906491046`*^9}, {
+   3.656467376067671*^9, 3.656467379883889*^9}, 3.6564773422798653`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Height for zero density:", "Subsection",
+ CellChangeTimes->{{3.656465230260728*^9, 3.65646523563663*^9}, 
+   3.6564662808340273`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"H", "=", 
+  RowBox[{"h", "/.", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"rho", "[", "h", "]"}], "\[Equal]", "0"}], ",", "h"}], "]"}], 
+    "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6564652425160236`*^9, 3.6564652762605267`*^9}, {
+  3.6564653096050158`*^9, 3.656465352923851*^9}, {3.6564654211715994`*^9, 
+  3.656465441634718*^9}, {3.6564654983378963`*^9, 3.656465552977021*^9}, {
+  3.656465593905362*^9, 3.656465605961052*^9}, {3.6564673845431557`*^9, 
+  3.6564673847491674`*^9}, {3.6564774648381033`*^9, 3.656477469364111*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"P0", " ", "\[CapitalGamma]", " ", 
+   SuperscriptBox["\[Rho]0", 
+    RowBox[{
+     RowBox[{"-", "1"}], "-", "\[CapitalGamma]"}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       SuperscriptBox["0", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]}], " ", "\[Rho]0"}], 
+     "+", 
+     SuperscriptBox["\[Rho]0", "\[CapitalGamma]"]}], ")"}]}], 
+  RowBox[{"g", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}], ")"}]}]]], "Output",
+ CellChangeTimes->{{3.656465255687174*^9, 3.6564652770015693`*^9}, 
+   3.656465351296758*^9, {3.6564654195119095`*^9, 3.6564654418977327`*^9}, {
+   3.656465500693031*^9, 3.6564655173299828`*^9}, 3.6564655534930506`*^9, {
+   3.6564655943983903`*^9, 3.6564656062190666`*^9}, {3.6564673828760605`*^9, 
+   3.6564674007110806`*^9}, 3.656477350940881*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituting given values (in SI units):", "Subsection",
+ CellChangeTimes->{{3.656465864286202*^9, 3.656465887549533*^9}, {
+  3.6564662690013504`*^9, 3.6564662800729837`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{
+    "0.001",RowBox[{
+      "\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+       SuperscriptBox["\"cm\"", "3"]}],"grams per centimeter cubed",
+     FractionBox["\"Grams\"", 
+      SuperscriptBox["\"Centimeters\"", "3"]]},
+    "Quantity"], ",", "\"\<SI\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.6564660444495068`*^9, 3.6564660687578974`*^9}, {
+  3.656466121173895*^9, 3.656466121669924*^9}, {3.656466160469143*^9, 
+  3.6564661666214943`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "1.`",RowBox[{
+    "\"kg\"", "\[ThinSpace]", "\"Pa\"", "\[InvisibleSpace]", "\"/\"", 
+     "\[InvisibleSpace]", "\"J\""}],"kilogram pascals per joule",FractionBox[
+    RowBox[{"\"Kilograms\"", " ", "\"Pascals\""}], "\"Joules\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.6564661405750046`*^9, 3.656466167116523*^9}, 
+   3.656466236761506*^9, {3.6564674060813875`*^9, 3.656467409355575*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{RowBox[{"1", " ", 
+       SuperscriptBox["10", "6"]}],
+     RowBox[{"\"dynes\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+       SuperscriptBox["\"cm\"", "2"]}],"dynes per centimeter squared",
+     FractionBox["\"Dynes\"", 
+      SuperscriptBox["\"Centimeters\"", "2"]]},
+    "Quantity"], ",", "\"\<SI\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.6564660444495068`*^9, 3.6564660687578974`*^9}, {
+  3.656466121173895*^9, 3.656466121669924*^9}, {3.6564661536947556`*^9, 
+  3.656466155472857*^9}, {3.656467061051653*^9, 3.6564670744024167`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  FractionBox["1", "10"],"\"MPa\"","megapascals","\"Megapascals\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.6564660629865675`*^9, 3.65646606915592*^9}, {
+   3.6564661150825467`*^9, 3.656466122494971*^9}, 3.6564661563189054`*^9, 
+   3.6564662375145493`*^9, {3.656467061654688*^9, 3.6564670752004623`*^9}, 
+   3.6564674103146296`*^9}]
+}, Open  ]],
+
+Cell["Numerical value of H in meters:", "Text",
+ CellChangeTimes->{{3.6564671521828656`*^9, 3.656467173607091*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"H", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Rho]0", "\[Rule]", "1"}], ",", 
+     RowBox[{"P0", "\[Rule]", 
+      RowBox[{"10", "^", "5"}]}], ",", 
+     RowBox[{"\[CapitalGamma]", "\[Rule]", 
+      RowBox[{"7", "/", "5"}]}], ",", 
+     RowBox[{"g", "\[Rule]", "9.8"}]}], "}"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{
+  3.656466115127549*^9, {3.6564662097549615`*^9, 3.656466259321797*^9}}],
+
+Cell[BoxData["35714.28571428571`"], "Output",
+ CellChangeTimes->{{3.6564662414427743`*^9, 3.656466259619814*^9}, 
+   3.6564674121067324`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "iso"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in meters:"
+}], "Text",
+ CellChangeTimes->{{3.656467143799386*^9, 3.6564671783753633`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Hiso", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"cs", "^", "2"}], "/", "g"}], "//.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"cs", "^", "2"}], "\[Rule]", 
+       RowBox[{"\[CapitalGamma]", " ", 
+        RowBox[{"P0", "/", "\[Rho]0"}]}]}], ",", 
+      RowBox[{"\[Rho]0", "\[Rule]", "1"}], ",", 
+      RowBox[{"P0", "\[Rule]", 
+       RowBox[{"10", "^", "5"}]}], ",", 
+      RowBox[{"\[CapitalGamma]", "\[Rule]", 
+       RowBox[{"7", "/", "5"}]}], ",", 
+      RowBox[{"g", "\[Rule]", "9.8"}]}], "}"}]}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6564662914546347`*^9, 3.6564662981050153`*^9}, 
+   3.656466598525198*^9, {3.656466689524403*^9, 3.656466738933229*^9}, {
+   3.6564667815166645`*^9, 3.6564667817956805`*^9}, 3.6564668595961304`*^9}],
+
+Cell[BoxData["14285.714285714284`"], "Output",
+ CellChangeTimes->{{3.656466857406005*^9, 3.6564668601561623`*^9}, 
+   3.6564674137408257`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Ratio  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"H", "/", 
+    SubscriptBox["H", "iso"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.6564671130956297`*^9, 3.656467121681121*^9}, {
+  3.656467254030691*^9, 3.656467257037863*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"H", "/", "Hiso"}], "//.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"cs", "^", "2"}], "\[Rule]", 
+      RowBox[{"\[CapitalGamma]", " ", 
+       RowBox[{"P0", "/", "\[Rho]0"}]}]}], ",", 
+     RowBox[{"\[Rho]0", "\[Rule]", "1"}], ",", 
+     RowBox[{"P0", "\[Rule]", 
+      RowBox[{"10", "^", "5"}]}], ",", 
+     RowBox[{"\[CapitalGamma]", "\[Rule]", 
+      RowBox[{"7", "/", "5"}]}], ",", 
+     RowBox[{"g", "\[Rule]", "9.8"}]}], "}"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.656466894002098*^9, 3.656466918403494*^9}}],
+
+Cell[BoxData["2.4999999999999996`"], "Output",
+ CellChangeTimes->{{3.6564668966592503`*^9, 3.656466918983527*^9}, 
+   3.656467414991897*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Convective instability criterion:", "Subsection",
+ CellChangeTimes->{{3.6564678810955567`*^9, 3.6564678939752936`*^9}}],
+
+Cell["\<\
+For the values of \[CapitalGamma] and \[Gamma] satisfying the inequality \
+below the system is convectively unstable\
+\>", "Text",
+ CellChangeTimes->{{3.65646815563626*^9, 3.656468175660405*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ineq", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"P", "[", "z", "]"}], "/", 
+          RowBox[{
+           RowBox[{"\[Rho]", "[", "z", "]"}], "^", "\[Gamma]"}]}], ",", "z"}],
+         "]"}], "<", "0"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{"\[Rho]", "\[Rule]", "rho"}], "}"}]}], "/.", "sk"}], "//", 
+    "PowerExpand"}], "//", "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.6564679013357143`*^9, 3.656467941415007*^9}, {
+  3.6564679741998825`*^9, 3.6564679744948993`*^9}, {3.656468017214342*^9, 
+  3.656468034581336*^9}, {3.6564680700223627`*^9, 3.6564680999090724`*^9}, {
+  3.6564681336220007`*^9, 3.656468134029024*^9}, {3.6564684745304995`*^9, 
+  3.6564684803858347`*^9}, {3.6564685896240826`*^9, 3.6564685901201105`*^9}, {
+  3.656477368349714*^9, 3.6564774021477833`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"g", " ", 
+    RowBox[{"(", 
+     RowBox[{"\[Gamma]", "-", "\[CapitalGamma]"}], ")"}], " ", 
+    "\[CapitalGamma]", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"g", " ", "z", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}], ")"}]}], 
+           RowBox[{"P0", " ", "\[CapitalGamma]"}]]}], "+", 
+         FractionBox["1", "\[Rho]0"]}], ")"}], " ", 
+       SuperscriptBox["\[Rho]0", "\[CapitalGamma]"]}], ")"}], 
+     FractionBox[
+      RowBox[{"1", "+", "\[Gamma]"}], 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "\[CapitalGamma]"}]]]}], "<", "0"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.6564679418930345`*^9, 3.656467974950925*^9, {3.6564680245037594`*^9, 
+   3.6564680354463854`*^9}, {3.6564680770117626`*^9, 3.656468100410101*^9}, 
+   3.6564681348960733`*^9, 3.6564684808228593`*^9, 3.656468591026163*^9, {
+   3.656477363978706*^9, 3.656477402461784*^9}}]
+}, Open  ]],
+
+Cell["Plugging in numerical values:", "Text",
+ CellChangeTimes->{{3.6564687265509143`*^9, 3.656468739501655*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ineq", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "//.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"cs", "^", "2"}], "\[Rule]", 
+      RowBox[{"\[CapitalGamma]", " ", 
+       RowBox[{"P0", "/", "\[Rho]0"}]}]}], ",", 
+     RowBox[{"\[Rho]0", "\[Rule]", "1"}], ",", 
+     RowBox[{"P0", "\[Rule]", 
+      RowBox[{"10", "^", "5"}]}], ",", 
+     RowBox[{"z", "\[Rule]", "0"}], ",", 
+     RowBox[{"g", "\[Rule]", "9.8"}]}], "}"}]}], "//", "Simplify"}]], "Input",
+ CellChangeTimes->{{3.6564686233830137`*^9, 3.656468704511654*^9}, {
+   3.656468770677438*^9, 3.6564687895175157`*^9}, {3.6564688495899515`*^9, 
+   3.6564688624686885`*^9}, 3.6564689688847747`*^9, {3.656469085570449*^9, 
+   3.6564691814339323`*^9}, {3.656477447482071*^9, 3.6564774525212803`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"9.8`", " ", 
+   RowBox[{"(", 
+    RowBox[{"\[Gamma]", "-", 
+     RowBox[{"1.`", " ", "\[CapitalGamma]"}]}], ")"}], " ", 
+   "\[CapitalGamma]"}], "<", "0"}]], "Output",
+ CellChangeTimes->{{3.65646866947865*^9, 3.656468705045684*^9}, {
+   3.656468773059574*^9, 3.6564687902185555`*^9}, {3.656468850565007*^9, 
+   3.6564688628517103`*^9}, 3.6564689692587967`*^9, {3.6564690929608717`*^9, 
+   3.6564691820539675`*^9}, 3.656477411999401*^9, {3.6564774483128724`*^9, 
+   3.656477455934087*^9}}]
+}, Open  ]],
+
+Cell["\<\
+The above inequality is true for \[Gamma] < \[CapitalGamma]. Hence system is \
+stable only if \[Gamma] > \[CapitalGamma]\
+\>", "Text",
+ CellChangeTimes->{{3.656468575015247*^9, 3.656468610183258*^9}, {
+  3.6564687487341833`*^9, 3.6564687615509157`*^9}, {3.656468821973372*^9, 
+  3.656468822829421*^9}, {3.6564690577068553`*^9, 3.656469083036304*^9}, {
+  3.6564691251467123`*^9, 3.656469142914729*^9}}],
+
+Cell[TextData[{
+ "If \[CapitalGamma] = 1 then the system is always stable since \[Gamma] = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["c", "p"], "/", 
+      SubscriptBox["c", "v"]}], " ", "is", " ", "always"}], " ", ">", "1."}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.6564688942365055`*^9, 3.656468933108729*^9}, {
+  3.656469074010788*^9, 3.6564690740827923`*^9}, {3.6564691278018646`*^9, 
+  3.656469127994876*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1296, 726},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 107, 1, 131, "Title"],
+Cell[CellGroupData[{
+Cell[712, 27, 88, 1, 93, "Chapter"],
+Cell[CellGroupData[{
+Cell[825, 32, 89, 1, 91, "Section"],
+Cell[CellGroupData[{
+Cell[939, 37, 206, 3, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[1170, 44, 271, 8, 39, "Input"],
+Cell[1444, 54, 342, 8, 62, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1835, 68, 226, 3, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[2086, 75, 322, 8, 39, "Input"],
+Cell[2411, 85, 300, 7, 62, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2760, 98, 310, 4, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[3095, 106, 472, 11, 39, "Input"],
+Cell[3570, 119, 324, 8, 62, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3943, 133, 115, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[4083, 138, 331, 7, 56, "Input"],
+Cell[4417, 147, 306, 7, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4760, 159, 325, 7, 56, "Input"],
+Cell[5088, 168, 247, 4, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5372, 177, 455, 11, 56, "Input"],
+Cell[5830, 190, 355, 6, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6222, 201, 364, 8, 45, "Input"],
+Cell[6589, 211, 298, 6, 47, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6936, 223, 239, 3, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[7200, 230, 378, 8, 39, "Input"],
+Cell[7581, 240, 610, 11, 54, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8252, 258, 87, 1, 91, "Section"],
+Cell[CellGroupData[{
+Cell[8364, 263, 167, 2, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[8556, 269, 227, 6, 39, "Input"],
+Cell[8786, 277, 613, 14, 76, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9448, 297, 108, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[9581, 302, 274, 6, 39, "Input"],
+Cell[9858, 310, 880, 21, 77, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10787, 337, 112, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[10924, 342, 284, 8, 39, "Input"],
+Cell[11211, 352, 438, 9, 55, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11722, 369, 142, 2, 93, "Chapter"],
+Cell[CellGroupData[{
+Cell[11889, 375, 116, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[12030, 380, 395, 9, 39, "Input"],
+Cell[12428, 391, 382, 7, 39, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12859, 404, 132, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[13016, 409, 337, 10, 39, "Input"],
+Cell[13356, 421, 618, 15, 41, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14023, 442, 98, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[14146, 447, 752, 17, 39, "Input"],
+Cell[14901, 466, 892, 24, 63, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15842, 496, 122, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[15989, 501, 779, 20, 39, "Input"],
+Cell[16771, 523, 946, 27, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17766, 556, 186, 2, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[17977, 562, 401, 10, 39, "Input"],
+Cell[18381, 574, 873, 25, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19303, 605, 170, 2, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[19498, 611, 438, 12, 39, "Input"],
+Cell[19939, 625, 622, 17, 59, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20610, 648, 132, 1, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[20767, 653, 409, 10, 39, "Input"],
+Cell[21179, 665, 666, 18, 69, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21894, 689, 139, 2, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[22058, 695, 631, 14, 39, "Input"],
+Cell[22692, 711, 907, 23, 67, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23648, 740, 181, 2, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[23854, 746, 532, 12, 55, "Input"],
+Cell[24389, 760, 429, 8, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24855, 773, 626, 12, 55, "Input"],
+Cell[25484, 787, 370, 7, 71, "Output"]
+}, Open  ]],
+Cell[25869, 797, 115, 1, 39, "Text"],
+Cell[CellGroupData[{
+Cell[26009, 802, 457, 13, 65, "Input"],
+Cell[26469, 817, 141, 2, 39, "Output"]
+}, Open  ]],
+Cell[26625, 822, 218, 7, 39, "Text"],
+Cell[CellGroupData[{
+Cell[26868, 833, 827, 21, 65, "Input"],
+Cell[27698, 856, 142, 2, 39, "Output"]
+}, Open  ]],
+Cell[27855, 861, 294, 10, 39, "Text"],
+Cell[CellGroupData[{
+Cell[28174, 875, 604, 17, 65, "Input"],
+Cell[28781, 894, 140, 2, 39, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28970, 902, 125, 1, 61, "Subsection"],
+Cell[29098, 905, 205, 4, 39, "Text"],
+Cell[CellGroupData[{
+Cell[29328, 913, 914, 22, 39, "Input"],
+Cell[30245, 937, 1101, 30, 67, "Output"]
+}, Open  ]],
+Cell[31361, 970, 113, 1, 39, "Text"],
+Cell[CellGroupData[{
+Cell[31499, 975, 831, 18, 39, "Input"],
+Cell[32333, 995, 523, 11, 39, "Output"]
+}, Open  ]],
+Cell[32871, 1009, 411, 7, 39, "Text"],
+Cell[33285, 1018, 510, 14, 43, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

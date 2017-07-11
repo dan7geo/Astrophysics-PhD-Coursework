@@ -1,0 +1,670 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17817,        662]
+NotebookOptionsPosition[     14870,        552]
+NotebookOutlinePosition[     15246,        568]
+CellTagsIndexPosition[     15203,        565]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 1 - ASTR510\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0 on January 27, 2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[TextData[{
+ "Let \[Sigma] = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Sigma]", "\[Theta]"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"eq\[Sigma]", ":=", 
+  RowBox[{"\[Sigma]", " ", "->", " ", 
+   RowBox[{"1.22", " ", 
+    RowBox[{"\[Lambda]", "/", "Diameter"}]}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["G", "\[Nu]"], "=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[CapitalIota]", "\[Nu]"], " ", "\[Theta]", " ", 
+      RowBox[{
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"\[Theta]", "^", "2"}]}], "/", 
+         RowBox[{"(", 
+          RowBox[{"2", 
+           RowBox[{"\[Sigma]", "^", "2"}]}], ")"}]}], "]"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]", " ", 
+         RowBox[{"\[Sigma]", "^", "2"}]}], ")"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", "0", ",", 
+       RowBox[{"R", "/", "d"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", "0", ",", 
+       RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}], "//", "Expand"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[CapitalIota]", "\[Nu]"], "-", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["R", "2"], 
+      RowBox[{"2", " ", 
+       SuperscriptBox["d", "2"], " ", 
+       SuperscriptBox["\[Sigma]", "2"]}]]}]], " ", 
+   SubscriptBox["\[CapitalIota]", "\[Nu]"]}]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Note that the 2nd term vanishes as \[Sigma] \[Rule] 0 (small beam), which \
+implies ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["G", "\[Nu]"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is independent of d in this limit."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell["Taylor series about R = 0", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Series", "[", 
+   RowBox[{
+    SubscriptBox["G", "\[Nu]"], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "0", ",", "2"}], "}"}]}], "]"}], "//", 
+  "Normal"}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["R", "2"], " ", 
+   SubscriptBox["\[CapitalIota]", "\[Nu]"]}], 
+  RowBox[{"2", " ", 
+   SuperscriptBox["d", "2"], " ", 
+   SuperscriptBox["\[Sigma]", "2"]}]]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Therefore as R \[Rule] 0 (corresponding to beam being larger than angular \
+size of source) ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["G", "\[Nu]"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is proportional to ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", 
+    SuperscriptBox["d", "2"]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell["Substituting result from part a in above:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Series", "[", 
+    RowBox[{
+     SubscriptBox["G", "\[Nu]"], ",", 
+     RowBox[{"{", 
+      RowBox[{"R", ",", "0", ",", "2"}], "}"}]}], "]"}], "/.", "eq\[Sigma]"}],
+   "//", "Normal"}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"0.33593120128997583`", " ", 
+   SuperscriptBox["Diameter", "2"], " ", 
+   SuperscriptBox["R", "2"], " ", 
+   SubscriptBox["\[CapitalIota]", "\[Nu]"]}], 
+  RowBox[{
+   SuperscriptBox["d", "2"], " ", 
+   SuperscriptBox["\[Lambda]", "2"]}]]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Therefore ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["G", "\[Nu]"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " would increase by a factor of 4 if diameter is doubled."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Extra", "Section"],
+
+Cell["Expanding up to 4th order in R and solving for d", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        SubscriptBox["G", "\[Nu]"], ",", 
+        RowBox[{"{", 
+         RowBox[{"R", ",", "0", ",", "4"}], "}"}]}], "]"}], "]"}], "\[Equal]",
+      "0"}], ",", "d"}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{
+    RowBox[{"-", "1"}], ",", "1"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"d", "\[Rule]", 
+  FractionBox["R", 
+   RowBox[{"2", " ", "\[Sigma]"}]]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "This is approximately the distance when the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["d", "2"]], " ", "contribution", " ", "is", " ", "equal", 
+    " ", "to", " ", "the", " ", 
+    FractionBox["1", 
+     SuperscriptBox["d", "4"]], " ", 
+    RowBox[{"contribution", "."}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " Farther than this distance, the inverse square law would dominate."
+}], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalIota]", "[", "\[Nu]_", "]"}], ":=", 
+  RowBox[{"2", " ", 
+   TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+     "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+     "\"PlanckConstant\""},
+    "Quantity"], " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Nu]", "^", "3"}], "/", 
+     TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],RowBox[{
+         SuperscriptBox[
+          StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}],
+       "speed of light in vacuum squared",SuperscriptBox[
+       "\"SpeedOfLight\"", "2"]},
+      "Quantity"]}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        TemplateBox[{
+         InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+          "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+          "\"PlanckConstant\""},
+         "Quantity"], 
+        RowBox[{"\[Nu]", "/", 
+         RowBox[{"(", 
+          RowBox[{
+           
+           TemplateBox[{
+            InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+             "\"k\"", Italic, StripOnInput -> False],"Boltzmann constants",
+             "\"BoltzmannConstant\""},
+            "Quantity"], 
+           TemplateBox[{"5780","\"K\"","kelvins","\"Kelvins\""},
+            "Quantity"]}], ")"}]}]}], "]"}], "-", "1"}], ")"}]}]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalIota]", "[", 
+   RowBox[{
+    RowBox[{"10", "^", "14"}], " ", 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],"\"Hz\"","hertz","\"Hertz\""},
+     "Quantity"]}], "]"}], "//", "UnitConvert"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "1.139444823932466697778475366641`5.758220604857101*^-8",
+   RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"s\"", "2"]}],"kilograms per second squared",
+   FractionBox["\"Kilograms\"", 
+    SuperscriptBox["\"Seconds\"", "2"]]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"n", "[", "\[Nu]_", "]"}], ":=", 
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+         "\"PlanckConstant\""},
+        "Quantity"], 
+       RowBox[{"\[Nu]", "/", 
+        RowBox[{"(", 
+         RowBox[{
+          
+          TemplateBox[{
+           InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+            "\"k\"", Italic, StripOnInput -> False],"Boltzmann constants",
+            "\"BoltzmannConstant\""},
+           "Quantity"], 
+          TemplateBox[{"5780.","\"K\"","kelvins","\"Kelvins\""},
+           "Quantity"]}], ")"}]}]}], "]"}], "-", "1"}], ")"}]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"n", "/@", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"10", "^", "14"}], 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],"\"Hz\"","hertz","\"Hertz\""},
+       "Quantity"]}], ",", 
+     RowBox[{
+      RowBox[{"10", "^", "12"}], 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],"\"Hz\"","hertz","\"Hertz\""},
+       "Quantity"]}], ",", 
+     RowBox[{
+      RowBox[{"10", "^", "15"}], 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],"\"Hz\"","hertz","\"Hertz\""},
+       "Quantity"]}]}], "}"}]}], "//", "UnitConvert"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.7727672136062764`", ",", "119.9363105930509`", ",", 
+   "0.0002477863434506694`"}], "}"}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{"4", "\[Pi]"}], ")"}]}], 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{"\[Theta]", " ", 
+     RowBox[{"\[CapitalIota]", "[", 
+      TemplateBox[{RowBox[{"1", " ", 
+          SuperscriptBox["10", "14"]}],"\"Hz\"","hertz","\"Hertz\""},
+       "Quantity"], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Theta]", ",", "0", ",", 
+      RowBox[{"\[Pi]", "/", "2"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Phi]", ",", "0", ",", 
+      RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "7.02866853067647666430318275249`5.758220604857101*^-9",
+   RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"s\"", "2"]}],"kilograms per second squared",
+   FractionBox["\"Kilograms\"", 
+    SuperscriptBox["\"Seconds\"", "2"]]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell["Half the energy inside uniform radiation", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"1", "/", "2"}], " ", 
+   RowBox[{"4", "/", 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+      "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+      "\"SpeedOfLight\""},
+     "Quantity"]}], 
+   TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1],"\"\[Sigma]\"",
+     "Stefan\[Hyphen]Boltzmann constants","\"StefanBoltzmannConstant\""},
+    "Quantity"], 
+   RowBox[{
+    TemplateBox[{"5780","\"K\"","kelvins","\"Kelvins\""},
+     "Quantity"], "^", "4"}]}], "//", "UnitConvert"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "0.4222132077086565774`5.338637820431227",
+   RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+     "\"m\"", "\[ThinSpace]", 
+     SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\")\""}],
+   "kilograms per meter second squared",FractionBox["\"Kilograms\"", 
+    RowBox[{"\"Meters\"", " ", 
+      SuperscriptBox["\"Seconds\"", "2"]}]]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["f)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{"4", "\[Pi]"}], ")"}]}], 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Cos", "[", "\[Theta]", "]"}], " ", "\[Theta]", " ", 
+     RowBox[{"\[CapitalIota]", "[", 
+      TemplateBox[{RowBox[{"1", " ", 
+          SuperscriptBox["10", "14"]}],"\"Hz\"","hertz","\"Hertz\""},
+       "Quantity"], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Theta]", ",", "0", ",", 
+      RowBox[{"\[Pi]", "/", "2"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Phi]", ",", "0", ",", 
+      RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "3.25195460043054850776926233949`5.758220604857101*^-9",
+   RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"s\"", "2"]}],"kilograms per second squared",
+   FractionBox["\"Kilograms\"", 
+    SuperscriptBox["\"Seconds\"", "2"]]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["g)", "Section"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cos", "[", "\[Theta]", "]"}], " ", "\[Theta]", " ", 
+    RowBox[{"\[CapitalIota]", "[", "\[Nu]", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"\[Pi]", "/", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Nu]", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["i)", "Section"],
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "/", 
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+       "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+       "\"SpeedOfLight\""},
+      "Quantity"]}], 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],"\"\[Sigma]\"",
+      "Stefan\[Hyphen]Boltzmann constants","\"StefanBoltzmannConstant\""},
+     "Quantity"], 
+    RowBox[{
+     TemplateBox[{"2.725","\"K\"","kelvins","\"Kelvins\""},
+      "Quantity"], "^", "4"}]}], ",", "\"\<eV/cm^3\>\""}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{
+   "0.260379",
+    RowBox[{"\"eV\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+      SuperscriptBox["\"cm\"", "3"]}],"electronvolts per centimeter cubed",
+    FractionBox["\"Electronvolts\"", 
+     SuperscriptBox["\"Centimeters\"", "3"]]},
+   "Quantity"], " "}]], "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1584, 814},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 309, 11, 180, "Title"],
+Cell[892, 35, 328, 10, 119, "Chapter"],
+Cell[CellGroupData[{
+Cell[1245, 49, 22, 0, 90, "Chapter"],
+Cell[CellGroupData[{
+Cell[1292, 53, 21, 0, 106, "Section"],
+Cell[1316, 55, 166, 6, 45, "Text"],
+Cell[1485, 63, 167, 4, 45, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1689, 72, 21, 0, 106, "Section"],
+Cell[CellGroupData[{
+Cell[1735, 76, 807, 24, 45, "Input"],
+Cell[2545, 102, 365, 11, 66, "Output"]
+}, Open  ]],
+Cell[2925, 116, 265, 8, 45, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3227, 129, 21, 0, 106, "Section"],
+Cell[3251, 131, 41, 0, 45, "Text"],
+Cell[CellGroupData[{
+Cell[3317, 135, 204, 7, 45, "Input"],
+Cell[3524, 144, 226, 7, 70, "Output"]
+}, Open  ]],
+Cell[3765, 154, 389, 13, 59, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4191, 172, 21, 0, 106, "Section"],
+Cell[4215, 174, 57, 0, 45, "Text"],
+Cell[CellGroupData[{
+Cell[4297, 178, 242, 8, 45, "Input"],
+Cell[4542, 188, 288, 8, 70, "Output"]
+}, Open  ]],
+Cell[4845, 199, 212, 7, 45, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5094, 211, 24, 0, 106, "Section"],
+Cell[5121, 213, 64, 0, 45, "Text"],
+Cell[CellGroupData[{
+Cell[5210, 217, 417, 14, 45, "Input"],
+Cell[5630, 233, 108, 3, 64, "Output"]
+}, Open  ]],
+Cell[5753, 239, 469, 13, 88, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6271, 258, 22, 0, 108, "Chapter"],
+Cell[CellGroupData[{
+Cell[6318, 262, 21, 0, 106, "Section"],
+Cell[6342, 264, 1380, 37, 61, "Input"],
+Cell[CellGroupData[{
+Cell[7747, 305, 262, 7, 52, "Input"],
+Cell[8012, 314, 330, 7, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8391, 327, 21, 0, 106, "Section"],
+Cell[8415, 329, 811, 23, 57, "Input"],
+Cell[CellGroupData[{
+Cell[9251, 356, 641, 19, 52, "Input"],
+Cell[9895, 377, 146, 4, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10090, 387, 21, 0, 106, "Section"],
+Cell[CellGroupData[{
+Cell[10136, 391, 576, 17, 61, "Input"],
+Cell[10715, 410, 329, 7, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11093, 423, 21, 0, 106, "Section"],
+Cell[11117, 425, 56, 0, 45, "Text"],
+Cell[CellGroupData[{
+Cell[11198, 429, 593, 16, 52, "Input"],
+Cell[11794, 447, 419, 9, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12262, 462, 21, 0, 106, "Section"],
+Cell[CellGroupData[{
+Cell[12308, 466, 626, 18, 61, "Input"],
+Cell[12937, 486, 329, 7, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13315, 499, 21, 0, 106, "Section"],
+Cell[13339, 501, 490, 13, 45, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13866, 519, 21, 0, 106, "Section"],
+Cell[13890, 521, 615, 16, 52, "Input"],
+Cell[14508, 539, 322, 8, 58, InheritFromParent]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

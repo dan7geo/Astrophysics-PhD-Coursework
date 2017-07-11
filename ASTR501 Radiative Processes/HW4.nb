@@ -1,0 +1,818 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25498,        810]
+NotebookOptionsPosition[     22354,        692]
+NotebookOutlinePosition[     22881,        713]
+CellTagsIndexPosition[     22838,        710]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 4 - ASTR501\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.1 on February 17, 2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title",ExpressionUUID->"a6842be3-b16e-4fb7-9185-eb3c15fad961"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter",ExpressionUUID->"a36c04dc-6a27-49cd-9feb-eee9059b5635"],
+
+Cell[CellGroupData[{
+
+Cell["Q1", "Chapter",ExpressionUUID->"7d4c4ae2-84fb-42f3-a8f2-63c5af33103b"],
+
+Cell["\<\
+The distance traveled through the atmosphere of height h at latitude \[Theta] \
+is given by\
+\>", "Text",ExpressionUUID->"53009495-e3c4-49d5-b1af-26b6e2985c33"],
+
+Cell[BoxData[
+ RowBox[{"d", "\[Equal]", " ", 
+  RowBox[{"h", "/", 
+   RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}]], "Input",ExpressionUUID->\
+"d6ebb496-b7d2-4c46-b2d5-c65bf2e62bc9"],
+
+Cell["\<\
+Therefore the visual extinction (proportional to distance) is\
+\>", "Text",ExpressionUUID->"9e7db320-bb94-4a75-b1e5-95efa4fdd3b6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"h", "/", 
+   RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "*", "constant"}]], "Input",Expres\
+sionUUID->"b30e1b82-52c6-495b-adf5-9ba60d3033db"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2", "Chapter",ExpressionUUID->"dd72ec4e-6516-443e-84e6-f56f9774e9e5"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section",ExpressionUUID->"3e3ce0a2-0aef-4401-8322-28f6135c128c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Lambda]", "=", 
+  RowBox[{"\[Lambda]", "->", 
+   RowBox[{
+    RowBox[{"FormulaData", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<PhotonWavelength\>\"", ",", " ", "\"\<Energy\>\""}], 
+       "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<E\>\"", " ", "->", " ", 
+        TemplateBox[{"10.2","\"eV\"","electronvolts","\"Electronvolts\""},
+         "Quantity"]}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}]}]], "Input",ExpressionUUID->"0e1170be-\
+1c69-4332-b596-b24ffcf34196"],
+
+Cell[BoxData[
+ RowBox[{"\[Lambda]", "\[Rule]", 
+  TemplateBox[{"1.2155313470235997`*^-7","\"m\"","meters","\"Meters\""},
+   "Quantity"]}]], "Output",ExpressionUUID->"e8323fb1-2101-48b1-a4a4-\
+266db2331b04"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section",ExpressionUUID->"b3270f54-1ebd-4d72-984b-3a37a166b01d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sB", "=", 
+  RowBox[{
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"B12", "/", "B21"}], "\[Equal]", 
+          RowBox[{"g2", "/", "g1"}]}], ",", 
+         RowBox[{
+          RowBox[{"A", "/", "B21"}], "\[Equal]", 
+          RowBox[{"2", 
+           
+           TemplateBox[{
+            InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+             "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+             "\"PlanckConstant\""},
+            "Quantity"], 
+           RowBox[{
+            RowBox[{"\[Nu]", "^", "3"}], "/", 
+            TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],RowBox[{
+                SuperscriptBox[
+                 StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}],
+              "speed of light in vacuum squared",SuperscriptBox[
+              "\"SpeedOfLight\"", "2"]},
+             "Quantity"]}]}]}]}], "}"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"g2", "\[Rule]", "6"}], ",", 
+         RowBox[{"g1", "\[Rule]", "2"}], ",", 
+         RowBox[{"A", "\[Rule]", 
+          RowBox[{"6.2", " ", 
+           RowBox[{"10", "^", "8"}], 
+           
+           TemplateBox[{
+            InterpretationBox["\[InvisibleSpace]", 1],
+             RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}],
+             "reciprocal seconds",FractionBox["1", "\"Seconds\""]},
+            "Quantity"]}]}]}], "}"}]}], "/.", 
+      RowBox[{"Solve", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          
+          TemplateBox[{
+           InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+            "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+            "\"PlanckConstant\""},
+           "Quantity"], "\[Nu]"}], "==", 
+         TemplateBox[{"10.2","\"eV\"","electronvolts","\"Electronvolts\""},
+          "Quantity"]}], ",", "\[Nu]"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"B12", ",", "B21"}], "}"}]}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",ExpressionUUID->"6f9890a2-c0db-4c3f-ab9b-090b22ec1408"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"B21", "\[Rule]", 
+    TemplateBox[{
+     "2.8027441733215054`*^12",
+      RowBox[{"\"s\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        "\"kg\""}],"seconds per kilogram",FractionBox[
+      "\"Seconds\"", "\"Kilograms\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"B12", "\[Rule]", 
+    TemplateBox[{
+     "8.408232519964517`*^12",
+      RowBox[{"\"s\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        "\"kg\""}],"seconds per kilogram",FractionBox[
+      "\"Seconds\"", "\"Kilograms\""]},
+     "Quantity"]}]}], "}"}]], "Output",ExpressionUUID->"0f93ad5f-02b5-400b-\
+80a6-ee653d67f62b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section",ExpressionUUID->"30071890-e960-4997-92c3-025924a73c8c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "\[Equal]", 
+        RowBox[{"N2", "/", 
+         RowBox[{"(", 
+          RowBox[{"N1", "+", "N2"}], ")"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"N2", "/", "N1"}], "\[Equal]", 
+        RowBox[{
+         RowBox[{"g2", "/", "g1"}], " ", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "E12"}], "/", 
+           RowBox[{"(", 
+            RowBox[{
+             
+             TemplateBox[{
+              InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+               "\"k\"", Italic, StripOnInput -> False],"Boltzmann constants",
+               "\"BoltzmannConstant\""},
+              "Quantity"], "T"}], ")"}]}], "]"}]}]}]}], "}"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"g2", "\[Rule]", "6"}], ",", 
+       RowBox[{"g1", "\[Rule]", "2"}], ",", 
+       RowBox[{"T", "->", 
+        TemplateBox[{"5000","\"K\"","kelvins","\"Kelvins\""},
+         "Quantity"]}], ",", 
+       RowBox[{"E12", "->", 
+        TemplateBox[{"10.2","\"eV\"","electronvolts","\"Electronvolts\""},
+         "Quantity"]}]}], "}"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "N1"}], "}"}]}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}]], "Input",ExpressionUUID->\
+"89a2a3b8-97e2-49d3-b170-1ca2fc767809"],
+
+Cell[BoxData["1.5702552962755272`*^-10"], "Output",ExpressionUUID->"40aed410-49ef-4689-9883-515d8c4be7c3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section",ExpressionUUID->"716e9452-e415-4567-830f-48f7d6ef6eb4"],
+
+Cell["Cross-section from textbook:", "Text",ExpressionUUID->"1fa5822b-bb9e-4aac-8314-891121a4e517"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Sigma]", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Sigma]", "->", 
+      RowBox[{"B12", " ", 
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+         "\"PlanckConstant\""},
+        "Quantity"], " ", 
+       RowBox[{"\[Nu]0", "/", 
+        RowBox[{"(", 
+         RowBox[{"4", "\[Pi]"}], ")"}]}], " ", 
+       RowBox[{"\[Phi]", "[", "\[Nu]", "]"}]}]}], "//.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Nu]0", "->", 
+        RowBox[{
+         TemplateBox[{
+          InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+           "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+           "\"SpeedOfLight\""},
+          "Quantity"], "/", "\[Lambda]"}]}], ",", "s\[Lambda]"}], "}"}]}], "/.",
+     "sB"}], "//", "UnitConvert"}]}]], "Input",ExpressionUUID->"6dcda54e-617d-\
+4e36-8df5-ce928d61e2f9"],
+
+Cell[BoxData[
+ RowBox[{"\[Sigma]", "\[Rule]", 
+  RowBox[{
+   RowBox[{"(", 
+    TemplateBox[{"1.0934663204466447`*^-6",RowBox[{
+        SuperscriptBox["\"m\"", "2"], "\[NegativeMediumSpace]", "\"/\"", 
+        "\[InvisibleSpace]", "\"s\""}],"meters squared per second",FractionBox[
+       SuperscriptBox["\"Meters\"", "2"], "\"Seconds\""]},
+     "Quantity"], ")"}], " ", 
+   RowBox[{"\[Phi]", "[", "\[Nu]", "]"}]}]}]], "Output",ExpressionUUID->\
+"0c5a5d73-4c2c-40b4-a57c-6c71401156df"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["e)", "Section",ExpressionUUID->"15791350-67b9-471c-80f8-df6a4da6de51"],
+
+Cell["Substituting value of B12 in cross-section above:", "Text",ExpressionUUID->"ef7b0ab6-dfc8-4561-85bd-2b66a54c4ec3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"B12", " ", 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+      "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+      "\"PlanckConstant\""},
+     "Quantity"], " ", 
+    RowBox[{"\[Nu]0", " ", "/", 
+     RowBox[{"(", 
+      RowBox[{"4", "\[Pi]"}], ")"}]}], " ", 
+    RowBox[{"\[Phi]", "[", "\[Nu]", "]"}]}], "/.", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"B12", "/", "B21"}], "\[Equal]", 
+         RowBox[{"g2", "/", "g1"}]}], ",", 
+        RowBox[{
+         RowBox[{"A", "/", "B21"}], "\[Equal]", 
+         RowBox[{"2", "h", " ", 
+          RowBox[{
+           RowBox[{"\[Nu]0", "^", "3"}], "/", 
+           RowBox[{"c", "^", "2"}]}]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"B12", ",", "B21"}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+  RowBox[{"\[Nu]0", "\[Rule]", 
+   RowBox[{"c", "/", "\[Lambda]"}]}]}]], "Input",ExpressionUUID->"8fce2125-\
+4e82-433b-a518-e4aea020e25c"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"A", " ", "g2", " ", 
+   SuperscriptBox["\[Lambda]", "2"], " ", 
+   RowBox[{"(", 
+    TemplateBox[{FractionBox["1", 
+       RowBox[{"8", " ", "\[Pi]"}]],StyleBox[
+      "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+      "\"PlanckConstant\""},
+     "Quantity"], ")"}], " ", 
+   RowBox[{"\[Phi]", "[", "\[Nu]", "]"}]}], 
+  RowBox[{"g1", " ", "h"}]]], "Output",ExpressionUUID->"4daadbb2-ddb3-4ac2-\
+8a3d-5475985bf243"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["f)", "Section",ExpressionUUID->"72f995d1-bafe-4347-a10f-2df6984fd713"],
+
+Cell[CellGroupData[{
+
+Cell["Function", "Subsubsection",ExpressionUUID->"774d5e40-c13f-4ca4-9fe5-56d7de037b3e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "\[Nu]_", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"\[Nu]", "-", "\[Nu]0"}], ")"}], "^", "2"}]}], "/", 
+        RowBox[{"(", 
+         RowBox[{"2", 
+          RowBox[{"\[Sigma]", "^", "2"}]}], ")"}]}], "]"}], "/.", 
+      RowBox[{"\[Sigma]", "\[Rule]", 
+       RowBox[{"\[Nu]0", " ", 
+        RowBox[{
+         TemplateBox[{
+          "5",RowBox[{
+            "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+             "\"s\""}],"kilometers per second",FractionBox[
+           "\"Kilometers\"", "\"Seconds\""]},
+          "Quantity"], "/", 
+         TemplateBox[{
+          InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+           "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+           "\"SpeedOfLight\""},
+          "Quantity"]}]}]}]}], "/.", 
+     RowBox[{"\[Nu]0", "\[Rule]", 
+      RowBox[{
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+         "\"SpeedOfLight\""},
+        "Quantity"], "/", "\[Lambda]"}]}]}], "/.", "s\[Lambda]"}], "//", 
+   "UnitConvert"}]}]], "Input",ExpressionUUID->"dbca093e-6eda-4039-ba9e-\
+c76d08c1efa9"],
+
+Cell[BoxData[
+ SuperscriptBox["\[ExponentialE]", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"\[Nu]", "+", 
+      TemplateBox[{
+       RowBox[{"-", "2.4663490475509675`*^15"}],
+        RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}],
+        "reciprocal seconds",FractionBox["1", "\"Seconds\""]},
+       "Quantity"]}], ")"}], "2"], " ", 
+   RowBox[{"(", 
+    TemplateBox[{RowBox[{"-", "2.9550329111940134`*^-22"}],RowBox[{
+        SuperscriptBox["\"s\"", "2"]}],"seconds squared",SuperscriptBox[
+      "\"Seconds\"", "2"]},
+     "Quantity"], ")"}]}]]], "Output",ExpressionUUID->"14816565-e84f-4833-\
+984b-b27d30c6e611"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Normalization", "Subsubsection",ExpressionUUID->"e87e00d6-cda6-4ac2-ae69-b866c6f86f16"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{"-", "a"}], " ", 
+     RowBox[{"x", "^", "2"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "\[Infinity]"}], ",", "\[Infinity]"}], "}"}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"a", ">", "0"}]}]}], "]"}]], "Input",ExpressionUUID->"b8c9a382-\
+15be-4296-a1ea-e89e203990d4"],
+
+Cell[BoxData[
+ FractionBox[
+  SqrtBox["\[Pi]"], 
+  SqrtBox["a"]]], "Output",ExpressionUUID->"d39d33d3-5a83-48a3-bcd4-bf111359b44e"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Therefore normalization constant = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "/", 
+    SqrtBox[
+     RowBox[{"\[Pi]", "/", "a"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "95237e26-e0fc-4e2e-a5d1-d53eab88833f"],
+ ", where -a is the coefficient of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[Nu]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "00c4f740-bc16-4ecc-8eed-1437a5e645d1"],
+ " "
+}], "Text",ExpressionUUID->"e89927bc-d73c-4d33-a241-63a1113e2e8a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"const", "=", " ", 
+  FormBox[
+   RowBox[{"1", "/", 
+    SqrtBox[
+     RowBox[{"\[Pi]", "/", 
+      RowBox[{"(", 
+       RowBox[{"2.955", "*", 
+        RowBox[{"10", "^", 
+         RowBox[{"-", "22"}]}]}], ")"}]}]]}],
+   TraditionalForm], " "}]], "Input",ExpressionUUID->"e3345119-ec20-47aa-9ac4-\
+687ae8767589"],
+
+Cell[BoxData["9.698482941538339`*^-12"], "Output",ExpressionUUID->"b6503c03-2bfc-47a4-bc05-091ecb68cafe"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Value at line center", "Subsubsection",ExpressionUUID->"bb722f54-b5f4-470e-9e7d-bbaa34f7f463"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Phi]0", " ", "=", 
+  RowBox[{"const", " ", 
+   RowBox[{"f", "[", 
+    RowBox[{
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], "/", "\[Lambda]"}], "/.", "s\[Lambda]"}], "]"}], 
+   TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1],
+     RowBox[{"\"/\"", "\[InvisibleSpace]", "\"Hz\""}],"reciprocal hertz",
+     FractionBox["1", "\"Hertz\""]},
+    "QuantityPostfix"]}]}]], "Input",ExpressionUUID->"5219c60f-3cda-4da0-b19b-\
+5259f4da7a77"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "9.698482941538339`*^-12",RowBox[{"\"/\"", "\[InvisibleSpace]", "\"Hz\""}],
+   "reciprocal hertz",FractionBox["1", "\"Hertz\""]},
+  "QuantityPostfix"]], "Output",ExpressionUUID->"4c9d830f-6758-4a18-b6a1-\
+850e5456f72e"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["g)", "Section",ExpressionUUID->"e9457dc5-2d26-482b-85aa-f6ef150fbba5"],
+
+Cell["Collision strength (f)", "Text",ExpressionUUID->"10d048df-0ba2-47bf-ab94-e11feb87ca73"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sf12", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"A", "\[Equal]", 
+         RowBox[{"8", 
+          RowBox[{"\[Pi]", "^", "2"}], " ", 
+          RowBox[{
+           
+           TemplateBox[{
+            InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+             "\"e\"", Italic, StripOnInput -> False],"elementary charges",
+             "\"ElementaryCharge\""},
+            "Quantity"], "^", "2"}], " ", 
+          RowBox[{
+           RowBox[{"\[Nu]", "^", "2"}], "/", 
+           RowBox[{"(", 
+            RowBox[{
+             
+             TemplateBox[{
+              InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+                StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                StyleBox["\"e\"", Plain, StripOnInput -> False]],
+               "electron masses","\"ElectronMass\""},
+              "Quantity"], " ", 
+             RowBox[{
+              
+              TemplateBox[{
+               InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+                "\"c\"", Italic, StripOnInput -> False],
+                "speed of light in vacuum","\"SpeedOfLight\""},
+               "Quantity"], "^", "3"}]}], ")"}]}], 
+          RowBox[{"g1", "/", "g2"}], " ", "f12"}]}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"g2", "\[Rule]", "6"}], ",", 
+          RowBox[{"g1", "\[Rule]", "2"}], ",", 
+          RowBox[{"A", "\[Rule]", 
+           RowBox[{"6.2", " ", 
+            RowBox[{"10", "^", "8"}], 
+            
+            TemplateBox[{
+             InterpretationBox["\[InvisibleSpace]", 1],
+              RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}],
+              "reciprocal seconds",FractionBox["1", "\"Seconds\""]},
+             "Quantity"]}]}]}], "}"}]}], "/.", 
+       RowBox[{"\[Nu]", "\[Rule]", 
+        RowBox[{
+         TemplateBox[{
+          InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+           "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+           "\"SpeedOfLight\""},
+          "Quantity"], "/", "\[Lambda]"}]}]}], "/.", "s\[Lambda]"}], ",", 
+     "f12"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input",ExpressionUUID->\
+"bd2ef7c2-c6a5-4632-8428-98727d3e7baa"],
+
+Cell[BoxData[
+ RowBox[{"f12", "\[Rule]", 
+  TemplateBox[{
+   "3.7029210264679213`*^9",
+    RowBox[{"\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+      "\"F\""}],"meters per farad",FractionBox["\"Meters\"", "\"Farads\""]},
+   "Quantity"]}]], "Output",ExpressionUUID->"1aedb985-1c80-4f5f-a961-\
+876da10d2fc5"]
+}, Open  ]],
+
+Cell["Finding density of atoms (N1) given \[Tau] = 1", "Text",ExpressionUUID->"7bc05955-16a2-4c72-8e28-ab89bbc72e3b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"1", "\[Equal]", 
+        RowBox[{"\[Pi]", " ", 
+         RowBox[{
+          RowBox[{
+           
+           TemplateBox[{
+            InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+             "\"e\"", Italic, StripOnInput -> False],"elementary charges",
+             "\"ElementaryCharge\""},
+            "Quantity"], "^", "2"}], " ", "/", 
+          RowBox[{"(", 
+           RowBox[{
+            
+            TemplateBox[{
+             InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+               StyleBox["\"m\"", Italic, StripOnInput -> False], 
+               StyleBox["\"e\"", Plain, StripOnInput -> False]],
+              "electron masses","\"ElectronMass\""},
+             "Quantity"], " ", 
+            RowBox[{
+             
+             TemplateBox[{
+              InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+               "\"c\"", Italic, StripOnInput -> False],
+               "speed of light in vacuum","\"SpeedOfLight\""},
+              "Quantity"], "^", "2"}]}], ")"}]}], 
+         RowBox[{"\[Lambda]", "^", "2"}], "  ", "N1", "  ", "\[Phi]0", "  ", 
+         "f12"}]}], "/.", "sf12"}], "/.", "s\[Lambda]"}], ",", "N1"}], "]"}], 
+   "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}], "//", "UnitConvert"}]], "Input",Exp\
+ressionUUID->"a985055e-b758-4e4f-a148-22a92637c5b4"],
+
+Cell[BoxData[
+ RowBox[{"N1", "\[Rule]", 
+  TemplateBox[{"1.913282764301554`*^39",RowBox[{
+      RowBox[{"\"per \"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"meter\"", "3"]}], 
+      RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}]}],
+    "per meter cubed seconds",FractionBox["1", 
+     RowBox[{
+       SuperscriptBox["\"Meters\"", "3"], " ", "\"Seconds\""}]]},
+   "Quantity"]}]], "Output",ExpressionUUID->"fafa8bb0-dda3-468d-9798-\
+64c62335a8ee"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["h)", "Section",ExpressionUUID->"0dd3bd66-d0f9-4270-a42d-a693e92d974e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"n", " ", "\[Sigma]"}], ")"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"n", "->", 
+       TemplateBox[{"1",RowBox[{"\"/\"", "\[InvisibleSpace]", 
+           SuperscriptBox["\"cm\"", "3"]}],"per centimeters cubed",
+         FractionBox["1", 
+          SuperscriptBox["\"Centimeters\"", "3"]]},
+        "QuantityPostfix"]}], ",", "s\[Sigma]"}], "}"}]}], "/.", 
+   RowBox[{
+    RowBox[{"\[Phi]", "[", "\[Nu]", "]"}], "\[Rule]", "\[Phi]0"}]}], "//", 
+  "UnitConvert"}]], "Input",ExpressionUUID->"c8193190-492c-400a-bb67-\
+a8cbc935447f"],
+
+Cell[BoxData[
+ TemplateBox[{"9.429545984327847`*^10","\"m\"","meters","\"Meters\""},
+  "Quantity"]], "Output",ExpressionUUID->"dd725514-52d5-43ec-9f25-\
+44a5fc0d5a4b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1600, 827},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (February 5, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 365, 11, 160, "Title"],
+Cell[948, 35, 383, 10, 105, "Chapter"],
+Cell[CellGroupData[{
+Cell[1356, 49, 76, 0, 78, "Chapter"],
+Cell[1435, 51, 170, 3, 39, "Text"],
+Cell[1608, 56, 179, 4, 40, "Input"],
+Cell[1790, 62, 140, 2, 39, "Text"],
+Cell[1933, 66, 174, 4, 40, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2144, 75, 76, 0, 94, "Chapter"],
+Cell[CellGroupData[{
+Cell[2245, 79, 76, 0, 90, "Section"],
+Cell[CellGroupData[{
+Cell[2346, 83, 543, 14, 48, "Input"],
+Cell[2892, 99, 206, 4, 53, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3147, 109, 76, 0, 90, "Section"],
+Cell[CellGroupData[{
+Cell[3248, 113, 2148, 56, 59, "Input"],
+Cell[5399, 171, 661, 17, 56, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6109, 194, 76, 0, 90, "Section"],
+Cell[CellGroupData[{
+Cell[6210, 198, 1392, 40, 48, "Input"],
+Cell[7605, 240, 106, 0, 40, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7760, 246, 76, 0, 90, "Section"],
+Cell[7839, 248, 99, 0, 39, "Text"],
+Cell[CellGroupData[{
+Cell[7963, 252, 969, 26, 47, "Input"],
+Cell[8935, 280, 484, 10, 59, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9468, 296, 76, 0, 90, "Section"],
+Cell[9547, 298, 120, 0, 39, "Text"],
+Cell[CellGroupData[{
+Cell[9692, 302, 1086, 32, 47, "Input"],
+Cell[10781, 336, 468, 12, 87, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11298, 354, 76, 0, 90, "Section"],
+Cell[CellGroupData[{
+Cell[11399, 358, 88, 0, 50, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[11512, 362, 1383, 38, 49, "Input"],
+Cell[12898, 402, 645, 16, 59, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13592, 424, 93, 0, 50, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[13710, 428, 420, 12, 40, "Input"],
+Cell[14133, 442, 131, 3, 71, "Output"]
+}, Open  ]],
+Cell[14279, 448, 544, 16, 53, "Text"],
+Cell[CellGroupData[{
+Cell[14848, 468, 335, 11, 54, "Input"],
+Cell[15186, 481, 105, 0, 40, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15340, 487, 100, 0, 50, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[15465, 491, 642, 16, 49, "Input"],
+Cell[16110, 509, 250, 5, 53, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16421, 521, 76, 0, 90, "Section"],
+Cell[16500, 523, 93, 0, 39, "Text"],
+Cell[CellGroupData[{
+Cell[16618, 527, 2321, 60, 50, "Input"],
+Cell[18942, 589, 322, 7, 53, "Output"]
+}, Open  ]],
+Cell[19279, 599, 117, 0, 39, "Text"],
+Cell[CellGroupData[{
+Cell[19421, 603, 1447, 38, 47, "Input"],
+Cell[20871, 643, 461, 10, 55, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21381, 659, 76, 0, 90, "Section"],
+Cell[CellGroupData[{
+Cell[21482, 663, 650, 18, 56, "Input"],
+Cell[22135, 683, 167, 3, 53, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,26 @@
+Overview of code:
+
+Cactus Framework
+The Cactus Framework is a free and open-source, collaborative, modular environment for high performance parallel computing. It is highly portable and can run on diverse architectures from desktops and laptop computers to supercomputers such as Blue Waters. It has seen applications across a variety of fields including numerical relativity, computational fluid dynamics and quantum gravity.
+
+The Cactus Framework originated from code developed by Ed Seidel's group at NCSA prior to 1995 for solving problems in numerical relativity, which was later developed at AEI and LSU
+
+The Cactus code consists of a common flesh along with numerous modules called thorns which can be selectively plugged in to implement different functionality.
+
+Einstein toolkit
+The Einstein toolkit is a particular collection of over 100 thorns within the Cactus Framework that is suited for relativistic astrophysics.
+
+Equations to solve
+
+The BSSN formalism is used
+KRANC
+
+Einstein's equations of General Relativity
+
+Results
+
+
+
+The program was successfully executed once with the initial conditions specified in the parameter file that I uploaded previously. However the ouput files were purged from my scratch directory over spring break. When I attempted to re-run the program, for some reason, the job has been waiting in the queue on the campus cluster for over 42 hours.
+
+

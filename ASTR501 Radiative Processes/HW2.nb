@@ -1,0 +1,144 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3390,        136]
+NotebookOptionsPosition[      2613,        103]
+NotebookOutlinePosition[      2989,        119]
+CellTagsIndexPosition[      2946,        116]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Luminosity crossing Disk", "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Generating light ray", "Subsection"],
+
+Cell["\<\
+Function to generate a random ray going out of a given point on the surface \
+of a sphere.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ray", "@", "v_"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"u", "=", 
+     RowBox[{"RandomPoint", "@", 
+      RowBox[{"Sphere", "[", "]"}]}]}], ";", 
+    RowBox[{"While", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"u", ".", "v"}], "<", "0"}], ",", 
+      RowBox[{"u", "=", 
+       RowBox[{"RandomPoint", "@", 
+        RowBox[{"Sphere", "[", "]"}]}]}]}], "]"}], ";", "u"}], 
+   ")"}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Monte Carlo simulation", "Subsection"],
+
+Cell["\<\
+Generating random points on a unit sphere, then generating random rays \
+emerging from each point. Counting the number of rays that hit the x-y plane \
+and diving by the total number of points.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"N", "@", 
+     RowBox[{"Total", "@", 
+      RowBox[{"UnitStep", "@", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"points", "=", 
+          RowBox[{"RandomPoint", "[", 
+           RowBox[{
+            RowBox[{"Sphere", "[", "]"}], ",", "#"}], "]"}]}], ";", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"points", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "3"}], "]"}], "]"}]}], 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"ParallelMap", "[", 
+             RowBox[{"ray", ",", "points"}], "]"}], ")"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "3"}], "]"}], "]"}]}]}], ")"}]}]}]}], "/", 
+    "#"}], " ", "&"}], "[", 
+  RowBox[{"10", "^", "3"}], "]"}]], "Input"],
+
+Cell[BoxData["0.319`"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Result for a million rays", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"0.31843`", " "}]], "Text", "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1598, 827},
+WindowMargins->{{Automatic, -6}, {Automatic, 0}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 41, 0, 201, "Title"],
+Cell[CellGroupData[{
+Cell[646, 26, 42, 0, 95, "Subsection"],
+Cell[691, 28, 114, 3, 60, "Text"],
+Cell[808, 33, 444, 15, 61, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1289, 53, 44, 0, 95, "Subsection"],
+Cell[1336, 55, 217, 4, 98, "Text"],
+Cell[CellGroupData[{
+Cell[1578, 63, 813, 25, 101, "Input"],
+Cell[2394, 90, 33, 0, 61, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2476, 96, 47, 0, 95, "Subsection"],
+Cell[2526, 98, 59, 1, 61, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

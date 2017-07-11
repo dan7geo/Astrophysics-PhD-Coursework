@@ -1,0 +1,533 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15493,        524]
+NotebookOptionsPosition[     13221,        438]
+NotebookOutlinePosition[     13732,        458]
+CellTagsIndexPosition[     13689,        455]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Q2)", "Chapter",
+ CellChangeTimes->{{3.6535211810800133`*^9, 3.6535211822570806`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Assuming the potential is of the form shown below:", "Section",
+ CellChangeTimes->{{3.65352633184162*^9, 3.653526342122208*^9}, 
+   3.653528103670963*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"V", "[", "x_", "]"}], "=", 
+  RowBox[{"A", " ", 
+   RowBox[{"x", "^", "n"}]}]}]], "Input",
+ CellChangeTimes->{{3.653521574999544*^9, 3.6535215901324096`*^9}, 
+   3.6535236072557826`*^9, 3.653525173591372*^9}],
+
+Cell[BoxData[
+ RowBox[{"A", " ", 
+  SuperscriptBox["x", "n"]}]], "Output",
+ CellChangeTimes->{3.65352160831945*^9, 3.6535236083918476`*^9, 
+  3.653525196496682*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["From the given Hamiltonian we get:", "Section",
+ CellChangeTimes->{{3.653526352265788*^9, 3.653526376721187*^9}, 
+   3.6535281047750263`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e", "=", 
+  RowBox[{"c", " ", 
+   RowBox[{"J", "^", 
+    RowBox[{"(", 
+     RowBox[{"4", "/", "3"}], ")"}], " ", 
+    RowBox[{"(*", "Energy", "*)"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.653524994208112*^9, 3.6535250031126213`*^9}, {
+  3.653526318970884*^9, 3.653526324081176*^9}}],
+
+Cell[BoxData[
+ RowBox[{"c", " ", 
+  SuperscriptBox["J", 
+   RowBox[{"4", "/", "3"}]]}]], "Output",
+ CellChangeTimes->{3.6535250037506576`*^9, 3.6535251982707834`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Potential at the maximum of x = X should equal energy e", "Section",
+ CellChangeTimes->{{3.6535251145429945`*^9, 3.6535251365022507`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"V", "[", "x", "]"}], "\[Equal]", "e"}], ",", "x"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.653524968791658*^9, 3.653525096159943*^9}, {
+  3.653525149239979*^9, 3.6535251494549913`*^9}, {3.65352520484816*^9, 
+  3.65352520643125*^9}, {3.653525243982398*^9, 3.6535252454464817`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6535252073523026`*^9, 3.653525249099691*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"x", "\[Rule]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"c", " ", 
+        SuperscriptBox["J", 
+         RowBox[{"4", "/", "3"}]]}], "A"], ")"}], 
+     FractionBox["1", "n"]]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6535249749910126`*^9, {3.653525011749115*^9, 3.653525024167825*^9}, {
+   3.6535250558406367`*^9, 3.653525096502963*^9}, 3.6535251499110174`*^9, 
+   3.653525207354303*^9, 3.653525249103691*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"X", "=", 
+  RowBox[{"x", "/.", 
+   RowBox[{"s", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], " ", 
+   RowBox[{"(*", "xMax", "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.6535251441796894`*^9, 3.653525160950649*^9}, {
+  3.653525247503599*^9, 3.653525272734042*^9}, {3.653526446753193*^9, 
+  3.653526454695647*^9}}],
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"c", " ", 
+     SuperscriptBox["J", 
+      RowBox[{"4", "/", "3"}]]}], "A"], ")"}], 
+  FractionBox["1", "n"]]], "Output",
+ CellChangeTimes->{
+  3.6535251612026634`*^9, {3.6535252697458715`*^9, 3.653525272986057*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The action is given by the equation:", "Section",
+ CellChangeTimes->{{3.65352639460921*^9, 3.6535264092490473`*^9}, 
+   3.6535281075191827`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   RowBox[{"J", "\[LongEqual]", 
+    FractionBox[
+     RowBox[{
+      SqrtBox[
+       RowBox[{"2", " ", "m"}]], " ", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "xMin", "xMax"], 
+       RowBox[{
+        SqrtBox[
+         RowBox[{"e", "-", 
+          RowBox[{"V", "(", "x", ")"}]}]], 
+        RowBox[{"\[DifferentialD]", "x"}]}]}]}], 
+     RowBox[{"2", " ", "\[Pi]"}]]}],
+   FontSize->18], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.653526438616727*^9, 3.6535264710165806`*^9}, 
+   3.6535265497480836`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Assuming the solution is symmetric about the origin", "Section",
+ CellChangeTimes->{{3.653526476871915*^9, 3.6535264860404396`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RHS", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"2", "m"}], "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "Pi"}], ")"}]}], "2", " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"e", "-", 
+       RowBox[{"V", "[", "x", "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "X"}], "}"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"c", ">", "0"}], ",", 
+        RowBox[{"n", "\[Element]", "Integers"}], ",", 
+        RowBox[{"J", ">", "0"}], ",", 
+        RowBox[{"n", ">", "0"}]}], "}"}]}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.653521262551673*^9, 3.6535213487296023`*^9}, {
+   3.6535215353252745`*^9, 3.653521553126293*^9}, {3.6535216637726216`*^9, 
+   3.653521718060727*^9}, {3.653521752146676*^9, 3.6535218092279415`*^9}, {
+   3.6535218741066523`*^9, 3.653521876377782*^9}, {3.653523664768072*^9, 
+   3.6535236671602087`*^9}, 3.653524860722477*^9, 3.6535250867134027`*^9, {
+   3.653525165255895*^9, 3.6535251918634167`*^9}, {3.653526237924248*^9, 
+   3.653526277666521*^9}, {3.653526494824942*^9, 3.6535264952729673`*^9}, {
+   3.653526586336176*^9, 3.653526587848263*^9}, {3.6535267923429594`*^9, 
+   3.653526792669978*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"2", "+", "n"}], ")"}], " ", "\[Pi]"}]], 
+  RowBox[{
+   SqrtBox["2"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["c", "A"], ")"}], 
+    FractionBox["1", "n"]], " ", 
+   SqrtBox[
+    RowBox[{"c", "-", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox["1", "A"], ")"}], 
+         FractionBox["1", "n"]], ")"}], "n"], " ", "A", " ", "c"}]}]], " ", 
+   SuperscriptBox["J", 
+    FractionBox[
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{"2", "+", "n"}], ")"}]}], 
+     RowBox[{"3", " ", "n"}]]], " ", 
+   SqrtBox["m"], " ", 
+   RowBox[{"(", 
+    RowBox[{"2", "+", 
+     RowBox[{"n", " ", 
+      RowBox[{"Hypergeometric2F1", "[", 
+       RowBox[{"1", ",", 
+        RowBox[{
+         FractionBox["1", "2"], "+", 
+         FractionBox["1", "n"]}], ",", 
+        RowBox[{"1", "+", 
+         FractionBox["1", "n"]}], ",", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             FractionBox["1", "A"], ")"}], 
+            FractionBox["1", "n"]], ")"}], "n"], " ", "A"}]}], "]"}]}]}], 
+    ")"}]}]}]], "Output",
+ CellChangeTimes->{{3.6535213768142085`*^9, 3.653521393688174*^9}, {
+   3.6535215550034003`*^9, 3.6535215632408714`*^9}, 3.653521660128413*^9, 
+   3.653521871254489*^9, 3.653522054170951*^9, 3.653523600904419*^9, 
+   3.6535236635530024`*^9, 3.653524736505372*^9, 3.653525432156161*^9, 
+   3.6535264960570126`*^9, 3.6535265441577635`*^9, 3.653526757426962*^9, 
+   3.6535269619396596`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Matching powers of J in LHS and RHS", "Section",
+ CellChangeTimes->{{3.6535268195575156`*^9, 3.653526832468254*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sn", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"2", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"2", "+", "n"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"3", "n"}], ")"}]}]}], "\[Equal]", "1"}], ",", "n"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6535268357904444`*^9, 3.65352685232439*^9}, {
+  3.653526980987749*^9, 3.653526993524466*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"n", "\[Rule]", "4"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6535269695070925`*^9, 3.6535269940224943`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finding the value of A for n = 4", "Section",
+ CellChangeTimes->{{3.653526999047782*^9, 3.6535270182988834`*^9}, {
+  3.6535280678159122`*^9, 3.6535280709510913`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RHS", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"2", "m"}], "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "Pi"}], ")"}]}], "2", " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"e", "-", 
+       RowBox[{"A", " ", 
+        RowBox[{"x", "^", "4"}]}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{"c", " ", 
+           SuperscriptBox["J", 
+            RowBox[{"4", "/", "3"}]]}], "A"], ")"}], 
+        FractionBox["1", "4"]]}], "}"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"c", ">", "0"}], ",", 
+        RowBox[{"J", ">", "0"}], ",", 
+        RowBox[{"A", ">", "0"}]}], "}"}]}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.653527162905154*^9, 3.653527184379382*^9}, {
+  3.6535277007439165`*^9, 3.65352773525189*^9}, {3.653527816802555*^9, 
+  3.653527818325642*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2", " ", 
+   SqrtBox["2"], " ", 
+   SuperscriptBox["c", 
+    RowBox[{"3", "/", "4"}]], " ", "J", " ", 
+   SqrtBox["m"], " ", 
+   RowBox[{"EllipticK", "[", 
+    RowBox[{"-", "1"}], "]"}]}], 
+  RowBox[{"3", " ", 
+   SuperscriptBox["A", 
+    RowBox[{"1", "/", "4"}]], " ", "\[Pi]"}]]], "Output",
+ CellChangeTimes->{3.6535276629267535`*^9, 3.65352773349679*^9, 
+  3.653527838801813*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sA", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"1.0", "J"}], "\[Equal]", "RHS"}], ",", "A", ",", "Reals"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6535278238759594`*^9, 3.653527948945113*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ratnz"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Solve was unable to solve the system with inexact \
+coefficients. The answer was obtained by solving a corresponding exact system \
+and numericizing the result. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Solve\\\", ButtonNote -> \
+\\\"Solve::ratnz\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.653527863034199*^9, 3.6535279494101396`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"A", "\[Rule]", 
+    RowBox[{"ConditionalExpression", "[", 
+     RowBox[{
+      RowBox[{"0.02396317518137792`", " ", 
+       SuperscriptBox["c", "3"], " ", 
+       SuperscriptBox["m", "2"]}], ",", 
+      RowBox[{
+       RowBox[{"m", ">", "0"}], "&&", 
+       RowBox[{"c", ">", "0"}]}]}], "]"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6535278496054316`*^9, 3.65352794941214*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", " ", "=", " ", 
+  RowBox[{"0.02396317518137792", " ", 
+   SuperscriptBox["c", "3"], " ", 
+   SuperscriptBox["m", "2"]}]}]], "Input",
+ CellChangeTimes->{{3.653527996719846*^9, 3.6535280000010333`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.02396317518137792`", " ", 
+  SuperscriptBox["c", "3"], " ", 
+  SuperscriptBox["m", "2"]}]], "Output",
+ CellChangeTimes->{{3.653527997377883*^9, 3.653528000676072*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Thus the potential is:", "Section",
+ CellChangeTimes->{{3.653528032919916*^9, 3.6535280411763887`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"V", "[", "x", "]"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{"n", "\[Rule]", "4"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6535280035212345`*^9, 3.653528016216961*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"0.02396317518137792", " ", 
+   SuperscriptBox["c", "3"], " ", 
+   SuperscriptBox["m", "2"], " ", 
+   SuperscriptBox["x", "4"]}],
+  FontSize->18]], "Input",
+ CellChangeTimes->{{3.653528046871714*^9, 3.653528051304968*^9}}],
+
+Cell["", "Subsection",
+ CellChangeTimes->{{3.653527967657183*^9, 3.6535279947777348`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1296, 726},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{594.9599999999999, 842.04}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 29, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 92, 1, 72, "Chapter"],
+Cell[CellGroupData[{
+Cell[697, 27, 160, 2, 70, "Section"],
+Cell[CellGroupData[{
+Cell[882, 33, 243, 6, 31, "Input"],
+Cell[1128, 41, 164, 4, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1341, 51, 147, 2, 70, "Section"],
+Cell[CellGroupData[{
+Cell[1513, 57, 306, 8, 31, "Input"],
+Cell[1822, 67, 166, 4, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2037, 77, 144, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[2206, 82, 384, 9, 31, "Input"],
+Cell[2593, 93, 555, 11, 21, "Message"],
+Cell[3151, 106, 509, 14, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3697, 125, 332, 8, 31, "Input"],
+Cell[4032, 135, 291, 9, 55, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4372, 150, 150, 2, 70, "Section"],
+Cell[4525, 154, 560, 18, 66, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5122, 177, 138, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[5285, 182, 1304, 30, 31, "Input"],
+Cell[6592, 214, 1659, 51, 69, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8300, 271, 122, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[8447, 276, 415, 13, 31, "Input"],
+Cell[8865, 291, 173, 4, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9087, 301, 172, 2, 70, "Section"],
+Cell[CellGroupData[{
+Cell[9284, 307, 1026, 31, 58, "Input"],
+Cell[10313, 340, 421, 13, 53, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10771, 358, 249, 7, 31, "Input"],
+Cell[11023, 367, 549, 11, 21, "Message"],
+Cell[11575, 380, 444, 12, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12056, 397, 228, 5, 31, "Input"],
+Cell[12287, 404, 193, 4, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12529, 414, 109, 1, 70, "Section"],
+Cell[12641, 417, 199, 5, 31, "Input"],
+Cell[12843, 424, 257, 7, 36, InheritFromParent],
+Cell[13103, 433, 90, 1, 49, "Subsection"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

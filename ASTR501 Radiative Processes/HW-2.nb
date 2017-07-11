@@ -1,0 +1,830 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21289,        822]
+NotebookOptionsPosition[     17601,        684]
+NotebookOutlinePosition[     17976,        700]
+CellTagsIndexPosition[     17933,        697]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 2 - ASTR501\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0 on February 1, 2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1", "Chapter"],
+
+Cell["Approximately flux is given by", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"F", "\[Rule]", 
+      RowBox[{
+       SubscriptBox["\[CapitalIota]", "\[Nu]"], 
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], 
+       "\[CapitalDelta]\[CapitalOmega]"}]}], "/.", 
+     RowBox[{"\[CapitalDelta]\[CapitalOmega]", "\[Rule]", 
+      FractionBox[
+       RowBox[{"dA", " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], 
+       SuperscriptBox["r", "2"]]}]}], "/.", 
+    RowBox[{"dA", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["d", "2"], " ", "\[Pi]"}], "4"]}]}], "/.", 
+   RowBox[{"r", "\[Rule]", 
+    RowBox[{"L", "/", 
+     RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}]}], "/.", 
+  RowBox[{"L", "\[Rule]", 
+   RowBox[{"f", "/", "d"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"F", "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["d", "4"], " ", "\[Pi]", " ", 
+    SuperscriptBox[
+     RowBox[{"Cos", "[", "\[Theta]", "]"}], "4"], " ", 
+    SubscriptBox["\[CapitalIota]", "\[Nu]"]}], 
+   RowBox[{"4", " ", 
+    SuperscriptBox["f", "2"]}]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell["Luminosity", "Text"],
+
+Cell[BoxData[
+ RowBox[{"4", "\[Pi]", " ", 
+  SubscriptBox["R", "*"], "\[Sigma]", " ", 
+  SuperscriptBox[
+   SubscriptBox["T", "*"], "4"]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Brightness", "Subsubsection"],
+
+Cell[BoxData[
+ RowBox[{"sB", ":=", 
+  RowBox[{"Brightness", "->", 
+   FractionBox[
+    RowBox[{"\[Sigma]", " ", 
+     SubsuperscriptBox["T", "*", "4"]}], "\[Pi]"]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Flux", "Subsubsection"],
+
+Cell["\<\
+Using spherical coordinates at a point on the disk with the axis passing \
+through the center of the star.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sF", "=", 
+  RowBox[{"Flux", "->", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Brightness", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], " ", 
+      RowBox[{"Cos", "[", "\[Phi]", "]"}], 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", "0", ",", 
+       RowBox[{"ArcSin", "[", 
+        RowBox[{
+         SubscriptBox["R", "*"], "/", "r"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", 
+       RowBox[{"-", 
+        FractionBox["\[Pi]", "2"]}], ",", 
+       FractionBox["\[Pi]", "2"]}], "}"}]}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Flux", "\[Rule]", 
+  RowBox[{"Brightness", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"ArcSin", "[", 
+      FractionBox[
+       SubscriptBox["R", "*"], "r"], "]"}], "-", 
+     FractionBox[
+      RowBox[{
+       SubscriptBox["R", "*"], " ", 
+       SqrtBox[
+        RowBox[{"1", "-", 
+         FractionBox[
+          SubsuperscriptBox["R", "*", "2"], 
+          SuperscriptBox["r", "2"]]}]]}], "r"]}], ")"}]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Solving for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "disk"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sT", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"sF", "/.", "sB"}], "/.", 
+       RowBox[{"Flux", "\[Rule]", 
+        RowBox[{"\[Sigma]", " ", 
+         SubsuperscriptBox["T", "disk", "4"]}]}]}], "/.", 
+      RowBox[{"Rule", "\[Rule]", "Equal"}]}], ",", 
+     SubscriptBox["T", "disk"]}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["T", "disk"], "\[Rule]", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       RowBox[{"ArcSin", "[", 
+        FractionBox[
+         SubscriptBox["R", "*"], "r"], "]"}], " ", 
+       SubsuperscriptBox["T", "*", "4"]}], "\[Pi]"], "-", 
+     FractionBox[
+      RowBox[{
+       SubscriptBox["R", "*"], " ", 
+       SqrtBox[
+        FractionBox[
+         RowBox[{
+          SuperscriptBox["r", "2"], "-", 
+          SubsuperscriptBox["R", "*", "2"]}], 
+         SuperscriptBox["r", "2"]]], " ", 
+       SubsuperscriptBox["T", "*", "4"]}], 
+      RowBox[{"\[Pi]", " ", "r"}]]}], ")"}], 
+   RowBox[{"1", "/", "4"}]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Series expansion about ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["R", "*"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["T", "disk"], "/.", "sT"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["R", "*"], ",", "0", ",", "1"}], "}"}]}], "]"}], "//", 
+  "Simplify"}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["2", 
+       RowBox[{"3", " ", "\[Pi]"}]], ")"}], 
+     RowBox[{"1", "/", "4"}]], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       SubsuperscriptBox["T", "*", "4"], 
+       SuperscriptBox["r", "3"]], ")"}], 
+     RowBox[{"1", "/", "4"}]], " ", 
+    SubsuperscriptBox["R", "*", 
+     RowBox[{"3", "/", "4"}]]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      SubscriptBox["R", "*"], "]"}], 
+     RowBox[{"7", "/", "4"}]],
+    SeriesData[
+     SubStar[$CellContext`R], 0, {}, 3, 7, 4],
+    Editable->False]}],
+  SeriesData[
+   SubStar[$CellContext`R], 
+   0, {(Rational[2, 3]/Pi)^
+     Rational[1, 4] ($CellContext`r^(-3) SubStar[$CellContext`T]^4)^
+     Rational[1, 4]}, 3, 7, 4],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell["Equating energy absorbed to emitted", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"4", " ", "\[Pi]", " ", "\[Sigma]", " ", 
+         SubsuperscriptBox["R", "*", "2"], " ", 
+         SubsuperscriptBox["T", "*", "4"]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"4", " ", "\[Pi]", " ", 
+         SuperscriptBox["r", "2"]}], ")"}]}], " ", "\[Pi]", " ", 
+      SuperscriptBox["R", "2"]}], " ", "\[Equal]", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"4", " ", "\[Pi]", " ", 
+        SuperscriptBox["R", "2"]}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"\[Sigma]", " ", 
+        SubsuperscriptBox["T", "eff", "4"]}], ")"}]}]}], ",", 
+    SubscriptBox["T", "eff"]}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{
+    RowBox[{"-", "1"}], ",", "1"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["T", "eff"], "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    SqrtBox[
+     SubscriptBox["R", "*"]], " ", 
+    SubscriptBox["T", "*"]}], 
+   RowBox[{
+    SqrtBox["2"], " ", 
+    SqrtBox["r"]}]]}]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+The scaling law is different because the planet has more effective surface \
+area. \
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell["\<\
+Twice the energy emitted by each side of the disk divided by luminosity of \
+star.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  RowBox[{
+   RowBox[{"Integrate", "[", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"2", " ", "\[Pi]", " ", "r", " ", 
+       SubsuperscriptBox["T", "disk", "4"], " ", "\[Sigma]"}], "/.", "sT"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", 
+       SubscriptBox["R", "*"], ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["R", "*"], ">", "0"}], "}"}]}]}], "]"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"4", " ", "\[Pi]", " ", 
+       SubsuperscriptBox["R", "*", "2"]}], ")"}], " ", "\[Sigma]", " ", 
+     SubsuperscriptBox["T", "*", "4"]}], ")"}]}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["1", "4"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["e)", "Section"],
+
+Cell["Larger. Bigger disk implies more absorption.", "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s0", "=", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"Assuming", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Alpha]", ">", "0"}], "&&", 
+       RowBox[{"\[Nu]0", ">", "0"}], "&&", 
+       RowBox[{
+        SubscriptBox["\[Nu]", "c"], ">", 
+        RowBox[{"\[CapitalDelta]\[Nu]", "/", "2"}]}], "&&", 
+       RowBox[{"\[CapitalDelta]\[Nu]", ">", "0"}]}], ",", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalIota]", "0"], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           FractionBox["\[Nu]", "\[Nu]0"], ")"}], "\[Alpha]"]}], " ", ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Nu]", ",", 
+          RowBox[{
+           SubscriptBox["\[Nu]", "c"], "-", 
+           RowBox[{"\[CapitalDelta]\[Nu]", "/", "2"}]}], ",", 
+          RowBox[{
+           SubscriptBox["\[Nu]", "c"], "+", 
+           RowBox[{"\[CapitalDelta]\[Nu]", "/", "2"}]}]}], "}"}]}], "]"}]}], 
+     "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[CapitalDelta]\[Nu]", ",", "0", ",", "1"}], "}"}]}], 
+   "]"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["\[Nu]0", 
+     RowBox[{"-", "\[Alpha]"}]], " ", 
+    SubscriptBox["\[CapitalIota]", "0"], " ", 
+    SubsuperscriptBox["\[Nu]", "c", "\[Alpha]"], " ", 
+    "\[CapitalDelta]\[Nu]"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "\[CapitalDelta]\[Nu]", "]"}], "2"],
+    SeriesData[$CellContext`\[CapitalDelta]\[Nu], 0, {}, 1, 2, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`\[CapitalDelta]\[Nu], 
+   0, {$CellContext`\[Nu]0^(-$CellContext`\[Alpha]) 
+    Subscript[$CellContext`\[CapitalIota], 0] 
+    Subscript[$CellContext`\[Nu], $CellContext`c]^$CellContext`\[Alpha]}, 1, 
+   2, 1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Observed Intensity", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sI", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         FractionBox[
+          SubscriptBox["\[CapitalIota]", "source"], 
+          SubsuperscriptBox["\[Nu]", "source", "3"]], "\[Equal]", " ", 
+         FractionBox[
+          SubscriptBox["\[CapitalIota]", "obs"], 
+          SuperscriptBox["\[Nu]", "3"]]}], "/.", 
+        RowBox[{
+         SubscriptBox["\[CapitalIota]", "source"], "->", 
+         RowBox[{
+          SubscriptBox["\[CapitalIota]", "0"], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            FractionBox[
+             SubscriptBox["\[Nu]", "source"], "\[Nu]0"], ")"}], 
+           "\[Alpha]"]}]}]}], "/.", 
+       RowBox[{
+        SubscriptBox["\[Nu]", "source"], "\[Rule]", 
+        RowBox[{"\[Nu]", 
+         RowBox[{"(", 
+          RowBox[{"1", "+", "z"}], ")"}]}]}]}], ",", 
+      SubscriptBox["\[CapitalIota]", "obs"]}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1"}], "]"}], "]"}], "//", "PowerExpand"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[CapitalIota]", "obs"], "\[Rule]", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", "z"}], ")"}], 
+    RowBox[{
+     RowBox[{"-", "3"}], "+", "\[Alpha]"}]], " ", 
+   SuperscriptBox["\[Nu]", "\[Alpha]"], " ", 
+   SuperscriptBox["\[Nu]0", 
+    RowBox[{"-", "\[Alpha]"}]], " ", 
+   SubscriptBox["\[CapitalIota]", "0"]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Surface brightness", "Subsubsection"],
+
+Cell["Series expansion about \[CapitalDelta]\[Nu]", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sZ", "=", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"Assuming", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Alpha]", ">", "0"}], "&&", 
+       RowBox[{"\[Nu]0", ">", "0"}], "&&", 
+       RowBox[{
+        SubscriptBox["\[Nu]", "c"], ">", 
+        RowBox[{"\[CapitalDelta]\[Nu]", "/", "2"}]}], "&&", 
+       RowBox[{"\[CapitalDelta]\[Nu]", ">", "0"}]}], ",", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalIota]", "obs"], "/.", "sI"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Nu]", ",", 
+          RowBox[{
+           SubscriptBox["\[Nu]", "c"], "-", 
+           FractionBox["\[CapitalDelta]\[Nu]", "2"]}], ",", 
+          RowBox[{
+           SubscriptBox["\[Nu]", "c"], "+", 
+           FractionBox["\[CapitalDelta]\[Nu]", "2"]}]}], "}"}]}], "]"}]}], 
+     "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[CapitalDelta]\[Nu]", ",", "0", ",", "1"}], "}"}]}], 
+   "]"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"1", "+", "z"}], ")"}], 
+     RowBox[{
+      RowBox[{"-", "3"}], "+", "\[Alpha]"}]], " ", 
+    SuperscriptBox["\[Nu]0", 
+     RowBox[{"-", "\[Alpha]"}]], " ", 
+    SubscriptBox["\[CapitalIota]", "0"], " ", 
+    SubsuperscriptBox["\[Nu]", "c", "\[Alpha]"], " ", 
+    "\[CapitalDelta]\[Nu]"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "\[CapitalDelta]\[Nu]", "]"}], "2"],
+    SeriesData[$CellContext`\[CapitalDelta]\[Nu], 0, {}, 1, 2, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`\[CapitalDelta]\[Nu], 
+   0, {(1 + $CellContext`z)^(-3 + $CellContext`\[Alpha]) \
+$CellContext`\[Nu]0^(-$CellContext`\[Alpha]) 
+    Subscript[$CellContext`\[CapitalIota], 0] 
+    Subscript[$CellContext`\[Nu], $CellContext`c]^$CellContext`\[Alpha]}, 1, 
+   2, 1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "2.5"}], 
+  RowBox[{"Log10", "[", 
+   RowBox[{
+    RowBox[{"s0", "/", "sZ"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"z", "\[Rule]", "7"}], ",", 
+      RowBox[{"\[Alpha]", "\[Rule]", 
+       RowBox[{"-", "1"}]}]}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"-", "9.030899869919434`"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "\[CapitalDelta]\[Nu]", "]"}], "1"],
+    SeriesData[$CellContext`\[CapitalDelta]\[Nu], 0, {}, 0, 1, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`\[CapitalDelta]\[Nu], 0, {-9.030899869919434}, 0, 1,
+    1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q4", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["First integrand", "Subsubsection"],
+
+Cell["Substituting expression for specific intensity", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"d\[CapitalOmega]", " ", "d\[Nu]", " ", 
+   SubscriptBox["\[CapitalIota]", "\[Nu]"]}], "/.", 
+  RowBox[{
+   SubscriptBox["\[CapitalIota]", "\[Nu]"], "\[Rule]", 
+   FractionBox["dE", 
+    RowBox[{
+    "c", " ", "dA", " ", "dt", " ", "d\[Nu]", " ", 
+     "d\[CapitalOmega]"}]]}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["dE", 
+  RowBox[{"c", " ", "dA", " ", "dt"}]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Second integrand", "Subsubsection"],
+
+Cell["\<\
+Substituting expressions for distribution function, energy, and volume\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"d3p", " ", "f", " ", "\[CapitalEpsilon]"}], " ", "/.", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["dN", 
+       RowBox[{"d3p", " ", "d3x"}]]}]}], "/.", " ", 
+    RowBox[{"dN", "\[Rule]", 
+     FractionBox["dE", 
+      RowBox[{"h", " ", "\[Nu]"}]]}]}], "/.", 
+   RowBox[{"\[CapitalEpsilon]", "\[Rule]", 
+    RowBox[{"h", " ", "\[Nu]"}]}]}], "/.", 
+  RowBox[{"d3x", "\[Rule]", 
+   RowBox[{"c", " ", "dA", " ", "dt"}]}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["dE", 
+  RowBox[{"c", " ", "dA", " ", "dt"}]]], "Output"]
+}, Open  ]],
+
+Cell["Thus they are both identical.", "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1584, 827},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 309, 11, 241, "Title"],
+Cell[892, 35, 328, 10, 160, "Chapter"],
+Cell[CellGroupData[{
+Cell[1245, 49, 21, 0, 118, "Chapter"],
+Cell[1269, 51, 46, 0, 60, "Text"],
+Cell[CellGroupData[{
+Cell[1340, 55, 758, 23, 98, "Input"],
+Cell[2101, 80, 308, 9, 116, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2458, 95, 21, 0, 144, "Chapter"],
+Cell[CellGroupData[{
+Cell[2504, 99, 21, 0, 140, "Section"],
+Cell[2528, 101, 26, 0, 60, "Text"],
+Cell[2557, 103, 149, 4, 61, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2743, 112, 21, 0, 140, "Section"],
+Cell[CellGroupData[{
+Cell[2789, 116, 35, 0, 76, "Subsubsection"],
+Cell[2827, 118, 177, 5, 97, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3041, 128, 29, 0, 76, "Subsubsection"],
+Cell[3073, 130, 130, 3, 60, "Text"],
+Cell[CellGroupData[{
+Cell[3228, 137, 638, 18, 86, "Input"],
+Cell[3869, 157, 452, 15, 214, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4370, 178, 161, 6, 76, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4556, 188, 475, 15, 66, "Input"],
+Cell[5034, 205, 697, 23, 214, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5780, 234, 169, 6, 76, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[5974, 244, 259, 9, 61, "Input"],
+Cell[6236, 255, 877, 30, 117, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7174, 292, 21, 0, 140, "Section"],
+Cell[7198, 294, 51, 0, 60, "Text"],
+Cell[CellGroupData[{
+Cell[7274, 298, 840, 25, 66, "Input"],
+Cell[8117, 325, 240, 10, 126, "Output"]
+}, Open  ]],
+Cell[8372, 338, 107, 3, 60, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8516, 346, 21, 0, 140, "Section"],
+Cell[8540, 348, 106, 3, 60, "Text"],
+Cell[CellGroupData[{
+Cell[8671, 355, 721, 21, 66, "Input"],
+Cell[9395, 378, 48, 1, 108, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9492, 385, 21, 0, 140, "Section"],
+Cell[9516, 387, 60, 0, 60, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9625, 393, 21, 0, 144, "Chapter"],
+Cell[CellGroupData[{
+Cell[9671, 397, 21, 0, 140, "Section"],
+Cell[CellGroupData[{
+Cell[9717, 401, 1087, 31, 145, "Input"],
+Cell[10807, 434, 724, 19, 86, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11580, 459, 21, 0, 140, "Section"],
+Cell[CellGroupData[{
+Cell[11626, 463, 43, 0, 76, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[11694, 467, 1068, 31, 123, "Input"],
+Cell[12765, 500, 394, 12, 86, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13208, 518, 43, 0, 76, "Subsubsection"],
+Cell[13254, 520, 59, 0, 60, "Text"],
+Cell[CellGroupData[{
+Cell[13338, 524, 979, 28, 172, "Input"],
+Cell[14320, 554, 920, 25, 86, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15301, 586, 21, 0, 140, "Section"],
+Cell[CellGroupData[{
+Cell[15347, 590, 295, 10, 61, "Input"],
+Cell[15645, 602, 401, 11, 86, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16107, 620, 21, 0, 144, "Chapter"],
+Cell[CellGroupData[{
+Cell[16153, 624, 40, 0, 76, "Subsubsection"],
+Cell[16196, 626, 62, 0, 60, "Text"],
+Cell[CellGroupData[{
+Cell[16283, 630, 323, 9, 118, "Input"],
+Cell[16609, 641, 84, 2, 110, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16742, 649, 41, 0, 76, "Subsubsection"],
+Cell[16786, 651, 94, 2, 60, "Text"],
+Cell[CellGroupData[{
+Cell[16905, 657, 509, 15, 122, "Input"],
+Cell[17417, 674, 84, 2, 110, "Output"]
+}, Open  ]],
+Cell[17516, 679, 45, 0, 60, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

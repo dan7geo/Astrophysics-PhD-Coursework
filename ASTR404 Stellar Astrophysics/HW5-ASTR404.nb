@@ -1,0 +1,1145 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     32995,       1137]
+NotebookOptionsPosition[     28016,        950]
+NotebookOutlinePosition[     28602,        972]
+CellTagsIndexPosition[     28559,        969]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 5 - ASTR404\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0 on 9-27-2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]],
+ StyleBox["\n",
+  FontSize->24],
+ StyleBox[" ",
+  FontSize->14]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1) Solving Lane-Emden Equation", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a) Euler\[CloseCurlyQuote]s method", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Function to update one step", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"next", "[", 
+    RowBox[{"\[CapitalDelta]\[Xi]_", ",", "n_"}], "]"}], "[", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]_", ",", "\[Theta]1_", ",", "\[Theta]2_"}], "}"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Xi]", "+", "\[CapitalDelta]\[Xi]"}], ",", 
+    RowBox[{"\[Theta]1", "+", 
+     RowBox[{"\[Theta]2", " ", "\[CapitalDelta]\[Xi]"}]}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"\[Xi]", "/", 
+        RowBox[{"(", 
+         RowBox[{"\[Xi]", "+", "\[CapitalDelta]\[Xi]"}], ")"}]}], ")"}], "^", 
+      "2"}], 
+     RowBox[{"(", 
+      RowBox[{"\[Theta]2", "-", 
+       RowBox[{
+        RowBox[{"\[Theta]1", "^", "n"}], " ", "\[CapitalDelta]\[Xi]"}]}], 
+      ")"}]}]}], "}"}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Initial conditions at \[Xi] = \[CapitalDelta]\[Xi]", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Theta]11", "@", "\[CapitalDelta]\[Xi]_"}], ":=", 
+   RowBox[{"1", "-", 
+    RowBox[{
+     RowBox[{"1", "/", "6"}], 
+     RowBox[{"\[CapitalDelta]\[Xi]", "^", "2"}]}]}]}], ";", " ", 
+  RowBox[{
+   RowBox[{"\[Theta]21", "@", "\[CapitalDelta]\[Xi]_"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "1"}], "/", "3"}], "\[CapitalDelta]\[Xi]"}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Function to iterate with n = 1.5", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"steps", "@", "\[CapitalDelta]\[Xi]_"}], ":=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<\[Xi]\>\"", ",", "\"\<\[Theta]\>\"", ",", 
+       "\"\<d\[Theta]/d\[Xi]\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "}"}], "~", "Join", "~", 
+   RowBox[{"NestWhileList", "[", 
+    RowBox[{
+     RowBox[{"next", "[", 
+      RowBox[{"\[CapitalDelta]\[Xi]", ",", "1.5"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[CapitalDelta]\[Xi]", ",", 
+       RowBox[{"\[Theta]11", "@", "\[CapitalDelta]\[Xi]"}], ",", 
+       RowBox[{"\[Theta]21", "@", "\[CapitalDelta]\[Xi]"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+       ">", "0"}], "&"}]}], "]"}]}]}]], "Input"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b) \[CapitalDelta]\[Xi] = \[Pi] / 4", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Table of steps", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"steps", "[", 
+    RowBox[{"\[Pi]", "/", "4."}], "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\[Xi]\"\>", "\<\"\[Theta]\"\>", "\<\"d\[Theta]/d\[Xi]\"\>"},
+    {"0", "1", "0"},
+    {"0.7853981633974483`", "0.8971916208219859`", 
+     RowBox[{"-", "0.2617993877991494`"}]},
+    {"1.5707963267948966`", "0.6915748624659577`", 
+     RowBox[{"-", "0.23231194634018565`"}]},
+    {"2.356194490192345`", "0.5091174864750894`", 
+     RowBox[{"-", "0.3040046574138133`"}]},
+    {"3.141592653589793`", "0.27035278687800995`", 
+     RowBox[{"-", "0.33148946093526643`"}]},
+    {"3.9269908169872414`", "0.01000157307384153`", 
+     RowBox[{"-", "0.28281203449559844`"}]},
+    {"4.71238898038469`", 
+     RowBox[{"-", "0.21211847940569728`"}], 
+     RowBox[{"-", "0.196942790270611`"}]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finding first zero", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Xi]11", "=", 
+  RowBox[{"Quiet", "@", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Interpolation", "[", 
+         RowBox[{
+          RowBox[{"steps", "[", 
+           RowBox[{"\[Pi]", "/", "4"}], "]"}], "\[LeftDoubleBracket]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "2"}], ";;"}], ",", 
+           RowBox[{";;", "2"}]}], "\[RightDoubleBracket]"}], "]"}], "@", 
+        "\[Xi]11"}], "\[Equal]", "0"}], ",", "\[Xi]11"}], "]"}], 
+    "\[LeftDoubleBracket]", 
+    RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Xi]11", "\[Rule]", "3.9623555534691226`"}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c) \[CapitalDelta]\[Xi] = \[Pi] / 8", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Table of steps", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"steps", "[", 
+    RowBox[{"\[Pi]", "/", "8."}], "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\[Xi]\"\>", "\<\"\[Theta]\"\>", "\<\"d\[Theta]/d\[Xi]\"\>"},
+    {"0", "1", "0"},
+    {"0.39269908169872414`", "0.9742979052054964`", 
+     RowBox[{"-", "0.1308996938995747`"}]},
+    {"0.7853981633974483`", "0.9228937156164894`", 
+     RowBox[{"-", "0.12713917347271253`"}]},
+    {"1.1780972450961724`", "0.8729662789458204`", 
+     RowBox[{"-", "0.21124712170962015`"}]},
+    {"1.5707963267948966`", "0.7900097282389539`", 
+     RowBox[{"-", "0.29899490296604314`"}]},
+    {"1.9634954084936207`", "0.6725947044115896`", 
+     RowBox[{"-", "0.36783390293970736`"}]},
+    {"2.356194490192345`", "0.5281466685095089`", 
+     RowBox[{"-", "0.40586782161476187`"}]},
+    {"2.748893571891069`", "0.3687627476703303`", 
+     RowBox[{"-", "0.40892697280477347`"}]},
+    {"3.141592653589793`", "0.20817750096805662`", 
+     RowBox[{"-", "0.3804128439862398`"}]},
+    {"3.5342917352885173`", "0.05878972646826022`", 
+     RowBox[{"-", "0.3300448343221915`"}]},
+    {"3.9269908169872414`", 
+     RowBox[{"-", "0.07081857688947193`"}], 
+     RowBox[{"-", "0.2718704781249125`"}]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finding first zero", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Xi]12", "=", 
+  RowBox[{"Quiet", "@", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Interpolation", "[", 
+         RowBox[{
+          RowBox[{"steps", "[", 
+           RowBox[{"\[Pi]", "/", "8"}], "]"}], "\[LeftDoubleBracket]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "2"}], ";;"}], ",", 
+           RowBox[{";;", "2"}]}], "\[RightDoubleBracket]"}], "]"}], "@", 
+        "\[Xi]12"}], "\[Equal]", "0"}], ",", "\[Xi]12"}], "]"}], 
+    "\[LeftDoubleBracket]", 
+    RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Xi]12", "\[Rule]", "3.712418221009755`"}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d) Richardson extrapolation", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "First order expression for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Xi]", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Xi]1", "=", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\[Xi]1", "\[Equal]", 
+         RowBox[{"\[Xi]11", "+", 
+          RowBox[{"\[Alpha]", " ", "\[CapitalDelta]\[Xi]1"}]}]}], ",", 
+        RowBox[{"\[Xi]1", "\[Equal]", 
+         RowBox[{"\[Xi]12", "+", 
+          RowBox[{"\[Alpha]", " ", "\[CapitalDelta]\[Xi]2"}]}]}]}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Xi]1", ",", "\[Alpha]"}], "}"}]}], "]"}], 
+    "\[LeftDoubleBracket]", 
+    RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Xi]1", "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "\[CapitalDelta]\[Xi]2"}], " ", "\[Xi]11"}], "+", 
+    RowBox[{"\[CapitalDelta]\[Xi]1", " ", "\[Xi]12"}]}], 
+   RowBox[{
+   "\[CapitalDelta]\[Xi]1", "-", "\[CapitalDelta]\[Xi]2"}]]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["This is equivalent to the given expression. Therefore this gives \
+an estimate of ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Xi]", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["which",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["is valid up to first order.",
+  FontWeight->"Bold"]
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Substituting ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    SuperscriptBox["\[Xi]", 
+     RowBox[{"(", "1", ")"}]], "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    SuperscriptBox["\[Xi]", 
+     RowBox[{"(", "2", ")"}]], "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Xi]1", "/.", 
+  RowBox[{"{", 
+   RowBox[{"s\[Xi]12", ",", "s\[Xi]11", ",", 
+    RowBox[{"\[CapitalDelta]\[Xi]1", "\[Rule]", 
+     RowBox[{"\[Pi]", "/", "4"}]}], ",", 
+    RowBox[{"\[CapitalDelta]\[Xi]2", "\[Rule]", 
+     RowBox[{"\[Pi]", "/", "8"}]}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Xi]1", "\[Rule]", "3.462480888550387`"}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["This is an estimate of the true zero with error of order ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", "\[CapitalDelta]\[Xi]", ")"}], "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontWeight->"Bold"],
+ "."
+}], "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2) Convective Stability", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Solution for n = 1 (given)", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"s\[Theta]", ":=", 
+  RowBox[{"\[Theta]", "\[Rule]", 
+   RowBox[{
+    RowBox[{"Sin", "@", "\[Xi]"}], "/", "\[Xi]"}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Equations for pressure & density", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"sP\[Rho]", ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"P", "\[Rule]", 
+     RowBox[{"\[CapitalKappa]", " ", 
+      RowBox[{
+       SubscriptBox["\[Rho]", "c"], "^", "2"}], 
+      RowBox[{"\[Theta]", "^", "2"}]}]}], ",", 
+    RowBox[{"\[Rho]", "\[Rule]", 
+     RowBox[{
+      SubscriptBox["\[Rho]", "c"], " ", "\[Theta]"}]}]}], "}"}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finding temperature of ideal gas", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sT", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"P", " ", "\[Mu]", " ", 
+       RowBox[{
+        SubscriptBox["m", "H"], "/", 
+        RowBox[{"(", 
+         RowBox[{"\[Rho]", " ", 
+          SubscriptBox["k", "B"]}], ")"}]}]}]}], "/.", "sP\[Rho]"}], "/.", 
+    "s\[Theta]"}], "//", "Simplify"}]}]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"T", "\[Rule]", 
+   FractionBox[
+    RowBox[{"\[CapitalKappa]", " ", "\[Mu]", " ", 
+     SubscriptBox["\[Rho]", "c"], " ", 
+     SubscriptBox["m", "H"], " ", 
+     RowBox[{"sin", "(", "\[Xi]", ")"}]}], 
+    RowBox[{"\[Xi]", " ", 
+     SubscriptBox["k", "B"]}]]}], TraditionalForm]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Finding", " ", 
+    RowBox[{"\[PartialD]", "T"}]}], TraditionalForm]]],
+ "/\[PartialD]r (LHS)"
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LHS", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{
+      RowBox[{"T", "/.", "sT"}], ",", "\[Xi]"}], "]"}], "/", "\[Alpha]"}], "//",
+    "Simplify"}]}]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{"\[CapitalKappa]", " ", "\[Mu]", " ", 
+    SubscriptBox["\[Rho]", "c"], " ", 
+    SubscriptBox["m", "H"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Xi]", " ", 
+       RowBox[{"cos", "(", "\[Xi]", ")"}]}], "-", 
+      RowBox[{"sin", "(", "\[Xi]", ")"}]}], ")"}]}], 
+   RowBox[{"\[Alpha]", " ", 
+    SuperscriptBox["\[Xi]", "2"], " ", 
+    SubscriptBox["k", "B"]}]], TraditionalForm]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Finding", " ", "adiabatic", " ", 
+    RowBox[{"\[PartialD]", "T"}]}], TraditionalForm]]],
+ "/\[PartialD]r (RHS)"
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RHS", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{"1", "/", "\[Gamma]"}]}], ")"}]}], "\[Mu]", " ", 
+    SubscriptBox["m", "H"], " ", "G", " ", 
+    SubscriptBox["\[Rho]", "c"], " ", 
+    RowBox[{
+     RowBox[{"\[Alpha]", "^", "3"}], "/", 
+     SubscriptBox["k", "B"]}], "  ", 
+    RowBox[{
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"4", "\[Pi]", " ", "\[Xi]", " ", 
+        RowBox[{"Sin", "@", "\[Xi]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Xi]", ",", "0", ",", "\[Xi]"}], "}"}]}], "]"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Alpha]", "^", "2"}], " ", 
+       RowBox[{"\[Xi]", "^", "2"}]}], ")"}]}]}], "/.", 
+   RowBox[{"\[Gamma]", "\[Rule]", 
+    RowBox[{"5", "/", "3"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"8", " ", "\[Pi]", " ", "\[Alpha]", " ", "G", " ", "\[Mu]", " ", 
+     SubscriptBox["\[Rho]", "c"], " ", 
+     SubscriptBox["m", "H"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"sin", "(", "\[Xi]", ")"}], "-", 
+       RowBox[{"\[Xi]", " ", 
+        RowBox[{"cos", "(", "\[Xi]", ")"}]}]}], ")"}]}], 
+    RowBox[{"5", " ", 
+     SuperscriptBox["\[Xi]", "2"], " ", 
+     SubscriptBox["k", "B"]}]]}], TraditionalForm]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Showing |LHS| > |RHS|", "Subsection"],
+
+Cell[TextData[StyleBox["Subtracting RHS from LHS:",
+ FontWeight->"Bold"]], "Text",
+ FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Abs", "@", "LHS"}], "-", 
+    RowBox[{"Abs", "@", "RHS"}]}], "/.", 
+   RowBox[{"\[Alpha]", "->", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"2", " ", 
+      RowBox[{"\[CapitalKappa]", " ", "/", 
+       RowBox[{"(", 
+        RowBox[{"4", "\[Pi]", " ", "G"}], ")"}]}]}], "]"}]}]}], "//", 
+  "Simplify"}]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["1", "5"], " ", 
+   SqrtBox[
+    RowBox[{"2", " ", "\[Pi]"}]], " ", 
+   TemplateBox[{FractionBox[
+      RowBox[{"G", " ", 
+        SqrtBox[
+         FractionBox["\[CapitalKappa]", "G"]], " ", "\[Mu]", " ", 
+        RowBox[{"(", 
+          RowBox[{
+            RowBox[{"\[Xi]", " ", 
+              RowBox[{"cos", "(", "\[Xi]", ")"}]}], "-", 
+            RowBox[{"sin", "(", "\[Xi]", ")"}]}], ")"}], " ", 
+        SubscriptBox["m", "H"], " ", 
+        SubscriptBox["\[Rho]", "c"]}], 
+      RowBox[{
+        SuperscriptBox["\[Xi]", "2"], " ", 
+        SubscriptBox["k", "B"]}]]},
+    "Abs"]}], TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["This is always positive, therefore |",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[PartialD]", "T"}], TraditionalForm]]],
+ StyleBox["/\[PartialD]r| > |",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[PartialD]", "T"}], TraditionalForm]]],
+ StyleBox["/\[PartialD]r|",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "adiabatic"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontWeight->"Bold"],
+ ". ",
+ StyleBox["Hence the solution is convectively unstable.",
+  FontWeight->"Bold"]
+}], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3) Energy Released in Reactions", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a) Exothermic", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[{"\"magnesium-24\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"Magnesium24\""}], "]"}],
+          "\"Entity[\\\"Isotope\\\", \\\"Magnesium24\\\"]\"","\"isotope\""},
+         "Entity"], "[", 
+        TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+          "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+         "EntityProperty"], "]"}], "-", 
+       RowBox[{"2", 
+        RowBox[{
+         TemplateBox[{"\"carbon-12\"",RowBox[{"Entity", "[", 
+             RowBox[{"\"Isotope\"", ",", "\"Carbon12\""}], "]"}],
+           "\"Entity[\\\"Isotope\\\", \\\"Carbon12\\\"]\"","\"isotope\""},
+          "Entity"], "[", 
+         TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+             RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+           "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+          "EntityProperty"], "]"}]}]}], ")"}], 
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], "^", "2"}]}], ",", "\"\<MeV\>\""}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "13.933569055275932`","\"MeV\"","megaelectronvolts","\"Megaelectronvolts\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b) Endothermic", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[{"\"oxygen-16\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"Oxygen16\""}], "]"}],
+          "\"Entity[\\\"Isotope\\\", \\\"Oxygen16\\\"]\"","\"isotope\""},
+         "Entity"], "[", 
+        TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+          "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+         "EntityProperty"], "]"}], "+", 
+       RowBox[{"2", 
+        RowBox[{
+         TemplateBox[{"\"helium-4\"",RowBox[{"Entity", "[", 
+             RowBox[{"\"Isotope\"", ",", "\"Helium4\""}], "]"}],
+           "\"Entity[\\\"Isotope\\\", \\\"Helium4\\\"]\"","\"isotope\""},
+          "Entity"], "[", 
+         TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+             RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+           "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+          "EntityProperty"], "]"}]}], "-", 
+       RowBox[{"2", 
+        RowBox[{
+         TemplateBox[{"\"carbon-12\"",RowBox[{"Entity", "[", 
+             RowBox[{"\"Isotope\"", ",", "\"Carbon12\""}], "]"}],
+           "\"Entity[\\\"Isotope\\\", \\\"Carbon12\\\"]\"","\"isotope\""},
+          "Entity"], "[", 
+         TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+             RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+           "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+          "EntityProperty"], "]"}]}]}], ")"}], 
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], "^", "2"}]}], ",", "\"\<MeV\>\""}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  RowBox[{"-", "0.11282988635054302`"}],"\"MeV\"","megaelectronvolts",
+   "\"Megaelectronvolts\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c) Exothermic", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[{"\"oxygen-16\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"Oxygen16\""}], "]"}],
+          "\"Entity[\\\"Isotope\\\", \\\"Oxygen16\\\"]\"","\"isotope\""},
+         "Entity"], "[", 
+        TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+          "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+         "EntityProperty"], "]"}], "+", 
+       RowBox[{
+        TemplateBox[{"\"helium-4\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"Helium4\""}], "]"}],
+          "\"Entity[\\\"Isotope\\\", \\\"Helium4\\\"]\"","\"isotope\""},
+         "Entity"], "[", 
+        TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+          "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+         "EntityProperty"], "]"}], "-", 
+       RowBox[{
+        TemplateBox[{"\"hydrogen\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"Hydrogen1\""}], "]"}],
+          "\"Entity[\\\"Isotope\\\", \\\"Hydrogen1\\\"]\"","\"isotope\""},
+         "Entity"], "[", 
+        TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+          "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+         "EntityProperty"], "]"}], "-", 
+       RowBox[{
+        TemplateBox[{"\"fluorine-19\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"Fluorine19\""}], "]"}],
+          "\"Entity[\\\"Isotope\\\", \\\"Fluorine19\\\"]\"","\"isotope\""},
+         "Entity"], "[", 
+        TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+            RowBox[{"\"Isotope\"", ",", "\"AtomicMass\""}], "]"}],
+          "\"EntityProperty[\\\"Isotope\\\", \\\"AtomicMass\\\"]\""},
+         "EntityProperty"], "]"}]}], ")"}], 
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], "^", "2"}]}], ",", "\"\<MeV\>\""}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "8.1136697350131422806`7.229943750093369","\"MeV\"","megaelectronvolts",
+   "\"Megaelectronvolts\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q4) Range of Stellar Lifespans", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a) Lowest mass star", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{".007", "*", ".072", 
+    RowBox[{
+     TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+       "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+      "Entity"], "[", "\"\<Mass\>\"", "]"}], 
+    RowBox[{
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], "^", "2"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"10", "^", 
+        RowBox[{"-", "4.3"}]}], " ", 
+       RowBox[{
+        TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+          "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+         "Entity"], "[", "\"\<Luminosity\>\"", "]"}]}], ")"}]}]}], ",", 
+   "\"\<Years\>\""}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"1.4809543471654044`*^14","\"yr\"","years","\"Years\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b) Highest mass star", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{".007", "*", ".1", "*", "85", 
+    RowBox[{
+     TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+       "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+      "Entity"], "[", "\"\<Mass\>\"", "]"}], 
+    RowBox[{
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], "^", "2"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"10", "^", "6.006"}], " ", 
+       RowBox[{
+        TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+            RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+          "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+         "Entity"], "[", "\"\<Luminosity\>\"", "]"}]}], ")"}]}]}], ",", 
+   "\"\<Years\>\""}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"864227.5369888206`","\"yr\"","years","\"Years\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q5) Lifespan of Sun", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Energy output divided by luminosity", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+        "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+       "Entity"], "[", "\"\<Mass\>\"", "]"}], "/", 
+     RowBox[{
+      TemplateBox[{"\"hydrogen\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Element\"", ",", "\"Hydrogen\""}], "]"}],
+        "\"Entity[\\\"Element\\\", \\\"Hydrogen\\\"]\"","\"element\""},
+       "Entity"], "[", 
+      TemplateBox[{"\"atomic mass\"",RowBox[{"EntityProperty", "[", 
+          RowBox[{"\"Element\"", ",", "\"AtomicMass\""}], "]"}],
+        "\"EntityProperty[\\\"Element\\\", \\\"AtomicMass\\\"]\""},
+       "EntityProperty"], "]"}]}], " ", 
+    RowBox[{
+     TemplateBox[{"10","\"eV\"","electronvolts","\"Electronvolts\""},
+      "Quantity"], "/", 
+     RowBox[{
+      TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+          RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+        "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+       "Entity"], "[", "\"\<Luminosity\>\"", "]"}]}]}], ",", 
+   "\"\<Years\>\""}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "156854.2706821989437376601`3.9950928446358467","\"yr\"","years",
+   "\"Years\""},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Therefore most of the Sun\[CloseCurlyQuote]s energy \
+cannot be from chemical reactions since we know that the lifespan of the sun \
+is many orders of magnitudes greater than the above result.",
+ FontWeight->"Bold"]], "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1600, 827},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PrintingMargins"->{{36., 36.}, {46.800000000000004`, 50.4}}},
+Magnification:>1.6 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 302, 11, 192, "Title"],
+Cell[885, 35, 391, 14, 105, "Chapter"],
+Cell[CellGroupData[{
+Cell[1301, 53, 50, 0, 81, "Chapter"],
+Cell[CellGroupData[{
+Cell[1376, 57, 53, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[1454, 61, 49, 0, 68, "Subsection"],
+Cell[1506, 63, 775, 23, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2318, 91, 72, 0, 68, "Subsection"],
+Cell[2393, 93, 407, 12, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2837, 110, 54, 0, 68, "Subsection"],
+Cell[2894, 112, 853, 23, 48, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3796, 141, 54, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[3875, 145, 36, 0, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[3936, 149, 179, 5, 48, "Input"],
+Cell[4118, 156, 908, 21, 254, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5075, 183, 40, 0, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[5140, 187, 635, 18, 48, "Input"],
+Cell[5778, 207, 80, 1, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5919, 215, 54, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[5998, 219, 36, 0, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[6059, 223, 179, 5, 48, "Input"],
+Cell[6241, 230, 1298, 29, 366, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7588, 265, 40, 0, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[7653, 269, 635, 18, 48, "Input"],
+Cell[8291, 289, 79, 1, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8431, 297, 46, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[8502, 301, 174, 6, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[8701, 311, 642, 18, 48, "Input"],
+Cell[9346, 331, 297, 8, 72, "Output"]
+}, Open  ]],
+Cell[9658, 342, 395, 15, 48, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10090, 362, 384, 15, 72, "Subsection"],
+Cell[CellGroupData[{
+Cell[10499, 381, 299, 7, 48, "Input"],
+Cell[10801, 390, 78, 1, 48, "Output"]
+}, Open  ]],
+Cell[10894, 394, 300, 10, 50, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11255, 411, 43, 0, 101, "Chapter"],
+Cell[CellGroupData[{
+Cell[11323, 415, 48, 0, 68, "Subsection"],
+Cell[11374, 417, 153, 4, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11564, 426, 54, 0, 68, "Subsection"],
+Cell[11621, 428, 373, 11, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12031, 444, 54, 0, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[12110, 448, 375, 12, 48, "Input"],
+Cell[12488, 462, 326, 9, 74, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12863, 477, 166, 6, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[13054, 487, 206, 7, 48, "Input"],
+Cell[13263, 496, 456, 13, 76, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13768, 515, 184, 6, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[13977, 525, 827, 25, 48, "Input"],
+Cell[14807, 552, 506, 14, 76, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15362, 572, 43, 0, 68, "Subsection"],
+Cell[15408, 574, 104, 2, 48, "Text"],
+Cell[CellGroupData[{
+Cell[15537, 580, 369, 12, 48, "Input"],
+Cell[15909, 594, 669, 20, 158, "Output"]
+}, Open  ]],
+Cell[16593, 617, 586, 21, 48, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17228, 644, 51, 0, 101, "Chapter"],
+Cell[CellGroupData[{
+Cell[17304, 648, 32, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[17361, 652, 1418, 31, 67, "Input"],
+Cell[18782, 685, 134, 3, 54, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18965, 694, 33, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[19023, 698, 1929, 41, 163, "Input"],
+Cell[20955, 741, 154, 4, 54, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21158, 751, 32, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[21215, 755, 2363, 48, 167, "Input"],
+Cell[23581, 805, 158, 4, 54, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23800, 816, 49, 0, 101, "Chapter"],
+Cell[CellGroupData[{
+Cell[23874, 820, 38, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[23937, 824, 963, 25, 67, "Input"],
+Cell[24903, 851, 110, 2, 63, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25062, 859, 39, 0, 99, "Section"],
+Cell[CellGroupData[{
+Cell[25126, 863, 950, 24, 67, "Input"],
+Cell[26079, 889, 105, 2, 57, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26245, 898, 38, 0, 101, "Chapter"],
+Cell[CellGroupData[{
+Cell[26308, 902, 57, 0, 68, "Subsection"],
+Cell[CellGroupData[{
+Cell[26390, 906, 1180, 27, 115, "Input"],
+Cell[27573, 935, 139, 4, 63, "Output"]
+}, Open  ]],
+Cell[27727, 942, 249, 3, 79, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

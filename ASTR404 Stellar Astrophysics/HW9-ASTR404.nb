@@ -1,0 +1,1135 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     37853,       1127]
+NotebookOptionsPosition[     34566,       1002]
+NotebookOutlinePosition[     35135,       1024]
+CellTagsIndexPosition[     35092,       1021]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 9 - ASTR404\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.1 on 11-4-2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "a) Equation for ",
+ Cell[BoxData[
+  OverscriptBox["M", "."]]]
+}], "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqR", "=", 
+  RowBox[{
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"M", "[", "t", "]"}], ",", "t"}], "]"}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "4."}], " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "13"}]}], " ", "\[Eta]", " ", 
+    RowBox[{"(", " ", 
+     RowBox[{"L", "/", "LSun"}], ")"}], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"M", "[", "t", "]"}], "/", 
+         SuperscriptBox["R", "2"]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"MSun", "/", 
+         SuperscriptBox["RSun", "2"]}], ")"}]}], ")"}], 
+     RowBox[{"-", "1"}]], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"R", "/", "RSun"}], ")"}], 
+     RowBox[{"-", "1"}]], " ", "MSun"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["M", "\[Prime]",
+    MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"4.`*^-13", " ", "L", " ", 
+     SuperscriptBox["MSun", "2"], " ", "R", " ", "\[Eta]"}], 
+    RowBox[{"LSun", " ", "RSun", " ", 
+     RowBox[{"M", "[", "t", "]"}]}]]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b) Solving for M(t)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"solM", "=", 
+  RowBox[{
+   RowBox[{"DSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"eqR", ",", 
+       RowBox[{
+        RowBox[{"M", "[", "0", "]"}], "\[Equal]", "M0"}]}], "}"}], ",", 
+     RowBox[{"M", "[", "t", "]"}], ",", "t"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"M", "[", "t", "]"}], "\[Rule]", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"8.944271909999158`*^-7", " ", 
+     RowBox[{"\[Sqrt]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"1.2499999999999998`*^12", " ", "LSun", " ", 
+         SuperscriptBox["M0", "2"], " ", "RSun"}], "-", 
+        RowBox[{"1.`", " ", "L", " ", 
+         SuperscriptBox["MSun", "2"], " ", "R", " ", "t", " ", "\[Eta]"}]}], 
+       ")"}]}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     SqrtBox["LSun"], " ", 
+     SqrtBox["RSun"]}], ")"}]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "c) Finding t such that M(t) = .6 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["M", "\[CircleDot]"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"t", "\[Rule]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        TemplateBox[{".6",SubscriptBox[
+           StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+          "solar masses","\"SolarMass\""},
+         "Quantity"], "==", 
+        RowBox[{"solM", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"LSun", "->", 
+          TemplateBox[{"1",SubsuperscriptBox[
+             StyleBox["\"\[ScriptCapitalL]\"", Italic, StripOnInput -> False],
+              "\"N\"", "\"\[Sun]\""],"nominal solar luminosities",
+            "\"NominalSolarLuminosity\""},
+           "Quantity"]}], ",", 
+         RowBox[{"RSun", "->", 
+          TemplateBox[{"1",SubsuperscriptBox[
+             StyleBox["\"\[ScriptCapitalR]\"", Italic, StripOnInput -> False],
+              "\"\[Sun]\"", 
+             StyleBox["\"N\"", Italic, StripOnInput -> False]],
+            "nominal solar radii","\"NominalSolarRadius\""},
+           "Quantity"]}], ",", 
+         RowBox[{"MSun", "->", 
+          TemplateBox[{"1",SubscriptBox[
+             StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+            "solar masses","\"SolarMass\""},
+           "Quantity"]}], ",", 
+         RowBox[{"L", "\[Rule]", 
+          TemplateBox[{"7000",SubsuperscriptBox[
+             StyleBox["\"\[ScriptCapitalL]\"", Italic, StripOnInput -> False],
+              "\"N\"", "\"\[Sun]\""],"nominal solar luminosities",
+            "\"NominalSolarLuminosity\""},
+           "Quantity"]}], ",", 
+         RowBox[{"R", "->", 
+          TemplateBox[{"310",SubsuperscriptBox[
+             StyleBox["\"\[ScriptCapitalR]\"", Italic, StripOnInput -> False],
+              "\"\[Sun]\"", 
+             StyleBox["\"N\"", Italic, StripOnInput -> False]],
+            "nominal solar radii","\"NominalSolarRadius\""},
+           "Quantity"]}], ",", 
+         RowBox[{"M0", "->", 
+          TemplateBox[{"1",SubscriptBox[
+             StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+            "solar masses","\"SolarMass\""},
+           "Quantity"]}], ",", 
+         RowBox[{"\[Eta]", "\[Rule]", "1"}]}], "}"}]}], ",", "t"}], "]"}], 
+    "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], 
+   TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1],"\"yr\"","years","\"Years\""},
+    "Quantity"]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"t", "\[Rule]", 
+  TemplateBox[{"368663.594470046`","\"yr\"","years","\"Years\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a) Finding central density and temperature", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s2", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Rho]", "c"], "->", 
+     RowBox[{"UnitConvert", "[", 
+      RowBox[{"5.991", " ", "3", " ", 
+       RowBox[{
+        TemplateBox[{".98",SubscriptBox[
+           StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+          "solar masses","\"SolarMass\""},
+         "Quantity"], "/", 
+        RowBox[{"(", 
+         RowBox[{"4", " ", "\[Pi]", " ", 
+          RowBox[{
+           TemplateBox[{".0086",SubsuperscriptBox[
+              StyleBox[
+              "\"\[ScriptCapitalR]\"", Italic, StripOnInput -> False], 
+              "\"\[Sun]\"", 
+              StyleBox["\"N\"", Italic, StripOnInput -> False]],
+             "nominal solar radii","\"NominalSolarRadius\""},
+            "Quantity"], "^", "3"}]}], ")"}]}]}], "]"}]}], ",", 
+    RowBox[{
+     SubscriptBox["T", "c"], "->", 
+     RowBox[{
+      TemplateBox[{RowBox[{"4", " ", 
+          SuperscriptBox["10", "7"]}],"\"K\"","kelvins","\"Kelvins\""},
+       "Quantity"], " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", " ", 
+          RowBox[{
+           TemplateBox[{".056",SubsuperscriptBox[
+              StyleBox[
+              "\"\[ScriptCapitalL]\"", Italic, StripOnInput -> False], 
+              "\"N\"", "\"\[Sun]\""],"nominal solar luminosities",
+             "\"NominalSolarLuminosity\""},
+            "Quantity"], "/", 
+           TemplateBox[{"1",SubsuperscriptBox[
+              StyleBox[
+              "\"\[ScriptCapitalL]\"", Italic, StripOnInput -> False], 
+              "\"N\"", "\"\[Sun]\""],"nominal solar luminosities",
+             "\"NominalSolarLuminosity\""},
+            "Quantity"]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{".98",SubscriptBox[
+              StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+             "solar masses","\"SolarMass\""},
+            "Quantity"], "/", 
+           TemplateBox[{"1",SubscriptBox[
+              StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+             "solar masses","\"SolarMass\""},
+            "Quantity"]}], ")"}]}], ")"}], "^", 
+       RowBox[{"(", 
+        RowBox[{"2", "/", "7"}], ")"}]}]}]}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Rho]", "c"], "\[Rule]", 
+    TemplateBox[{
+     "1.3013281399088184`*^10",
+      RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "3"]}],"kilograms per meter cubed",
+      FractionBox["\"Kilograms\"", 
+       SuperscriptBox["\"Meters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{
+    SubscriptBox["T", "c"], "\[Rule]", 
+    TemplateBox[{"1.765656685310671`*^7","\"K\"","kelvins","\"Kelvins\""},
+     "Quantity"]}]}], "}"}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[" Luminosity as a function of X", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sL", "=", 
+  RowBox[{
+   RowBox[{"L", "==", 
+    RowBox[{
+     RowBox[{"10", "^", 
+      RowBox[{"-", "36"}]}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       TemplateBox[{".98",SubscriptBox[
+          StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+         "solar masses","\"SolarMass\""},
+        "Quantity"], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"4", "/", "3"}], " ", "\[Pi]", " ", 
+         RowBox[{
+          TemplateBox[{".0086",SubsuperscriptBox[
+             StyleBox["\"\[ScriptCapitalR]\"", Italic, StripOnInput -> False],
+              "\"\[Sun]\"", 
+             StyleBox["\"N\"", Italic, StripOnInput -> False]],
+            "nominal solar radii","\"NominalSolarRadius\""},
+           "Quantity"], "^", "3"}]}], ")"}]}], ")"}], " ", 
+     RowBox[{"X", "^", "2"}], " ", 
+     RowBox[{
+      SubscriptBox["T", "c"], "^", "4"}], " ", 
+     TemplateBox[{".98",SubscriptBox[
+        StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+       "solar masses","\"SolarMass\""},
+      "Quantity"], " ", 
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],"\"W\"","watts","\"Watts\""},
+       "Quantity"], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],RowBox[{
+            SuperscriptBox["\"kg\"", "2"], "\[NegativeMediumSpace]", "\"/\"", 
+            "\[InvisibleSpace]", 
+            SuperscriptBox["\"m\"", "3"]}],
+          "kilograms squared per meter cubed",FractionBox[
+           SuperscriptBox["\"Kilograms\"", "2"], 
+           SuperscriptBox["\"Meters\"", "3"]]},
+         "Quantity"], 
+        TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],RowBox[{
+            SuperscriptBox["\"K\"", "4"]}],"kelvins to the fourth",
+          SuperscriptBox["\"Kelvins\"", "4"]},
+         "Quantity"]}], ")"}]}]}]}], "/.", "s2"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"L", "\[Equal]", 
+  RowBox[{
+   SuperscriptBox["X", "2"], " ", 
+   RowBox[{"(", 
+    TemplateBox[{"4.1138649312411795`*^32","\"W\"","watts","\"Watts\""},
+     "Quantity"], ")"}]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Upper bound of X", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"sL", "/.", 
+     RowBox[{"L", "->", 
+      TemplateBox[{".056",SubsuperscriptBox[
+         StyleBox["\"\[ScriptCapitalL]\"", Italic, StripOnInput -> False], 
+         "\"N\"", "\"\[Sun]\""],"nominal solar luminosities",
+        "\"NominalSolarLuminosity\""},
+       "Quantity"]}]}], ",", "X"}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "1", ",", "2"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData["0.0002288687675132648`"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a) Velocity at which \[Gamma] = 1.1", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryParseResults",
+  DynamicModuleBox[{Typeset`q$$ = "find velocity if lorentz factor is 1.1", 
+   Typeset`newq$$ = "find velocity if lorentz factor is 1.1", 
+   Typeset`chosen$$ = "FormulaData[\"LorentzFactor\", {\"\[Gamma]\" -> 1.1}]",
+    Typeset`open$$ = False}, 
+   PaneSelectorBox[{False->
+    DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+     WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+     TagBox[
+      FrameBox[
+       TagBox[GridBox[{
+          {
+           InputFieldBox[Dynamic[Typeset`newq$$], String,
+            Appearance->None,
+            BaseStyle->{"CalculateInput"},
+            ContinuousAction->True,
+            Enabled->True,
+            FieldSize->{{1, 40}, {1, 
+               DirectedInfinity[1]}},
+            TrapSelection->False], 
+           ItemBox[
+            ButtonBox[
+             PaneSelectorBox[{True->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "OrangeSquarePlus"],
+                 ImageSizeCache->{7.199999999999999, {3., 4.92}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ], False->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "GraySquarePlus"],
+                 ImageSizeCache->{7.199999999999999, {3., 4.92}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ]}, Dynamic[WolframAlphaClient`Private`show$$],
+              ImageSize->All],
+             Appearance->None,
+             ButtonFunction:>(Quiet[
+                WolframAlpha[]]; If[
+                Or[
+                 CurrentValue["OptionKey"], 
+                 CurrentValue["AltKey"]], SelectionMove[
+                  ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                  Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                   "TextForm"], All], Typeset`open$$ = True; 
+                WolframAlphaClient`Private`extrudeFromFastParse[
+                 "find velocity if lorentz factor is 1.1", 
+                  Defer[
+                   FormulaData["LorentzFactor", {"\[Gamma]" -> 1.1}]], 
+                  "Fast parse"]; Typeset`open$$ = False]),
+             Evaluator->Automatic,
+             Method->"Queued"],
+            Alignment->{Right, Top},
+            StripOnInput->False]},
+          {
+           PaneBox[
+            TagBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                StyleBox[
+                 RowBox[{"FormulaData", "[", 
+                  RowBox[{"\"\<LorentzFactor\>\"", ",", " ", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<\[Gamma]\>\"", " ", "->", " ", "1.1"}], 
+                    "}"}]}], "]"}],
+                 StripOnInput->False,
+                 NumberMarks->False], True->
+                StyleBox[
+                 RowBox[{"FormulaData", "[", 
+                  RowBox[{"\<\"LorentzFactor\"\>", ",", " ", 
+                   RowBox[{"{", 
+                    RowBox[{"\<\"\[Gamma]\"\>", " ", "->", " ", "1.1"}], 
+                    "}"}]}], "]"}],
+                 StripOnInput->False,
+                 ShowSyntaxStyles->False,
+                 NumberMarks->False,
+                 FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                BaseStyle->{ShowStringCharacters -> True},
+                FrameMargins->0,
+                ImageSize->Automatic],
+               Alignment->Left,
+               Appearance->None,
+               BaseStyle->{},
+               ButtonFunction:>(SelectionMove[
+                  ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                   BoxData[
+                    RowBox[{"FormulaData", "[", 
+                    RowBox[{"\"LorentzFactor\"", ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\[Gamma]\"", " ", "->", " ", "1.1"}], "}"}]}], 
+                    "]"}]], "Input"], All]; SelectionMove[
+                  ButtonNotebook[], After, CellContents]),
+               Evaluator->Automatic,
+               ImageSize->Automatic,
+               Method->"Preemptive"],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+              "Tooltip"]& ],
+            AppearanceElements->{},
+            BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+            ImageSize->{Automatic, {1, 100}},
+            Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         BaselinePosition->{1, 1},
+         FrameStyle->GrayLevel[0.85],
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxDividers->{
+          "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       Alignment->Top,
+       Background->Dynamic[
+         FEPrivate`If[
+          FEPrivate`And[
+           FEPrivate`SameQ[
+            FEPrivate`Head[Typeset`newq$$], String], 
+           FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+          RGBColor[1., 0.975, 0.95], 
+          GrayLevel[1]]],
+       BaselinePosition->Baseline,
+       FrameStyle->GrayLevel[0.85],
+       ImageSize->Automatic,
+       RoundingRadius->5,
+       StripOnInput->False],
+      EventHandlerTag[{
+       "MouseEntered" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, True], "MouseExited" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+        "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+     DynamicModuleValues:>{}], True->
+    TagBox[GridBox[{
+       {
+        DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+         WolframAlphaClient`Private`assumptionsQ$$ = False}, 
+         TagBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               InputFieldBox[Dynamic[Typeset`newq$$], String,
+                Appearance->None,
+                BaseStyle->{"CalculateInput"},
+                ContinuousAction->True,
+                Enabled->True,
+                FieldSize->{{1, 40}, {1, 
+                   DirectedInfinity[1]}},
+                TrapSelection->False], 
+               ItemBox[
+                ButtonBox[
+                 PaneSelectorBox[{True->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "OrangeSquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ], False->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "GraySquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ]}, Dynamic[
+                  WolframAlphaClient`Private`show$$],
+                  ImageSize->All],
+                 Appearance->None,
+                 ButtonFunction:>(Quiet[
+                    WolframAlpha[]]; If[
+                    Or[
+                    CurrentValue["OptionKey"], 
+                    CurrentValue["AltKey"]], SelectionMove[
+                    ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                    NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                    "TextForm"], All], Typeset`open$$ = True; 
+                    WolframAlphaClient`Private`extrudeFromFastParse[
+                    "find velocity if lorentz factor is 1.1", 
+                    Defer[
+                    FormulaData["LorentzFactor", {"\[Gamma]" -> 1.1}]], 
+                    "Fast parse"]; Typeset`open$$ = False]),
+                 Evaluator->Automatic,
+                 Method->"Queued"],
+                Alignment->{Right, Top},
+                StripOnInput->False]},
+              {
+               PaneBox[
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   PaneSelectorBox[{False->
+                    StyleBox[
+                    RowBox[{"FormulaData", "[", 
+                    RowBox[{"\<\"LorentzFactor\"\>", ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\[Gamma]\"\>", " ", "->", " ", "1.1"}], 
+                    "}"}]}], "]"}],
+                    StripOnInput->False,
+                    NumberMarks->False], True->
+                    StyleBox[
+                    RowBox[{"FormulaData", "[", 
+                    RowBox[{"\<\"LorentzFactor\"\>", ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\[Gamma]\"\>", " ", "->", " ", "1.1"}], 
+                    "}"}]}], "]"}],
+                    StripOnInput->False,
+                    ShowSyntaxStyles->False,
+                    NumberMarks->False,
+                    FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    BaseStyle->{ShowStringCharacters -> True},
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                   Alignment->Left,
+                   Appearance->None,
+                   BaseStyle->{},
+                   ButtonFunction:>(SelectionMove[
+                    ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    BoxData[
+                    RowBox[{"FormulaData", "[", 
+                    RowBox[{"\"LorentzFactor\"", ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\[Gamma]\"", " ", "->", " ", "1.1"}], "}"}]}], 
+                    "]"}]], "Input"], All]; SelectionMove[
+                    ButtonNotebook[], After, CellContents]),
+                   Evaluator->Automatic,
+                   ImageSize->Automatic,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+                  "Tooltip"]& ],
+                AppearanceElements->{},
+                BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+                ImageSize->{Automatic, {1, 100}},
+                Scrollbars->{False, Automatic}], "\[SpanFromLeft]"}
+             },
+             AutoDelete->False,
+             BaselinePosition->{1, 1},
+             FrameStyle->GrayLevel[0.85],
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxDividers->{
+              "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           Alignment->Top,
+           Background->Dynamic[
+             FEPrivate`If[
+              FEPrivate`And[
+               FEPrivate`SameQ[
+                FEPrivate`Head[Typeset`newq$$], String], 
+               FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+              RGBColor[1., 0.975, 0.95], 
+              GrayLevel[1]]],
+           BaselinePosition->Baseline,
+           FrameStyle->GrayLevel[0.85],
+           ImageSize->Automatic,
+           RoundingRadius->5,
+           StripOnInput->False],
+          
+          EventHandlerTag[{
+           "MouseEntered" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, True], 
+            "MouseExited" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+            "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+         DynamicModuleValues:>{}]},
+       {
+        InterpretationBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "NecklaceAnimator"][20]],
+          AnimatorBoxOptions->{ImageSize->20}],
+         Animator[Appearance -> "Necklace", ImageSize -> 20],
+         BaseStyle->{"Deploy"}]}
+      },
+      BaselinePosition->{1, 1},
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+     "Column"]}, Dynamic[
+     TrueQ[Typeset`open$$]],
+    BaseStyle->{Deployed -> True},
+    ImageSize->Automatic],
+   DynamicModuleValues:>{}],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   TemplateBox[{StyleBox["\"v\""],"\"Speed\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " speed"}], TooltipStyle -> 
+      "TextStyling"]& )], "\[Equal]", 
+   TemplateBox[{
+    RowBox[{"-", "1.2489287559653358`*^8"}],
+     RowBox[{"\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+       "\"s\""}],"meters per second",FractionBox["\"Meters\"", "\"Seconds\""]},
+    "Quantity"]}], "||", 
+  RowBox[{
+   TemplateBox[{StyleBox["\"v\""],"\"Speed\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " speed"}], TooltipStyle -> 
+      "TextStyling"]& )], "\[Equal]", 
+   TemplateBox[{
+    "1.2489287559653358`*^8",
+     RowBox[{"\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+       "\"s\""}],"meters per second",FractionBox["\"Meters\"", "\"Seconds\""]},
+    "Quantity"]}]}]], "Output"]
+}, Open  ]],
+
+Cell["(Soon I\[CloseCurlyQuote]ll be able to solve every question like this \
+\[HappySmiley])", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b) Density of CO white dwarf", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Solving for \[Rho] such that momentum is Fermi momentum", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Rho]", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Gamma]", " ", 
+         TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+            StyleBox["\"m\"", Italic, StripOnInput -> False], 
+            StyleBox["\"e\"", Plain, StripOnInput -> False]],
+           "electron masses","\"ElectronMass\""},
+          "Quantity"], " ", "v"}], "\[Equal]", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{"3", " ", "n", " ", 
+            SuperscriptBox[
+             
+             TemplateBox[{
+              InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+               "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+               "\"PlanckConstant\""},
+              "Quantity"], "3"]}], 
+           RowBox[{"8", " ", "\[Pi]"}]], ")"}], 
+         RowBox[{"1", "/", "3"}]]}], "/.", 
+       RowBox[{"n", "\[Rule]", 
+        FractionBox["\[Rho]", 
+         RowBox[{"\[Mu]", " ", 
+          TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+             StyleBox["\"m\"", Italic, StripOnInput -> False], 
+             StyleBox["\"p\"", Plain, StripOnInput -> False]],"proton masses",
+            "\"ProtonMass\""},
+           "Quantity"]}]]}]}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\[Gamma]", "\[Rule]", "1.1"}], ",", 
+        RowBox[{"v", "->", 
+         TemplateBox[{RowBox[{"1.248929", "*", 
+             RowBox[{"10", "^", "8"}]}],
+           RowBox[{"\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+              "\"s\""}],"meters per second",FractionBox[
+           "\"Meters\"", "\"Seconds\""]},
+          "Quantity"]}], ",", 
+        RowBox[{"\[Mu]", "\[Rule]", "2"}]}], "}"}]}], ",", "\[Rho]"}], "]"}], 
+   "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Rho]", "\[Rule]", 
+  TemplateBox[{
+   "1.8881503974384087`*^8",
+    RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+      SuperscriptBox["\"m\"", "3"]}],"kilograms per meter cubed",FractionBox[
+    "\"Kilograms\"", 
+     SuperscriptBox["\"Meters\"", "3"]]},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c) Mass of the white dwarf", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Solving the mass-volume relation for M", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sM", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"M", "/", 
+          TemplateBox[{"1",SubscriptBox[
+             StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+            "solar masses","\"SolarMass\""},
+           "Quantity"]}], ")"}], 
+        RowBox[{
+         RowBox[{"M", "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"4", "/", "3"}], "\[Pi]", " ", "\[Rho]"}], ")"}]}], "/", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           TemplateBox[{"1",SubsuperscriptBox[
+              StyleBox[
+              "\"\[ScriptCapitalR]\"", Italic, StripOnInput -> False], 
+              "\"\[Sun]\"", 
+              StyleBox["\"N\"", Italic, StripOnInput -> False]],
+             "nominal solar radii","\"NominalSolarRadius\""},
+            "Quantity"], ")"}], "3"]}]}], "\[Equal]", 
+       RowBox[{"1.98", " ", 
+        RowBox[{"10", "^", 
+         RowBox[{"-", "6"}]}]}]}], "/.", "s\[Rho]"}], ",", "M"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"M", "\[Rule]", 
+  TemplateBox[{"1.0239621331841265`*^30","\"kg\"","kilograms","\"Kilograms\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q4)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Computing Eddington Luminosity", "Subsection"],
+
+Cell[TextData[StyleBox["Assuming opacity ~ .02 and using previous mass:",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LEdd", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"4", " ", "\[Pi]", " ", 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"G\"", Italic, StripOnInput -> False],
+        "Newtonian gravitational constants","\"GravitationalConstant\""},
+       "Quantity"], " ", "M", " ", 
+      RowBox[{
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+         "\"SpeedOfLight\""},
+        "Quantity"], " ", "/", 
+       TemplateBox[{"0.02",RowBox[{
+           SuperscriptBox["\"m\"", "2"], "\[NegativeMediumSpace]", "\"/\"", 
+           "\[InvisibleSpace]", "\"kg\""}],"meters squared per kilogram",
+         FractionBox[
+          SuperscriptBox["\"Meters\"", "2"], "\"Kilograms\""]},
+        "Quantity"]}]}], "/.", "sM"}], ",", "\"\<Watts\>\""}], 
+   "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"1.2872884594376415`*^31","\"W\"","watts","\"Watts\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Time span", "Subsection"],
+
+Cell[TextData[StyleBox["Dividing energy produced by luminosity:",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"10", "^", 
+     RowBox[{"-", "4"}]}], " ", "*", ".007", " ", 
+    TemplateBox[{"1",SubscriptBox[
+       StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+      "solar masses","\"SolarMass\""},
+     "Quantity"], 
+    RowBox[{
+     RowBox[{
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], "^", "2"}], "/", "LEdd"}]}], ",", "\"\<Years\>\""}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"308.15439205592935`","\"yr\"","years","\"Years\""},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["This is much greater than a couple of years. \
+Therefore not all the Hydrogen gets fused.",
+ FontWeight->"Bold"]], "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1590, 814},
+WindowMargins->{{Automatic, -2}, {Automatic, 1}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->0.75,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PrintingMargins"->{{36, 36}, {54, 54}}},
+Magnification:>1.7 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (October 14, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 302, 11, 203, "Title"],
+Cell[885, 35, 326, 10, 77, "Chapter"],
+Cell[CellGroupData[{
+Cell[1236, 49, 22, 0, 87, "Chapter"],
+Cell[CellGroupData[{
+Cell[1283, 53, 94, 4, 109, "Section"],
+Cell[CellGroupData[{
+Cell[1402, 61, 796, 26, 57, "Input"],
+Cell[2201, 89, 355, 10, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2605, 105, 38, 0, 107, "Section"],
+Cell[CellGroupData[{
+Cell[2668, 109, 354, 11, 51, "Input"],
+Cell[3025, 122, 571, 17, 95, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3645, 145, 184, 6, 110, "Section"],
+Cell[CellGroupData[{
+Cell[3854, 155, 2466, 58, 142, "Input"],
+Cell[6323, 215, 134, 3, 59, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6518, 225, 22, 0, 108, "Chapter"],
+Cell[CellGroupData[{
+Cell[6565, 229, 61, 0, 107, "Section"],
+Cell[CellGroupData[{
+Cell[6651, 233, 2271, 57, 68, "Input"],
+Cell[8925, 292, 563, 15, 68, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9537, 313, 21, 0, 107, "Section"],
+Cell[CellGroupData[{
+Cell[9583, 317, 52, 0, 73, "Subsection"],
+Cell[CellGroupData[{
+Cell[9660, 321, 1920, 47, 68, "Input"],
+Cell[11583, 370, 216, 6, 68, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11848, 382, 38, 0, 73, "Subsection"],
+Cell[CellGroupData[{
+Cell[11911, 386, 459, 12, 67, "Input"],
+Cell[12373, 400, 49, 0, 51, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12495, 408, 22, 0, 108, "Chapter"],
+Cell[CellGroupData[{
+Cell[12542, 412, 54, 0, 107, "Section"],
+Cell[CellGroupData[{
+Cell[12621, 416, 14234, 342, 120, "WolframAlphaShortInput"],
+Cell[26858, 760, 1100, 25, 63, "Output"]
+}, Open  ]],
+Cell[27973, 788, 103, 1, 50, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28113, 794, 47, 0, 107, "Section"],
+Cell[CellGroupData[{
+Cell[28185, 798, 77, 0, 73, "Subsection"],
+Cell[CellGroupData[{
+Cell[28287, 802, 1918, 48, 102, "Input"],
+Cell[30208, 852, 334, 8, 65, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30603, 867, 45, 0, 107, "Section"],
+Cell[CellGroupData[{
+Cell[30673, 871, 60, 0, 73, "Subsection"],
+Cell[CellGroupData[{
+Cell[30758, 875, 1155, 32, 68, "Input"],
+Cell[31916, 909, 148, 3, 65, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32137, 920, 22, 0, 108, "Chapter"],
+Cell[CellGroupData[{
+Cell[32184, 924, 52, 0, 73, "Subsection"],
+Cell[32239, 926, 104, 1, 52, "Text"],
+Cell[CellGroupData[{
+Cell[32368, 931, 962, 23, 68, "Input"],
+Cell[33333, 956, 109, 2, 62, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33491, 964, 31, 0, 73, "Subsection"],
+Cell[33525, 966, 96, 1, 52, "Text"],
+Cell[CellGroupData[{
+Cell[33646, 971, 610, 17, 59, "Input"],
+Cell[34259, 990, 106, 2, 59, "Output"]
+}, Open  ]],
+Cell[34380, 995, 146, 2, 52, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,1482 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     39729,       1474]
+NotebookOptionsPosition[     32854,       1221]
+NotebookOutlinePosition[     33426,       1243]
+CellTagsIndexPosition[     33383,       1240]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 6 - ASTR404\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0 on 10-6-2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Density in terms of radius", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"s\[Rho]", ":=", 
+  RowBox[{
+   RowBox[{"\[Rho]", "[", "r_", "]"}], "\[Rule]", 
+   RowBox[{
+    SubscriptBox["\[Rho]", "c"], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox["r", 
+       SubscriptBox["R", "*"]]}], ")"}]}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Nuclear energy production rate", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"s\[Epsilon]", ":=", 
+  RowBox[{
+   RowBox[{"\[Epsilon]", "[", "r_", "]"}], "\[Rule]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"r", "<", 
+      FractionBox[
+       SubscriptBox["R", "*"], "5"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[Epsilon]", "c"], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        FractionBox["r", 
+         FractionBox[
+          SubscriptBox["R", "*"], "5"]]}], ")"}]}], ",", "0"}], 
+    "]"}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Total energy produced per second:", "Subsection"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"L", "\[LongEqual]", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", 
+     SubscriptBox["R", "*"]], 
+    RowBox[{
+     RowBox[{"4", " ", "\[Pi]", " ", 
+      SuperscriptBox["r", "2"], " ", 
+      RowBox[{"\[Rho]", "(", "r", ")"}], " ", 
+      RowBox[{"\[Epsilon]", "(", "r", ")"}]}], 
+     RowBox[{"\[DifferentialD]", "r"}]}]}]}], 
+  TraditionalForm]], "DisplayFormula"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Evaluating the integral:", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sL", "=", 
+  RowBox[{"L", "\[Rule]", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"4", " ", "\[Pi]", " ", 
+       SuperscriptBox["r", "2"], " ", 
+       RowBox[{"\[Epsilon]", "[", "r", "]"}], " ", 
+       RowBox[{"\[Rho]", "[", "r", "]"}]}], "/.", 
+      RowBox[{"{", 
+       RowBox[{"s\[Rho]", ",", "s\[Epsilon]"}], "}"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0.", ",", 
+       SubscriptBox["R", "*"]}], "}"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{
+       SubscriptBox["R", "*"], ">", "0"}]}]}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"L", "\[Rule]", 
+  RowBox[{"0.007372270760424048`", " ", 
+   SubscriptBox["\[Epsilon]", "c"], " ", 
+   SubscriptBox["\[Rho]", "c"], " ", 
+   SubsuperscriptBox["R", "*", "3"]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Degeneracy is important if:", "Subsection"],
+
+Cell[TextData[StyleBox["Fermi energy is greater than thermal energy.",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqe", "=", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{"3", " ", "n", " ", 
+         SuperscriptBox[
+          
+          TemplateBox[{
+           InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+            "\"h\"", Italic, StripOnInput -> False],"Planck constants",
+            "\"PlanckConstant\""},
+           "Quantity"], "3"]}], 
+        RowBox[{"8", " ", "\[Pi]"}]], ")"}], 
+      RowBox[{"2", "/", "3"}]], 
+     RowBox[{"2", " ", 
+      TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+         StyleBox["\"m\"", Italic, StripOnInput -> False], 
+         StyleBox["\"e\"", Plain, StripOnInput -> False]],"electron masses",
+        "\"ElectronMass\""},
+       "Quantity"]}]], ">", 
+    RowBox[{
+     FractionBox["3", "2"], " ", 
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+       "\"k\"", Italic, StripOnInput -> False],"Boltzmann constants",
+       "\"BoltzmannConstant\""},
+      "Quantity"], "Tc"}]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Number density at center given \[Mu]", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"sn", "[", "\[Mu]_", "]"}], ":=", 
+   RowBox[{"n", "\[Rule]", 
+    FractionBox["\[Rho]c", 
+     RowBox[{"\[Mu]", " ", 
+      RowBox[{"(", 
+       TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+          StyleBox["\"m\"", Italic, StripOnInput -> False], 
+          StyleBox["\"p\"", Plain, StripOnInput -> False]],"proton masses",
+         "\"ProtonMass\""},
+        "Quantity"], ")"}]}]]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Scaling relation for central density", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"s\[Rho]c", "=", 
+   RowBox[{
+    RowBox[{"\[Rho]c", "\[Rule]", 
+     RowBox[{"\[Rho]cSun", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox["M", 
+         TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+            StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+           "solar masses","\"SolarMass\""},
+          "Quantity"]], ")"}], 
+       RowBox[{
+        RowBox[{"-", "2"}], "/", "7"}]]}]}], "/.", "\[VeryThinSpace]", 
+    RowBox[{"\[Rho]cSun", "\[Rule]", 
+     TemplateBox[{
+      "160000",RowBox[{
+        "\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+         SuperscriptBox["\"m\"", "3"]}],"kilograms per meter cubed",
+       FractionBox["\"Kilograms\"", 
+        SuperscriptBox["\"Meters\"", "3"]]},
+      "Quantity"]}]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Scaling relation for central temperature", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sT", "=", 
+   RowBox[{
+    RowBox[{"Tc", "\[Rule]", 
+     RowBox[{"TcSun", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox["M", 
+         TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+            StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+           "solar masses","\"SolarMass\""},
+          "Quantity"]], ")"}], 
+       RowBox[{"4", "/", "7"}]]}]}], "/.", "\[VeryThinSpace]", 
+    RowBox[{"TcSun", "\[Rule]", 
+     TemplateBox[{RowBox[{"1.57", " ", 
+         SuperscriptBox["10", "7"]}],"\"K\"","kelvins","\"Kelvins\""},
+      "Quantity"]}]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituting and finding range of M", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Quiet", "@", 
+   RowBox[{"Reduce", "[", 
+    RowBox[{
+     RowBox[{"eqe", "//.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"sn", "[", "1.17", "]"}], ",", "s\[Rho]c", ",", "sT"}], 
+       "}"}]}], ",", "M"}], "]"}]}], "/.", 
+  RowBox[{"m_Quantity", ":>", 
+   RowBox[{"UnitConvert", "[", 
+    RowBox[{"m", ",", "\"\<SolarMass\>\""}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{"0",SubscriptBox[
+     StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+    "solar masses","\"SolarMass\""},
+   "Quantity"], "<", "M", "<", 
+  TemplateBox[{"0.24127328091854994`",SubscriptBox[
+     StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+    "solar masses","\"SolarMass\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Coulomb interaction energy dominates if:", "Subsection"],
+
+Cell[TextData[StyleBox["It is greater than the thermal energy.",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqC", "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"1.9", " ", 
+      SuperscriptBox[
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"e\"", Italic, StripOnInput -> False],"elementary charges",
+         "\"ElementaryCharge\""},
+        "Quantity"], "2"], " ", 
+      SuperscriptBox["n", 
+       RowBox[{"1", "/", "3"}]]}], 
+     RowBox[{"4", " ", "\[Pi]", 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],SubscriptBox[
+        "\"\[CurlyEpsilon]\"", "0"],"electric constants",
+        "\"ElectricConstant\""},
+       "Quantity"]}]], ">", 
+    RowBox[{
+     FractionBox["3", "2"], " ", 
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+       "\"k\"", Italic, StripOnInput -> False],"Boltzmann constants",
+       "\"BoltzmannConstant\""},
+      "Quantity"], "Tc"}]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituting and finding range of M", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Quiet", "@", 
+   RowBox[{"Reduce", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"eqC", "&&", 
+       RowBox[{"M", ">", "0"}]}], "//.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"sn", "[", "1.29", "]"}], ",", "s\[Rho]c", ",", "sT"}], 
+       "}"}]}], ",", "M"}], "]"}]}], "/.", 
+  RowBox[{"m_Quantity", ":>", 
+   RowBox[{"UnitConvert", "[", 
+    RowBox[{"m", ",", "\"\<SolarMass\>\""}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{"0",SubscriptBox[
+     StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+    "solar masses","\"SolarMass\""},
+   "Quantity"], "<", "M", "<", 
+  TemplateBox[{"0.013479657670414402`",SubscriptBox[
+     StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+    "solar masses","\"SolarMass\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Luminosity of a shell", "Subsection"],
+
+Cell[TextData[StyleBox["The luminosity in a shell of mass dm is the nuclear \
+energy generated - heat absorbed:",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[BoxData[
+ RowBox[{"eqL", ":=", 
+  RowBox[{"dL", " ", "\[Rule]", " ", 
+   RowBox[{
+    RowBox[{"\[Epsilon]", " ", "dm"}], "-", 
+    RowBox[{"T", " ", 
+     RowBox[{
+      SuperscriptBox["S", "\[Prime]",
+       MultilineFunction->None], "[", "t", "]"}], "dm"}]}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rate of change in entropy", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqS", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"S", "'"}], "[", "t", "]"}], "->", 
+    RowBox[{
+     SubscriptBox["\[PartialD]", "t"], 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"k", " ", 
+         RowBox[{"Log", "[", 
+          FractionBox[
+           RowBox[{"P", "[", "t", "]"}], 
+           SuperscriptBox[
+            RowBox[{"\[Rho]", "[", "t", "]"}], "\[Gamma]"]], "]"}]}], 
+        RowBox[{"\[Mu]", " ", 
+         SubscriptBox["m", "H"], " ", 
+         RowBox[{"(", 
+          RowBox[{"\[Gamma]", "-", "1"}], ")"}]}]], "+", "const"}], 
+      ")"}]}]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituting this in the first equation", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sL", "=", 
+  RowBox[{"eqL", "/.", "eqS"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"dL", "\[Rule]", 
+  RowBox[{
+   RowBox[{"dm", " ", "\[Epsilon]"}], "-", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"dm", " ", "k", " ", "T", " ", 
+      SuperscriptBox[
+       RowBox[{"\[Rho]", "[", "t", "]"}], "\[Gamma]"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"\[Rho]", "[", "t", "]"}], 
+          RowBox[{"-", "\[Gamma]"}]], " ", 
+         RowBox[{
+          SuperscriptBox["P", "\[Prime]",
+           MultilineFunction->None], "[", "t", "]"}]}], "-", 
+        RowBox[{"\[Gamma]", " ", 
+         RowBox[{"P", "[", "t", "]"}], " ", 
+         SuperscriptBox[
+          RowBox[{"\[Rho]", "[", "t", "]"}], 
+          RowBox[{
+           RowBox[{"-", "1"}], "-", "\[Gamma]"}]], " ", 
+         RowBox[{
+          SuperscriptBox["\[Rho]", "\[Prime]",
+           MultilineFunction->None], "[", "t", "]"}]}]}], ")"}]}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", "\[Mu]", " ", 
+      RowBox[{"P", "[", "t", "]"}], " ", 
+      SubscriptBox["m", "H"]}], ")"}]}]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Checking whether this is equivalent to the given equation", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["dL", "dm"], "==", 
+     RowBox[{"\[Epsilon]", "-", 
+      RowBox[{
+       FractionBox[
+        SuperscriptBox[
+         RowBox[{"\[Rho]", "[", "t", "]"}], 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "\[Gamma]"}]], 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "\[Gamma]"}]], 
+       RowBox[{
+        SubscriptBox["\[PartialD]", "t"], 
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{"P", "[", "t", "]"}], 
+          SuperscriptBox[
+           RowBox[{"\[Rho]", "[", "t", "]"}], "\[Gamma]"]], ")"}]}]}]}]}], "/.",
+     "sL"}], "/.", 
+   RowBox[{"P", "\[Rule]", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"k", " ", "T", " ", 
+        RowBox[{"\[Rho]", "[", "#", "]"}]}], 
+       RowBox[{"\[Mu]", " ", 
+        SubscriptBox["m", "H"]}]], "&"}], ")"}]}]}], "//", 
+  "Simplify"}]], "Input"],
+
+Cell[BoxData["True"], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["QED.",
+ FontWeight->"Bold"]], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q4)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Final density of bubble", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Rho]f", "=", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"\[Rho]", "[", 
+     RowBox[{"r", "+", "dr"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"dr", ",", "0", ",", "1"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"\[Rho]", "[", "r", "]"}], "+", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[Rho]", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}], " ", "dr"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "dr", "]"}], "2"],
+    SeriesData[$CellContext`dr, 0, {}, 0, 2, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`dr, 0, {
+    $CellContext`\[Rho][$CellContext`r], 
+    Derivative[1][$CellContext`\[Rho]][$CellContext`r]}, 0, 2, 1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Gravitational force per unit volume on the bubble", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fg", "=", 
+  RowBox[{"\[Rho]f", " ", "g"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"g", " ", 
+    RowBox[{"\[Rho]", "[", "r", "]"}]}], "+", 
+   RowBox[{"g", " ", 
+    RowBox[{
+     SuperscriptBox["\[Rho]", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}], " ", "dr"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "dr", "]"}], "2"],
+    SeriesData[$CellContext`dr, 0, {}, 0, 2, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`dr, 
+   0, {$CellContext`g $CellContext`\[Rho][$CellContext`r], $CellContext`g 
+    Derivative[1][$CellContext`\[Rho]][$CellContext`r]}, 0, 2, 1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Pressure of gas at final position of bubble", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Rho]gf", "=", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"\[Rho]g", "[", 
+     RowBox[{"r", "+", "dr"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"dr", ",", "0", ",", "1"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"\[Rho]g", "[", "r", "]"}], "+", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[Rho]g", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}], " ", "dr"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "dr", "]"}], "2"],
+    SeriesData[$CellContext`dr, 0, {}, 0, 2, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`dr, 0, {
+    $CellContext`\[Rho]g[$CellContext`r], 
+    Derivative[1][$CellContext`\[Rho]g][$CellContext`r]}, 0, 2, 1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Entropy is conserved for adiabatic process", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqEn", "=", 
+  RowBox[{
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"P", "[", "r", "]"}], "/", 
+      RowBox[{
+       RowBox[{"\[Rho]g", "[", "r", "]"}], "^", "\[Gamma]"}]}], ",", "r"}], 
+    "]"}], "\[Equal]", "0"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"\[Rho]g", "[", "r", "]"}], 
+     RowBox[{"-", "\[Gamma]"}]], " ", 
+    RowBox[{
+     SuperscriptBox["P", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}]}], "-", 
+   RowBox[{"\[Gamma]", " ", 
+    RowBox[{"P", "[", "r", "]"}], " ", 
+    SuperscriptBox[
+     RowBox[{"\[Rho]g", "[", "r", "]"}], 
+     RowBox[{
+      RowBox[{"-", "1"}], "-", "\[Gamma]"}]], " ", 
+    RowBox[{
+     SuperscriptBox["\[Rho]g", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}]}]}], "\[Equal]", 
+  "0"}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Solving above for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Rho]", "g"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\[CloseCurlyQuote](r)"
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Rho]g", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{"eqEn", ",", 
+     RowBox[{
+      RowBox[{"\[Rho]g", "'"}], "[", "r", "]"}]}], "]"}], 
+   "\[LeftDoubleBracket]", 
+   RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["\[Rho]g", "\[Prime]",
+    MultilineFunction->None], "[", "r", "]"}], "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"\[Rho]g", "[", "r", "]"}], " ", 
+    RowBox[{
+     SuperscriptBox["P", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}]}], 
+   RowBox[{"\[Gamma]", " ", 
+    RowBox[{"P", "[", "r", "]"}]}]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Buoyant force per unit volume on the bubble", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fb", "=", 
+  RowBox[{
+   RowBox[{"\[Rho]gf", " ", "g"}], "/.", "s\[Rho]g"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"g", " ", 
+    RowBox[{"\[Rho]g", "[", "r", "]"}]}], "+", 
+   FractionBox[
+    RowBox[{"g", " ", 
+     RowBox[{"\[Rho]g", "[", "r", "]"}], " ", 
+     RowBox[{
+      SuperscriptBox["P", "\[Prime]",
+       MultilineFunction->None], "[", "r", "]"}], " ", "dr"}], 
+    RowBox[{"\[Gamma]", " ", 
+     RowBox[{"P", "[", "r", "]"}]}]], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "dr", "]"}], "2"],
+    SeriesData[$CellContext`dr, 0, {}, 0, 2, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`dr, 
+   0, {$CellContext`g $CellContext`\[Rho]g[$CellContext`r], $CellContext`g \
+$CellContext`\[Gamma]^(-1) $CellContext`P[$CellContext`r]^(-1) $CellContext`\
+\[Rho]g[$CellContext`r] Derivative[1][$CellContext`P][$CellContext`r]}, 0, 2, 
+   1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Net force up to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"O", "(", 
+    SuperscriptBox["dr", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")"
+}], "Subsection"],
+
+Cell[TextData[StyleBox["Subtracting buoyant force from gravitational force \
+and using Newton\[CloseCurlyQuote]s second law:",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqF", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Rho]f", " ", 
+      RowBox[{
+       SuperscriptBox["r", "\[Prime]\[Prime]",
+        MultilineFunction->None], "[", "t", "]"}]}], "==", 
+     RowBox[{"Fb", "-", "Fg"}]}], "/.", 
+    RowBox[{
+     RowBox[{"\[Rho]g", "[", "r", "]"}], "\[Rule]", 
+     RowBox[{"\[Rho]", "[", "r", "]"}]}]}], "//", "Normal"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Rho]", "[", "r", "]"}], " ", 
+    RowBox[{
+     SuperscriptBox["r", "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}]}], "+", 
+   RowBox[{"dr", " ", 
+    RowBox[{
+     SuperscriptBox["\[Rho]", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}], " ", 
+    RowBox[{
+     SuperscriptBox["r", "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}]}]}], "\[Equal]", 
+  RowBox[{"dr", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"g", " ", 
+       RowBox[{"\[Rho]", "[", "r", "]"}], " ", 
+       RowBox[{
+        SuperscriptBox["P", "\[Prime]",
+         MultilineFunction->None], "[", "r", "]"}]}], 
+      RowBox[{"\[Gamma]", " ", 
+       RowBox[{"P", "[", "r", "]"}]}]], "-", 
+     RowBox[{"g", " ", 
+      RowBox[{
+       SuperscriptBox["\[Rho]", "\[Prime]",
+        MultilineFunction->None], "[", "r", "]"}]}]}], ")"}]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Solving for ",
+ StyleBox["r\[CloseCurlyQuote]\[CloseCurlyQuote]",
+  IgnoreSpellCheck->True],
+ "(t)"
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sr", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{"eqF", ",", 
+     RowBox[{
+      RowBox[{"r", "''"}], "[", "t", "]"}]}], "]"}], "\[LeftDoubleBracket]", 
+   RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["r", "\[Prime]\[Prime]",
+    MultilineFunction->None], "[", "t", "]"}], "\[Rule]", 
+  FractionBox[
+   RowBox[{"dr", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"g", " ", 
+       RowBox[{"\[Rho]", "[", "r", "]"}], " ", 
+       RowBox[{
+        SuperscriptBox["P", "\[Prime]",
+         MultilineFunction->None], "[", "r", "]"}]}], "-", 
+      RowBox[{"g", " ", "\[Gamma]", " ", 
+       RowBox[{"P", "[", "r", "]"}], " ", 
+       RowBox[{
+        SuperscriptBox["\[Rho]", "\[Prime]",
+         MultilineFunction->None], "[", "r", "]"}]}]}], ")"}]}], 
+   RowBox[{"\[Gamma]", " ", 
+    RowBox[{"P", "[", "r", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Rho]", "[", "r", "]"}], "+", 
+      RowBox[{"dr", " ", 
+       RowBox[{
+        SuperscriptBox["\[Rho]", "\[Prime]",
+         MultilineFunction->None], "[", "r", "]"}]}]}], ")"}]}]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Expanding up to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"O", "(", 
+    SuperscriptBox["dr", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")"
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sr", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "->", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"sr", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"dr", ",", "0", ",", "1"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["r", "\[Prime]\[Prime]",
+    MultilineFunction->None], "[", "t", "]"}], "\[Rule]", 
+  InterpretationBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"g", " ", 
+         RowBox[{
+          SuperscriptBox["P", "\[Prime]",
+           MultilineFunction->None], "[", "r", "]"}]}], 
+        RowBox[{"\[Gamma]", " ", 
+         RowBox[{"P", "[", "r", "]"}]}]], "-", 
+       FractionBox[
+        RowBox[{"g", " ", 
+         RowBox[{
+          SuperscriptBox["\[Rho]", "\[Prime]",
+           MultilineFunction->None], "[", "r", "]"}]}], 
+        RowBox[{"\[Rho]", "[", "r", "]"}]]}], ")"}], " ", "dr"}], "+", 
+    InterpretationBox[
+     SuperscriptBox[
+      RowBox[{"O", "[", "dr", "]"}], "2"],
+     SeriesData[$CellContext`dr, 0, {}, 1, 2, 1],
+     Editable->False]}],
+   SeriesData[$CellContext`dr, 
+    0, {$CellContext`g $CellContext`\[Gamma]^(-1) \
+$CellContext`P[$CellContext`r]^(-1) 
+      Derivative[
+       1][$CellContext`P][$CellContext`r] - $CellContext`g \
+$CellContext`\[Rho][$CellContext`r]^(-1) 
+     Derivative[1][$CellContext`\[Rho]][$CellContext`r]}, 1, 2, 1],
+   Editable->False]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["This is equivalent to the given equation, where ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["N", "2"], TraditionalForm]],
+  FontWeight->"Bold"],
+ StyleBox[" is:",
+  FontWeight->"Bold"]
+}], "Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["N", "2"], "\[Rule]", 
+    RowBox[{
+     RowBox[{"-", "g"}], "  ", 
+     FormBox[
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          SuperscriptBox["P", "\[Prime]",
+           MultilineFunction->None], "(", "r", ")"}], 
+         RowBox[{"\[Gamma]", " ", 
+          RowBox[{"P", "(", "r", ")"}]}]], "-", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox["\[Rho]", "\[Prime]",
+           MultilineFunction->None], "(", "r", ")"}], 
+         RowBox[{"\[Rho]", "(", "r", ")"}]]}]}],
+      TraditionalForm]}]}], ")"}], TraditionalForm]], "DisplayFormula"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Entropy equation", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"sS", ":=", 
+  RowBox[{"S", "\[Rule]", 
+   RowBox[{
+    RowBox[{"P", "[", "r", "]"}], " ", 
+    SuperscriptBox[
+     RowBox[{"\[Rho]", "[", "r", "]"}], 
+     RowBox[{"-", "\[Gamma]"}]]}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rate of change in entropy with radius", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"\[Rho]", "[", "r", "]"}], "\[Gamma]"], " ", 
+     RowBox[{
+      SuperscriptBox["S", "\[Prime]",
+       MultilineFunction->None], "[", "r", "]"}]}], 
+    RowBox[{"\[Gamma]", " ", 
+     RowBox[{"P", "[", "r", "]"}]}]], "\[Equal]", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"\[Rho]", "[", "r", "]"}], "\[Gamma]"], 
+       RowBox[{
+        SubscriptBox["\[PartialD]", "r"], 
+        RowBox[{"(", 
+         RowBox[{"S", "/.", "\[VeryThinSpace]", "sS"}], ")"}]}]}], 
+      RowBox[{"\[Gamma]", " ", 
+       RowBox[{"P", "[", "r", "]"}], " "}]], "//", "Simplify"}], 
+    ")"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"\[Rho]", "[", "r", "]"}], "\[Gamma]"], " ", 
+    RowBox[{
+     SuperscriptBox["S", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}]}], 
+   RowBox[{"\[Gamma]", " ", 
+    RowBox[{"P", "[", "r", "]"}]}]], "\[Equal]", 
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["P", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}], 
+    RowBox[{"\[Gamma]", " ", 
+     RowBox[{"P", "[", "r", "]"}]}]], "-", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[Rho]", "\[Prime]",
+      MultilineFunction->None], "[", "r", "]"}], 
+    RowBox[{"\[Rho]", "[", "r", "]"}]]}]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Since g, P, \[Rho], and \[Gamma] are positive, we have that ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["N", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontWeight->"Bold"],
+ StyleBox[" is positive only if ",
+  FontWeight->"Bold"],
+ StyleBox["S\[CloseCurlyQuote]",
+  IgnoreSpellCheck->True,
+  FontWeight->"Bold"],
+ StyleBox["(r) is negative.",
+  FontWeight->"Bold"]
+}], "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q5)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Formula for Eddington luminosity", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fEdd", "[", 
+   RowBox[{"M_", ",", "\[Kappa]_"}], "]"}], ":=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"4", "\[Pi]", " ", "M", "  ", 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+        "\"SpeedOfLight\""},
+       "Quantity"], " ", 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+        "\"G\"", Italic, StripOnInput -> False],
+        "Newtonian gravitational constants","\"GravitationalConstant\""},
+       "Quantity"]}], "\[Kappa]"], ",", "\"\<SolarLuminosity\>\""}], 
+   "]"}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "a) Star with mass 0.072 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["M", "\[CircleDot]"], TraditionalForm]]]
+}], "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Eddington luminosity", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fEdd", "[", 
+  RowBox[{
+   TemplateBox[{"0.072",SubscriptBox[
+      StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+     "solar masses","\"SolarMass\""},
+    "Quantity"], ",", 
+   TemplateBox[{"0.001",RowBox[{
+       SuperscriptBox["\"m\"", "2"], "\[NegativeMediumSpace]", "\"/\"", 
+       "\[InvisibleSpace]", "\"kg\""}],"meters squared per kilogram",
+     FractionBox[
+      SuperscriptBox["\"Meters\"", "2"], "\"Kilograms\""]},
+    "Quantity"]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"94061.27940542653`",SubscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar luminosities","\"SolarLuminosity\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Actual luminosity", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{RowBox[{"10", "^", 
+     RowBox[{"-", "4.3"}]}],SubscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar luminosities","\"SolarLuminosity\""},
+  "Quantity"]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"0.00005011872336272725`",SubscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar luminosities","\"SolarLuminosity\""},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["This is much lesser than the Eddington luminosity; \
+therefore the radiation pressure is not significant for such stars.",
+ FontWeight->"Bold"]], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "b) Star with mass 120 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["M", "\[CircleDot]"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Eddington luminosity", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fEdd", "[", 
+  RowBox[{
+   TemplateBox[{"120",SubscriptBox[
+      StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+     "solar masses","\"SolarMass\""},
+    "Quantity"], ",", 
+   TemplateBox[{"0.04",RowBox[{
+       SuperscriptBox["\"m\"", "2"], "\[NegativeMediumSpace]", "\"/\"", 
+       "\[InvisibleSpace]", "\"kg\""}],"meters squared per kilogram",
+     FractionBox[
+      SuperscriptBox["\"Meters\"", "2"], "\"Kilograms\""]},
+    "Quantity"]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"3.919219975226106`*^6",SubscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar luminosities","\"SolarLuminosity\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Actual luminosity", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{RowBox[{"10", "^", "6.252"}],SubscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar luminosities","\"SolarLuminosity\""},
+  "Quantity"]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"1.7864875748520498`*^6",SubscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar luminosities","\"SolarLuminosity\""},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["This is comparable to the Eddington luminosity. \
+Therefore the radiation pressure is significant for such stars.",
+ FontWeight->"Bold"]], "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1584, 827},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->0.75,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PrintingMargins"->{{28.8, 28.8}, {36., 36.}}},
+Magnification:>1.65 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 302, 11, 199, "Title"],
+Cell[885, 35, 326, 10, 76, "Chapter"],
+Cell[CellGroupData[{
+Cell[1236, 49, 22, 0, 85, "Chapter"],
+Cell[CellGroupData[{
+Cell[1283, 53, 48, 0, 71, "Subsection"],
+Cell[1334, 55, 276, 9, 79, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1647, 69, 52, 0, 71, "Subsection"],
+Cell[1702, 71, 477, 16, 107, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2216, 92, 55, 0, 71, "Subsection"],
+Cell[2274, 94, 411, 12, 75, "DisplayFormula"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2722, 111, 46, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[2793, 115, 606, 17, 53, "Input"],
+Cell[3402, 134, 212, 5, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3675, 146, 22, 0, 106, "Chapter"],
+Cell[CellGroupData[{
+Cell[3722, 150, 21, 0, 103, "Section"],
+Cell[CellGroupData[{
+Cell[3768, 154, 49, 0, 71, "Subsection"],
+Cell[3820, 156, 101, 1, 50, "Text"],
+Cell[3924, 159, 1084, 30, 119, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5045, 194, 58, 0, 71, "Subsection"],
+Cell[5106, 196, 477, 12, 93, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5620, 213, 58, 0, 71, "Subsection"],
+Cell[5681, 215, 863, 22, 101, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6581, 242, 62, 0, 71, "Subsection"],
+Cell[6646, 244, 665, 17, 101, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7348, 266, 57, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[7430, 270, 398, 12, 48, "Input"],
+Cell[7831, 284, 383, 9, 57, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8275, 300, 21, 0, 103, "Section"],
+Cell[CellGroupData[{
+Cell[8321, 304, 62, 0, 71, "Subsection"],
+Cell[8386, 306, 95, 1, 50, "Text"],
+Cell[8484, 309, 916, 26, 93, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9437, 340, 57, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[9519, 344, 454, 14, 48, "Input"],
+Cell[9976, 360, 384, 9, 57, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10433, 377, 22, 0, 106, "Chapter"],
+Cell[CellGroupData[{
+Cell[10480, 381, 43, 0, 71, "Subsection"],
+Cell[10526, 383, 144, 2, 50, "Text"],
+Cell[10673, 387, 280, 8, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10990, 400, 47, 0, 71, "Subsection"],
+Cell[11040, 402, 645, 21, 118, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11722, 428, 61, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[11808, 432, 78, 2, 48, "Input"],
+Cell[11889, 436, 1154, 33, 82, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13092, 475, 79, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[13196, 479, 917, 31, 85, "Input"],
+Cell[14116, 512, 31, 0, 48, "Output"]
+}, Open  ]],
+Cell[14162, 515, 61, 1, 50, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14272, 522, 22, 0, 106, "Chapter"],
+Cell[CellGroupData[{
+Cell[14319, 526, 21, 0, 103, "Section"],
+Cell[CellGroupData[{
+Cell[14365, 530, 45, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[14435, 534, 236, 7, 48, "Input"],
+Cell[14674, 543, 555, 16, 48, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15278, 565, 71, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[15374, 569, 79, 2, 48, "Input"],
+Cell[15456, 573, 619, 17, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16136, 597, 21, 0, 103, "Section"],
+Cell[CellGroupData[{
+Cell[16182, 601, 65, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[16272, 605, 238, 7, 48, "Input"],
+Cell[16513, 614, 559, 16, 48, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17121, 636, 64, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[17210, 640, 272, 9, 48, "Input"],
+Cell[17485, 651, 593, 19, 48, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18127, 676, 192, 7, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[18344, 687, 271, 8, 48, "Input"],
+Cell[18618, 697, 388, 12, 73, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19055, 715, 65, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[19145, 719, 112, 3, 48, "Input"],
+Cell[19260, 724, 850, 23, 73, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20171, 754, 21, 0, 103, "Section"],
+Cell[CellGroupData[{
+Cell[20217, 758, 193, 8, 79, "Subsection"],
+Cell[20413, 768, 157, 2, 50, "Text"],
+Cell[CellGroupData[{
+Cell[20595, 774, 404, 12, 48, "Input"],
+Cell[21002, 788, 955, 29, 74, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22006, 823, 135, 5, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[22166, 832, 255, 7, 48, "Input"],
+Cell[22424, 841, 921, 27, 73, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23394, 874, 193, 8, 79, "Subsection"],
+Cell[CellGroupData[{
+Cell[23612, 886, 307, 7, 48, "Input"],
+Cell[23922, 895, 1209, 35, 74, "Output"]
+}, Open  ]],
+Cell[25146, 933, 249, 9, 50, "Text"],
+Cell[25398, 944, 665, 21, 79, "DisplayFormula"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26112, 971, 21, 0, 103, "Section"],
+Cell[CellGroupData[{
+Cell[26158, 975, 38, 0, 71, "Subsection"],
+Cell[26199, 977, 224, 7, 48, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26460, 989, 59, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[26544, 993, 750, 24, 82, "Input"],
+Cell[27297, 1019, 687, 22, 75, "Output"]
+}, Open  ]],
+Cell[27999, 1044, 446, 15, 50, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28506, 1066, 22, 0, 106, "Chapter"],
+Cell[CellGroupData[{
+Cell[28553, 1070, 54, 0, 71, "Subsection"],
+Cell[28610, 1072, 706, 18, 84, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29353, 1095, 142, 5, 106, "Section"],
+Cell[CellGroupData[{
+Cell[29520, 1104, 42, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[29587, 1108, 507, 12, 66, "Input"],
+Cell[30097, 1122, 205, 4, 57, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30351, 1132, 39, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[30415, 1136, 231, 5, 57, "Input"],
+Cell[30649, 1143, 210, 4, 57, "Output"]
+}, Open  ]],
+Cell[30874, 1150, 177, 2, 50, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31100, 1158, 173, 6, 106, "Section"],
+Cell[CellGroupData[{
+Cell[31298, 1168, 42, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[31365, 1172, 504, 12, 66, "Input"],
+Cell[31872, 1186, 208, 4, 63, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32129, 1196, 39, 0, 71, "Subsection"],
+Cell[CellGroupData[{
+Cell[32193, 1200, 212, 4, 57, "Input"],
+Cell[32408, 1206, 209, 4, 63, "Output"]
+}, Open  ]],
+Cell[32632, 1213, 170, 2, 50, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

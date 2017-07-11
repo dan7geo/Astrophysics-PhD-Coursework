@@ -1,0 +1,1033 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26462,       1025]
+NotebookOptionsPosition[     20686,        810]
+NotebookOutlinePosition[     21258,        832]
+CellTagsIndexPosition[     21215,        829]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 6 - ASTR540\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0 on October 11, 2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]],
+ StyleBox["\n",
+  FontSize->24],
+ StyleBox[" ",
+  FontSize->14]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1) Distribution of Binary Periods", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Probability distribution of periods", "Subsection"],
+
+Cell[TextData[{
+ StyleBox["Since ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["log", "10"], TraditionalForm]],
+  FontWeight->"Bold"],
+ StyleBox["P is a normal distribution, we can find the distribution of P as \
+follows",
+  FontWeight->"Bold"]
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"distP", "=", 
+   RowBox[{"TransformedDistribution", "[", 
+    RowBox[{
+     RowBox[{"10", "^", "logP"}], " ", ",", 
+     RowBox[{"logP", "\[Distributed]", 
+      RowBox[{"NormalDistribution", "[", 
+       RowBox[{"5", ",", 
+        RowBox[{"23", "/", "10"}]}], "]"}]}]}], "]"}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Period for two solar mass stars separated by d AU", "Subsection"],
+
+Cell[TextData[StyleBox["Function to find the period in days, given separation \
+in AU, using Kepler\[CloseCurlyQuote]s 3rd law",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fP", "[", "d_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["P", "2"], " ", "\[Equal]", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"4", 
+          SuperscriptBox["\[Pi]", "2"]}], 
+         RowBox[{
+          
+          TemplateBox[{
+           InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+            "\"G\"", Italic, StripOnInput -> False],
+            "Newtonian gravitational constants","\"GravitationalConstant\""},
+           "Quantity"], 
+          TemplateBox[{"2",SubscriptBox[
+             StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+            "solar masses","\"SolarMass\""},
+           "Quantity"]}]], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          
+          TemplateBox[{
+           "d","\"au\"","astronomical units","\"AstronomicalUnit\""},
+           "Quantity"], ")"}], "3"]}]}], ",", "P"}], "]"}], 
+    "\[LeftDoubleBracket]", 
+    RowBox[{"2", ",", "1", ",", "2"}], "\[RightDoubleBracket]"}], "~", 
+   "QuantityMagnitude", "~", "\"\<Days\>\""}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Minimum period estimate in days", "Subsection"],
+
+Cell[TextData[StyleBox["Finding a P such that probability of period being \
+less than P is 3% or CDF(P) = .03", "Text",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NSolve", "[", 
+   RowBox[{
+    RowBox[{"distP", "~", "CDF", "~", "P"}], "\[Equal]", 
+    RowBox[{"3", "/", "100"}]}], "]"}], "\[LeftDoubleBracket]", 
+  RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"P", "\[Rule]", "4.722529736652893`"}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["This is larger than the period corresponding to the \
+separation when two solar mass stars touch",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fP", "[", 
+  RowBox[{"2", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[{"\"Sun\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"Star\"", ",", "\"Sun\""}], "]"}],
+       "\"Entity[\\\"Star\\\", \\\"Sun\\\"]\"","\"star\""},
+      "Entity"], "[", "\"\<Radius\>\"", "]"}], "~", "QuantityMagnitude", "~", 
+    " ", "\"\<AU\>\""}]}], "]"}]], "Input"],
+
+Cell[BoxData["0.2316742272400986188`3.4056110976225984"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Maximum period estimate in days", "Subsection"],
+
+Cell[TextData[StyleBox["Finding a P such that probability of period being \
+greater than P is 3% or CDF(P) = .97", "Text",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NSolve", "[", 
+   RowBox[{
+    RowBox[{"distP", "~", "CDF", "~", "P"}], "\[Equal]", 
+    RowBox[{"97", "/", "100"}]}], "]"}], "\[LeftDoubleBracket]", 
+  RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"P", "\[Rule]", "2.117509165138164`*^9"}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Fraction of stars with smaller separation than 1 AU", "Subsection"],
+
+Cell[TextData[StyleBox["Finding the CDF at the period corresponding to this \
+separation",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"distP", "~", "CDF", "~", 
+  RowBox[{"fP", "@", "1"}]}]], "Input"],
+
+Cell[BoxData["0.1302565529106270489`3.1939970250610727"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Fraction of stars with separation between 0.4 AU & 40 AU", "Subsection"],
+
+Cell[TextData[StyleBox["Subtracting the values of the CDF corresponding to \
+the two periods",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Subtract", "@@", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"distP", "~", "CDF", "~", 
+      RowBox[{"fP", "@", "#"}]}], "&"}], "/@", 
+    RowBox[{"{", 
+     RowBox[{"40", ",", ".4"}], "}"}]}], ")"}]}]], "Input"],
+
+Cell[BoxData["0.38490517736835356`"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2) Fast Radio Bursts", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Total energy output", "Subsection"],
+
+Cell[TextData[StyleBox["Assuming the width of the spectrum is ~ 1 GHz:",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"power", "*", "area", "*", "time"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"power", "->", 
+       RowBox[{
+        TemplateBox[{"1","\"Jy\"","janskies","\"Janskies\""},
+         "Quantity"], "*", 
+        TemplateBox[{"1","\"GHz\"","gigahertz","\"Gigahertz\""},
+         "Quantity"]}]}], ",", 
+      RowBox[{"area", "\[Rule]", 
+       RowBox[{"4.", " ", "\[Pi]", 
+        TemplateBox[{InterpretationBox["\[InvisibleSpace]", 1],RowBox[{
+            SuperscriptBox["\"Gpc\"", "2"]}],"gigaparsecs squared",
+          SuperscriptBox["\"Gigaparsecs\"", "2"]},
+         "Quantity"]}]}], ",", 
+      RowBox[{"time", "->", 
+       TemplateBox[{"1","\"ms\"","milliseconds","\"Milliseconds\""},
+        "Quantity"]}]}], "}"}]}], ",", "\"\<Ergs\>\""}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"1.1964951828447577`*^39","\"ergs\"","ergs","\"Ergs\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Formula for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Omega]", "p"], TraditionalForm]]]
+}], "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"swp", ":=", 
+  RowBox[{"\[Omega]p", "\[Rule]", 
+   SqrtBox[
+    RowBox[{"4", "\[Pi]", " ", 
+     RowBox[{"ne", "[", "s", "]"}], " ", 
+     RowBox[{
+      SuperscriptBox["e", "2"], "/", "me"}]}]]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finding plasma frequency in CGS", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"swp", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"e", "\[Rule]", 
+     RowBox[{"4.8", " ", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "10"}]}]}]}], " ", ",", 
+    RowBox[{"me", "->", 
+     RowBox[{"9.109383", " ", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "28"}]}]}]}], ",", 
+    RowBox[{
+     RowBox[{"ne", "[", "s", "]"}], "\[Rule]", ".03"}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Omega]p", "\[Rule]", "9764.776684821623`"}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Taylor expansion of group velocity ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[Omega]"}], 
+     RowBox[{"\[PartialD]", "k"}],
+     MultilineFunction->None], ")"}], TraditionalForm]]]
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sP", "=", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["c", "Plasma"], "->", 
+    RowBox[{"Normal", "@", 
+     RowBox[{"Series", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"Sqrt", "[", 
+          RowBox[{
+           RowBox[{"\[Omega]p", "^", "2"}], "+", 
+           RowBox[{
+            RowBox[{"c", "^", "2"}], " ", 
+            RowBox[{"k", "^", "2"}]}]}], "]"}], ",", "k"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Omega]p", ",", "0", ",", "2"}], "}"}]}], "]"}]}]}], "//", 
+   "PowerExpand"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["c", "Plasma"], "\[Rule]", 
+  RowBox[{"c", "-", 
+   FractionBox[
+    SuperscriptBox["\[Omega]p", "2"], 
+    RowBox[{"2", " ", "c", " ", 
+     SuperscriptBox["k", "2"]}]]}]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["So we can see that the speed decreases in the \
+presence of plasma.",
+ FontWeight->"Bold"]], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Difference in pulse arrival times", "Subsection"],
+
+Cell[TextData[{
+ StyleBox["Let ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  StyleBox[
+   SubscriptBox["c", "Plasma"],
+   FontWeight->"Bold"]]],
+ StyleBox[" be the speed in plasma",
+  FontWeight->"Bold"]
+}], "Text"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[CapitalDelta]t", "\[LongEqual]", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox["1", 
+         SubscriptBox["c", "Plasma"]], "-", 
+        FractionBox["1", "c"]}], ")"}], 
+      RowBox[{"\[DifferentialD]", "s"}]}]}]}], ";"}], 
+  TraditionalForm]], "DisplayFormula"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["First term in Taylor expansion of the integral", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Normal", "@", 
+     RowBox[{"Series", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox["1", 
+           SubscriptBox["c", "Plasma"]], "-", 
+          FractionBox["1", "c"]}], ")"}], "/.", "sP"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Omega]p", ",", "0", ",", "2"}], "}"}]}], "]"}]}], "/.", 
+    "swp"}], ",", "s"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2", " ", 
+   SuperscriptBox["e", "2"], " ", "\[Pi]", " ", 
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     RowBox[{"ne", "[", "s", "]"}], 
+     RowBox[{"\[DifferentialD]", "s"}]}]}]}], 
+  RowBox[{
+   SuperscriptBox["c", "3"], " ", 
+   SuperscriptBox["k", "2"], " ", "me"}]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["This is equivalent to the given expression", "Subsection"],
+
+Cell[TextData[StyleBox["Substituting the value of \[Omega] in the given \
+expression and expanding up to first order",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"2", " ", 
+      SuperscriptBox["e", "2"], " ", "\[Pi]", " ", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        RowBox[{"ne", "[", "s", "]"}], 
+        RowBox[{"\[DifferentialD]", "s"}]}]}]}], 
+     RowBox[{"c", " ", 
+      SuperscriptBox["\[Omega]", "2"], " ", "me"}]], "/.", 
+    RowBox[{"\[Omega]", "\[Rule]", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"\[Omega]p", "^", "2"}], "+", 
+       RowBox[{
+        RowBox[{"c", "^", "2"}], " ", 
+        RowBox[{"k", "^", "2"}]}]}], "]"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Omega]p", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{"2", " ", 
+     SuperscriptBox["e", "2"], " ", "\[Pi]", " ", 
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       RowBox[{"ne", "[", "s", "]"}], 
+       RowBox[{"\[DifferentialD]", "s"}]}]}]}], 
+    RowBox[{
+     SuperscriptBox["c", "3"], " ", 
+     SuperscriptBox["k", "2"], " ", "me"}]], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "\[Omega]p", "]"}], "2"],
+    SeriesData[$CellContext`\[Omega]p, 0, {}, 0, 2, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`\[Omega]p, 0, {
+   2 $CellContext`c^(-3) $CellContext`e^2 $CellContext`k^(-2) \
+$CellContext`me^(-1) Pi Integrate[
+      $CellContext`ne[$CellContext`s], $CellContext`s]}, 0, 2, 1],
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Distance to center of galaxy in parsecs", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dCenter", "=", 
+  RowBox[{"QuantityMagnitude", "[", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[{"\"Milky Way\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"Galaxy\"", ",", "\"MilkyWay\""}], "]"}],
+       "\"Entity[\\\"Galaxy\\\", \\\"MilkyWay\\\"]\"","\"galaxy\""},
+      "Entity"], "[", "\"\<DistanceFromSun\>\"", "]"}], ",", " ", 
+    "\"\<Parsecs\>\""}], "]"}]}]], "Input"],
+
+Cell[BoxData["7611.13332483427`"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["DM on the galactic pole at angle \[Theta] ", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"poleDM", "[", "\[Theta]_", "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "0", 
+      RowBox[{"dCenter", " ", 
+       RowBox[{"Tan", "[", "\[Theta]", "]"}]}]], 
+     RowBox[{
+      FractionBox[
+       RowBox[{"ne", "[", "z", "]"}], 
+       RowBox[{"Cos", "[", "\[Theta]", "]"}]], " ", 
+      RowBox[{"\[DifferentialD]", "z"}]}]}], " ", "/.", 
+    RowBox[{
+     RowBox[{"ne", "[", "z", "]"}], "\[Rule]", 
+     RowBox[{".03", " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "z"}], "/", "1000"}], "]"}]}]}]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Finding maximum for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "<", "\[Theta]", "<", 
+    RowBox[{"45", "\[Degree]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"poleDM", "[", "\[Theta]", "]"}], ",", 
+     RowBox[{"0", "<", "\[Theta]", "<", 
+      RowBox[{"\[Pi]", "/", "4"}]}]}], "}"}], ",", "\[Theta]"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"42.40540959076103`", ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", "\[Rule]", "0.7853981633974483`"}], "}"}]}], 
+  "}"}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Therefore the DM is maximum at \[Theta] ~ 45\[Degree] (0.7853982 \
+radians) and the maximum value is ~ 42.4 ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"pc", "/", 
+    SuperscriptBox["cm", "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontWeight->"Bold"]
+}], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["e)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Number density of electrons in ISM in CGS", "Subsection"],
+
+Cell[TextData[StyleBox["Source: (Cosmological Effects of Scattering in the \
+Intergalactic Medium - Raymond F Bonn)",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["ne", "ISM"], "=", 
+   RowBox[{"3.2", " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "8"}]}]}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["DM at 1Gpc", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["ne", "ISM"], " ", 
+  RowBox[{"10", "^", "9"}], " ", 
+  "\"\<pc/\!\(\*SuperscriptBox[\(cm\), \(3\)]\)\>\""}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"32.`", 
+  " ", "\<\"pc/\\!\\(\\*SuperscriptBox[\\(cm\\), \\(3\\)]\\)\"\>"}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["f)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Rate of bursts per steradian", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rate", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"time", "*", "7", "*", "\[CapitalOmega]"}]], "//.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[CapitalOmega]", "\[Rule]", 
+        RowBox[{
+         FractionBox[
+          SuperscriptBox["\[Lambda]", "2"], "Area"], 
+         TemplateBox[{
+          InterpretationBox["\[InvisibleSpace]", 1],"\"sr\"","steradians",
+           "\"Steradians\""},
+          "Quantity"]}]}], ",", 
+       RowBox[{"Area", "\[Rule]", 
+        RowBox[{"\[Pi]", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           FractionBox["d", "2"], ")"}], "2"]}]}], ",", 
+       RowBox[{"d", "->", 
+        TemplateBox[{"305.","\"m\"","meters","\"Meters\""},
+         "Quantity"]}], ",", 
+       RowBox[{"time", "->", 
+        TemplateBox[{"300","\"h\"","hours","\"Hours\""},
+         "Quantity"]}], ",", 
+       RowBox[{"\[Lambda]", "->", 
+        TemplateBox[{"20","\"cm\"","centimeters","\"Centimeters\""},
+         "Quantity"]}]}], "}"}]}], ",", 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],
+      RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}],
+      "reciprocal seconds",FractionBox["1", "\"Seconds\""]},
+     "Quantity"]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"0.24160603224222096`",RowBox[{
+     RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}], 
+     RowBox[{"\"per \"", "\[InvisibleSpace]", "\"steradian\""}]}],
+   "per second steradians",FractionBox["1", 
+    RowBox[{"\"Seconds\"", " ", "\"Steradians\""}]]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["g)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Number density of bursts", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"4", " ", "\[Pi]", " ", 
+   TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1],"\"sr\"","steradians",
+     "\"Steradians\""},
+    "Quantity"], "rate", " "}], 
+  RowBox[{"Volume", "@", 
+   RowBox[{"Ball", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+     TemplateBox[{"3","\"Gpc\"","gigaparsecs","\"Gigaparsecs\""},
+      "Quantity"]}], "]"}]}]]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"0.026845114693580106`",RowBox[{
+     RowBox[{"\"per \"", "\[InvisibleSpace]", 
+       SuperscriptBox["\"gigaparsec\"", "3"]}], 
+     RowBox[{"\"per \"", "\[InvisibleSpace]", "\"second\""}]}],
+   "per gigaparsec cubed seconds",FractionBox["1", 
+    RowBox[{
+      SuperscriptBox["\"Gigaparsecs\"", "3"], " ", "\"Seconds\""}]]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["h)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["DM of ionosphere", "Subsection"],
+
+Cell[TextData[StyleBox["Source: Tools of Radio Astronomy - Thomas Wilson, \
+Susanne H\[UDoubleDot]ttemeister",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ne", "*", "width"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"ne", "\[Rule]", 
+     RowBox[{
+      RowBox[{"10", "^", "5"}], "/", 
+      "\"\<\!\(\*SuperscriptBox[\(cm\), \(3\)]\)\>\""}]}], ",", 
+    RowBox[{"width", "\[Rule]", 
+     RowBox[{"6.7", " ", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "13"}]}], "\"\<pc\>\""}]}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+  "6.7`*^-8", 
+   " ", "\<\"pc\"\>"}], "\<\"\\!\\(\\*SuperscriptBox[\\(cm\\), \
+\\(3\\)]\\)\"\>"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1600, 827},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PrintingMargins"->{{32.4, 32.4}, {25.2, 28.8}}},
+Magnification:>1.8 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 309, 11, 217, "Title"],
+Cell[892, 35, 391, 14, 117, "Chapter"],
+Cell[CellGroupData[{
+Cell[1308, 53, 53, 0, 90, "Chapter"],
+Cell[CellGroupData[{
+Cell[1386, 57, 57, 0, 77, "Subsection"],
+Cell[1446, 59, 278, 10, 55, "Text"],
+Cell[1727, 71, 332, 9, 54, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2096, 85, 71, 0, 77, "Subsection"],
+Cell[2170, 87, 159, 2, 55, "Text"],
+Cell[2332, 91, 1134, 32, 105, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3503, 128, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[3549, 132, 53, 0, 77, "Subsection"],
+Cell[3605, 134, 150, 2, 56, "Text"],
+Cell[CellGroupData[{
+Cell[3780, 140, 248, 6, 54, "Input"],
+Cell[4031, 148, 73, 1, 53, "Output"]
+}, Open  ]],
+Cell[4119, 152, 153, 2, 54, "Text"],
+Cell[CellGroupData[{
+Cell[4297, 158, 364, 9, 77, "Input"],
+Cell[4664, 169, 67, 0, 55, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4792, 176, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[4838, 180, 53, 0, 77, "Subsection"],
+Cell[4894, 182, 153, 2, 56, "Text"],
+Cell[CellGroupData[{
+Cell[5072, 188, 249, 6, 55, "Input"],
+Cell[5324, 196, 76, 1, 55, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5461, 204, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[5507, 208, 73, 0, 77, "Subsection"],
+Cell[5583, 210, 121, 2, 56, "Text"],
+Cell[CellGroupData[{
+Cell[5729, 216, 89, 2, 55, "Input"],
+Cell[5821, 220, 67, 0, 55, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5949, 227, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[5995, 231, 78, 0, 77, "Subsection"],
+Cell[6076, 233, 125, 2, 56, "Text"],
+Cell[CellGroupData[{
+Cell[6226, 239, 248, 8, 55, "Input"],
+Cell[6477, 249, 47, 0, 55, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6597, 257, 40, 0, 115, "Chapter"],
+Cell[CellGroupData[{
+Cell[6662, 261, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[6708, 265, 41, 0, 77, "Subsection"],
+Cell[6752, 267, 103, 1, 56, "Text"],
+Cell[CellGroupData[{
+Cell[6880, 272, 852, 21, 74, "Input"],
+Cell[7735, 295, 110, 2, 74, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7906, 304, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[7952, 308, 129, 5, 83, "Subsection"],
+Cell[8084, 315, 233, 7, 97, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8354, 327, 53, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[8432, 331, 402, 13, 55, "Input"],
+Cell[8837, 346, 81, 1, 55, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8979, 354, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[9025, 358, 268, 9, 91, "Subsection"],
+Cell[CellGroupData[{
+Cell[9318, 371, 579, 18, 55, "Input"],
+Cell[9900, 391, 224, 7, 88, "Output"]
+}, Open  ]],
+Cell[10139, 401, 124, 2, 56, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10312, 409, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[10358, 413, 55, 0, 77, "Subsection"],
+Cell[10416, 415, 212, 9, 56, "Text"],
+Cell[10631, 426, 366, 12, 87, "DisplayFormula"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11034, 443, 68, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[11127, 447, 468, 15, 91, "Input"],
+Cell[11598, 464, 321, 10, 90, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11968, 480, 64, 0, 77, "Subsection"],
+Cell[12035, 482, 149, 2, 56, "Text"],
+Cell[CellGroupData[{
+Cell[12209, 488, 697, 21, 100, "Input"],
+Cell[12909, 511, 777, 22, 90, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13747, 540, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[13793, 544, 61, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[13879, 548, 400, 9, 77, "Input"],
+Cell[14282, 559, 44, 0, 55, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14375, 565, 64, 0, 77, "Subsection"],
+Cell[14442, 567, 623, 19, 91, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15102, 591, 210, 7, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[15337, 602, 260, 8, 55, "Input"],
+Cell[15600, 612, 173, 5, 55, "Output"]
+}, Open  ]],
+Cell[15788, 620, 328, 10, 61, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16165, 636, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[16211, 640, 63, 0, 77, "Subsection"],
+Cell[16277, 642, 148, 2, 56, "Text"],
+Cell[16428, 646, 166, 6, 55, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16631, 657, 32, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[16688, 661, 158, 4, 55, "Input"],
+Cell[16849, 667, 111, 2, 55, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17021, 676, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[17067, 680, 50, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[17142, 684, 1296, 35, 97, "Input"],
+Cell[18441, 721, 314, 6, 69, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18816, 734, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[18862, 738, 46, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[18933, 742, 449, 13, 115, "Input"],
+Cell[19385, 757, 381, 8, 74, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19827, 772, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[19873, 776, 38, 0, 77, "Subsection"],
+Cell[19914, 778, 141, 2, 56, "Text"],
+Cell[CellGroupData[{
+Cell[20080, 784, 391, 12, 59, "Input"],
+Cell[20474, 798, 148, 5, 87, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

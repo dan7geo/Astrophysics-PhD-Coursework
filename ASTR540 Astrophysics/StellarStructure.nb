@@ -1,0 +1,348 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13385,        340]
+NotebookOptionsPosition[     12557,        304]
+NotebookOutlinePosition[     12929,        320]
+CellTagsIndexPosition[     12886,        317]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Stellar Structure",
+ FontWeight->"Bold"]], "Title",
+ CellChangeTimes->{{3.6820386221673574`*^9, 3.6820386266388884`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Numerical solutions", "Section",
+ CellChangeTimes->{{3.681575655134227*^9, 3.6815756589581156`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Lane-Emden equation", "Subsection",
+ CellChangeTimes->{{3.681575122408906*^9, 3.6815751285906053`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"R", "=", "100"}], ",", 
+       RowBox[{"zero", "=", 
+        RowBox[{"10", " ", "$MachineEpsilon"}]}], " ", ",", "\[Theta]", ",", 
+       "x", ",", "y", ",", "r"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\[Theta]", "=", 
+       RowBox[{"NDSolveValue", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"x", "^", 
+               RowBox[{"-", "2"}]}], 
+              RowBox[{"D", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"x", "^", "2"}], " ", 
+                 RowBox[{"D", "[", 
+                  RowBox[{
+                   RowBox[{"y", "[", "x", "]"}], ",", "x"}], "]"}]}], ",", 
+                "x"}], "]"}]}], "+", 
+             RowBox[{
+              RowBox[{"y", "[", "x", "]"}], "^", "n"}]}], "\[Equal]", "0"}], 
+           ",", 
+           RowBox[{
+            RowBox[{"y", "[", "zero", "]"}], "\[Equal]", "1"}], ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"y", "'"}], "[", "zero", "]"}], "\[Equal]", "0"}], ",", 
+           RowBox[{"WhenEvent", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Re", "@", 
+               RowBox[{"y", "[", "x", "]"}]}], "\[LessEqual]", "0"}], ",", 
+             RowBox[{
+              RowBox[{"R", "=", "x"}], ";", "\"\<StopIntegration\>\""}]}], 
+            "]"}]}], "}"}], ",", "y", ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "zero", ",", 
+           RowBox[{"10", "^", "3"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Column", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Plot", "[", 
+          RowBox[{
+           RowBox[{"\[Theta]", "[", "r", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"r", ",", "0", ",", 
+             RowBox[{"R", "~", "Min", "~", "100"}]}], "}"}], ",", 
+           RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+           RowBox[{"Filling", "\[Rule]", "Bottom"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "1"}], "}"}]}], ",", 
+           RowBox[{"FrameLabel", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"\"\<\[Xi]\>\"", ",", "\"\<\[Theta]\>\""}], "}"}]}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", "400"}], ",", 
+           RowBox[{
+           "PlotLabel", "\[Rule]", 
+            "\"\<Solution of the Lane-Emden equation\>\""}]}], 
+          "\[IndentingNewLine]", "]"}], ",", 
+         RowBox[{"\"\< Radius = \>\"", "<>", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"R", "\[Equal]", "100"}], ",", "\"\<\[Infinity]\>\"", ",", 
+            RowBox[{"ToString", "@", "R"}]}], "]"}]}]}], "}"}]}]}]}], "]"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "3"}], "}"}], ",", "0", ",", "7", ",", 
+     RowBox[{"10.", "^", 
+      RowBox[{"-", "2"}]}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6815756820611863`*^9, 3.6815757508181915`*^9}, {
+   3.6815760751408463`*^9, 3.6815761430318546`*^9}, 3.681657705702425*^9, {
+   3.68165776263128*^9, 3.6816579963705654`*^9}, {3.681658038890222*^9, 
+   3.6816581084787655`*^9}, {3.681658145218264*^9, 3.6816581503196335`*^9}, {
+   3.6816582062972217`*^9, 3.6816582142094564`*^9}, {3.681658249684322*^9, 
+   3.681658386874525*^9}, {3.681658424728237*^9, 3.6816585663033094`*^9}, {
+   3.681658598706502*^9, 3.6816587090952787`*^9}, {3.68165874615038*^9, 
+   3.681658832355234*^9}, {3.6816588724135647`*^9, 3.6816588829653726`*^9}, {
+   3.681665032790947*^9, 3.681665048505463*^9}, {3.6816650791049666`*^9, 
+   3.681665210285848*^9}, {3.681665250852992*^9, 3.6816652519202743`*^9}, {
+   3.681665304771942*^9, 3.68166532399209*^9}, 3.681665358926321*^9, {
+   3.6816655895867867`*^9, 3.681665778118409*^9}, {3.6816658130832343`*^9, 
+   3.681665834224558*^9}, {3.681665878561096*^9, 3.6816659287370243`*^9}, {
+   3.681665979977168*^9, 3.6816659900467377`*^9}, {3.6816663279415894`*^9, 
+   3.681666339119969*^9}, {3.6817455813405037`*^9, 3.681745581936117*^9}, {
+   3.681745734390759*^9, 3.6817457443592834`*^9}, {3.6817457910112743`*^9, 
+   3.6817458235297995`*^9}, {3.6817474970119677`*^9, 3.681747502724141*^9}, 
+   3.681785142394508*^9, {3.6820383246100154`*^9, 3.68203842225163*^9}, {
+   3.6820384538247833`*^9, 3.682038482738804*^9}, {3.6820389720218945`*^9, 
+   3.6820389933027773`*^9}, {3.682176542150719*^9, 3.682176595898729*^9}, {
+   3.6821766278286867`*^9, 3.682176692351816*^9}, {3.682176747610134*^9, 
+   3.6821767746119785`*^9}, {3.6821768156080613`*^9, 
+   3.6821769617598743`*^9}, {3.682177523154135*^9, 3.6821776392612867`*^9}, {
+   3.682177675376381*^9, 3.682177708499514*^9}, {3.6835150376001415`*^9, 
+   3.683515315995517*^9}, {3.6835153634738855`*^9, 3.6835155477531824`*^9}, {
+   3.6835155960547266`*^9, 3.683515598357848*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 4.93, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 3}, 0, 7, 0.01}}, Typeset`size$$ = {
+    720., {259., 270.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`n$182791$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 3}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$182791$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Block[{$CellContext`R = 100, $CellContext`zero = 
+         10 $MachineEpsilon, $CellContext`\[Theta], $CellContext`x, \
+$CellContext`y, $CellContext`r}, $CellContext`\[Theta] = 
+         NDSolveValue[{$CellContext`x^(-2) D[$CellContext`x^2 D[
+                  $CellContext`y[$CellContext`x], $CellContext`x], \
+$CellContext`x] + $CellContext`y[$CellContext`x]^$CellContext`n$$ == 
+            0, $CellContext`y[$CellContext`zero] == 1, 
+            Derivative[1][$CellContext`y][$CellContext`zero] == 0, 
+            WhenEvent[Re[
+               $CellContext`y[$CellContext`x]] <= 
+             0, $CellContext`R = $CellContext`x; 
+             "StopIntegration"]}, $CellContext`y, {$CellContext`x, \
+$CellContext`zero, 10^3}]; Column[{
+           Plot[
+            $CellContext`\[Theta][$CellContext`r], {$CellContext`r, 0, 
+             Min[$CellContext`R, 100]}, Frame -> True, Filling -> Bottom, 
+            PlotRange -> {0, 1}, FrameLabel -> {"\[Xi]", "\[Theta]"}, 
+            ImageSize -> 400, PlotLabel -> 
+            "Solution of the Lane-Emden equation"], 
+           StringJoin[" Radius = ", 
+            If[$CellContext`R == 100, "\[Infinity]", 
+             ToString[$CellContext`R]]]}]], 
+      "Specifications" :> {{{$CellContext`n$$, 3}, 0, 7, 0.01, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{802., {357., 368.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({Attributes[Derivative] = {NHoldAll, ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.6821767217410145`*^9, {3.682176754055284*^9, 3.6821767752757463`*^9}, {
+   3.6821768170869956`*^9, 3.6821769621208344`*^9}, {3.682177557749405*^9, 
+   3.682177584916689*^9}, {3.682177615792843*^9, 3.6821776402007875`*^9}, 
+   3.682177678367338*^9, 3.682177714583703*^9, {3.6835150509271865`*^9, 
+   3.683515221998515*^9}, {3.68351526075983*^9, 3.683515316509884*^9}, {
+   3.6835153647061224`*^9, 3.6835155480609856`*^9}, 3.683515598811058*^9}]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Analytic solutions", "Section",
+ CellChangeTimes->{{3.681576247682561*^9, 3.6815762511668377`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Lane-Emden equation", "Subsection",
+ CellChangeTimes->{{3.681575122408906*^9, 3.6815751285906053`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"DSolve", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"1", "/", 
+              RowBox[{"x", "^", "2"}]}], 
+             RowBox[{"D", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"x", "^", "2"}], " ", 
+                RowBox[{"D", "[", 
+                 RowBox[{
+                  RowBox[{"y", "[", "x", "]"}], ",", "x"}], "]"}]}], ",", 
+               "x"}], "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"y", "[", "x", "]"}], "^", "n"}]}], "\[Equal]", "0"}], 
+          ",", 
+          RowBox[{
+           RowBox[{"y", "[", "0", "]"}], "\[Equal]", "1"}]}], "}"}], ",", 
+        RowBox[{"y", "[", "x", "]"}], ",", "x"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], "]"}], "//", 
+   "FullSimplify"}], "//", "Grid"}]], "Input",
+ CellChangeTimes->{{3.6815736248077865`*^9, 3.6815736872294116`*^9}, {
+  3.6815737232238216`*^9, 3.6815737336306524`*^9}, {3.68157406524782*^9, 
+  3.681574126386352*^9}, {3.681574175050289*^9, 3.681574178209322*^9}, {
+  3.6815744346500034`*^9, 3.6815744402899*^9}, {3.6815747096400785`*^9, 
+  3.68157474599723*^9}, {3.6815755294623146`*^9, 3.6815755310318995`*^9}, {
+  3.6815762100035305`*^9, 3.6815762133288374`*^9}, {3.6820386913134995`*^9, 
+  3.6820388396531134`*^9}, {3.682038878235679*^9, 3.682038883015109*^9}, {
+  3.682038941685443*^9, 3.68203895849188*^9}, {3.6834830644143105`*^9, 
+  3.68348308400303*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"y", "[", "x", "]"}], "\[Rule]", 
+      RowBox[{"1", "-", 
+       FractionBox[
+        SuperscriptBox["x", "2"], "6"]}]}]},
+    {
+     RowBox[{
+      RowBox[{"y", "[", "x", "]"}], "\[Rule]", 
+      FractionBox[
+       RowBox[{"Sin", "[", "x", "]"}], "x"]}]}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.6815740838411713`*^9, 3.681574133915768*^9}, 
+   3.6815743272590394`*^9, 3.6815745737646275`*^9, {3.6815747101197615`*^9, 
+   3.6815747182938237`*^9}, 3.6815748230054493`*^9, 3.6815749227121706`*^9, 
+   3.681575531648494*^9, 3.681576236420687*^9, {3.682038672146612*^9, 
+   3.6820387350682*^9}, {3.6820387690098343`*^9, 3.6820388400582886`*^9}, 
+   3.682038879765996*^9, {3.682038922337197*^9, 3.682038958775363*^9}, {
+   3.683483065628513*^9, 3.683483084270708*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1164, 818},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+Magnification:>1.8 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 145, 2, 164, "Title"],
+Cell[CellGroupData[{
+Cell[750, 28, 106, 1, 112, "Section"],
+Cell[CellGroupData[{
+Cell[881, 33, 109, 1, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[1015, 38, 5177, 111, 327, "Input"],
+Cell[6195, 151, 3329, 62, 754, "Output"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9585, 220, 105, 1, 112, "Section"],
+Cell[CellGroupData[{
+Cell[9715, 225, 109, 1, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[9849, 230, 1714, 43, 89, "Input"],
+Cell[11566, 275, 939, 23, 111, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

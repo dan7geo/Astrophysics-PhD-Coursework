@@ -1,0 +1,1502 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     43651,       1494]
+NotebookOptionsPosition[     36705,       1238]
+NotebookOutlinePosition[     37273,       1260]
+CellTagsIndexPosition[     37230,       1257]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 12 - ASTR404\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0.1 on December 2, 2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell["\<\
+Finding dimensionless combinations of the moment of inertia, radius and other \
+constants:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"const", "=", 
+  RowBox[{"First", "@", 
+   RowBox[{"DimensionalCombinations", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<MomentOfInertia\>\"", ",", "\"\<Radius\>\""}], "}"}], ",", 
+     RowBox[{"IncludeQuantities", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<GravitationalConstant\>\"", ",", "\"\<SpeedOfLight\>\""}],
+        "}"}]}]}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{"(", 
+    TemplateBox[{"1",RowBox[{
+        SuperscriptBox[
+         StyleBox["\"c\"", Italic, StripOnInput -> False], 
+         RowBox[{"2", "/", "3"}]], "\[NegativeMediumSpace]", "\"/\"", 
+        "\[InvisibleSpace]", 
+        RadicalBox[
+         StyleBox["\"G\"", Italic, StripOnInput -> False], "3"]}],
+      "speed of light in vacuum to the two thirds per cube root Newtonian \
+gravitational constant",FractionBox[
+       SuperscriptBox["\"SpeedOfLight\"", 
+        RowBox[{"2", "/", "3"}]], 
+       SuperscriptBox["\"GravitationalConstant\"", 
+        RowBox[{"1", "/", "3"}]]]},
+     "Quantity"], ")"}], " ", 
+   TemplateBox[{"\"Radius\"","\"Radius\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " radius"}], TooltipStyle -> 
+      "TextStyling"]& )]}], 
+  SuperscriptBox[
+   TemplateBox[{"\"MomentOfInertia\"","\"MomentOfInertia\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " moment of inertia"}], TooltipStyle -> 
+      "TextStyling"]& )], 
+   RowBox[{"1", "/", "3"}]]]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+We can obtain units of \[Omega] by cubing the reciprocal of the above and \
+multiplying with \[Omega].\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Omega]", "/", 
+  RowBox[{"const", "^", "3"}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"\[Omega]", " ", 
+   RowBox[{"(", 
+    TemplateBox[{"1",RowBox[{
+        StyleBox["\"G\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
+         "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox[
+         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}],
+      "Newtonian gravitational constants per speed of light in vacuum \
+squared",FractionBox["\"GravitationalConstant\"", 
+       SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+     "Quantity"], ")"}], " ", 
+   TemplateBox[{"\"MomentOfInertia\"","\"MomentOfInertia\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " moment of inertia"}], TooltipStyle -> 
+      "TextStyling"]& )]}], 
+  SuperscriptBox[
+   TemplateBox[{"\"Radius\"","\"Radius\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " radius"}], TooltipStyle -> 
+      "TextStyling"]& )], "3"]]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Since J is equal to the moment of inertia times \[Omega], we get the desired \
+result.\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Angular rotation rate for earth", "Subsection"],
+
+Cell["Assuming earth is a uniform sphere of constant density.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fE", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+       "\"G\"", Italic, StripOnInput -> False],
+       "Newtonian gravitational constants","\"GravitationalConstant\""},
+      "Quantity"], 
+     RowBox[{"2", "/", "5"}], " ", 
+     NamespaceBox["LinguisticAssistant",
+      DynamicModuleBox[{Typeset`query$$ = "mass of earth", Typeset`boxes$$ = 
+       RowBox[{
+         TemplateBox[{"\"Earth\"", 
+           RowBox[{"Entity", "[", 
+             RowBox[{"\"Planet\"", ",", "\"Earth\""}], "]"}], 
+           "\"Entity[\\\"Planet\\\", \\\"Earth\\\"]\"", "\"planet\""}, 
+          "Entity"], "[", "\"Mass\"", "]"}], Typeset`allassumptions$$ = {}, 
+       Typeset`assumptions$$ = {}, Typeset`open$$ = {1}, 
+       Typeset`querystate$$ = {
+       "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+        1.2944339`7.5636248716749765, "Messages" -> {}}}, 
+       DynamicBox[ToBoxes[
+         AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+          Dynamic[Typeset`query$$], 
+          Dynamic[Typeset`boxes$$], 
+          Dynamic[Typeset`allassumptions$$], 
+          Dynamic[Typeset`assumptions$$], 
+          Dynamic[Typeset`open$$], 
+          Dynamic[Typeset`querystate$$]], StandardForm],
+        ImageSizeCache->{162., {10., 26.}},
+        TrackedSymbols:>{
+         Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+          Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+       DynamicModuleValues:>{},
+       UndoTrackedVariables:>{Typeset`open$$}],
+      BaseStyle->{"Deploy"},
+      DeleteWithContents->True,
+      Editable->False,
+      SelectWithContents->True], 
+     RowBox[{
+      NamespaceBox["LinguisticAssistant",
+       DynamicModuleBox[{Typeset`query$$ = "radius of earth", 
+        Typeset`boxes$$ = RowBox[{
+          TemplateBox[{"\"Earth\"", 
+            RowBox[{"Entity", "[", 
+              RowBox[{"\"Planet\"", ",", "\"Earth\""}], "]"}], 
+            "\"Entity[\\\"Planet\\\", \\\"Earth\\\"]\"", "\"planet\""}, 
+           "Entity"], "[", "\"Radius\"", "]"}], 
+        Typeset`allassumptions$$ = {{
+         "type" -> "MultiClash", "word" -> "", "template" -> 
+          "Assuming ${word1} is referring to ${desc1}. Use \"${word2}\" as \
+${desc2}.", "count" -> "2", 
+          "Values" -> {{
+            "name" -> "Planet", "word" -> "earth", "desc" -> "a planet", 
+             "input" -> "*MC.%7E-_*Planet-"}, {
+            "name" -> "Unit", "word" -> "", "desc" -> "a unit", "input" -> 
+             "*MC.%7E-_*Unit-"}}}}, Typeset`assumptions$$ = {}, 
+        Typeset`open$$ = {1}, Typeset`querystate$$ = {
+        "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+         0.6317130999999999999`7.252064876562136, "Messages" -> {}}}, 
+        DynamicBox[ToBoxes[
+          AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+           Dynamic[Typeset`query$$], 
+           Dynamic[Typeset`boxes$$], 
+           Dynamic[Typeset`allassumptions$$], 
+           Dynamic[Typeset`assumptions$$], 
+           Dynamic[Typeset`open$$], 
+           Dynamic[Typeset`querystate$$]], StandardForm],
+         ImageSizeCache->{169., {10., 26.}},
+         TrackedSymbols:>{
+          Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+           Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+        DynamicModuleValues:>{},
+        UndoTrackedVariables:>{Typeset`open$$}],
+       BaseStyle->{"Deploy"},
+       DeleteWithContents->True,
+       Editable->False,
+       SelectWithContents->True], "^", "2"}], 
+     RowBox[{
+      RowBox[{
+       NamespaceBox["LinguisticAssistant",
+        DynamicModuleBox[{Typeset`query$$ = "angular velocity of earth", 
+         Typeset`boxes$$ = RowBox[{
+           TemplateBox[{"\"Earth\"", 
+             RowBox[{"Entity", "[", 
+               RowBox[{"\"Planet\"", ",", "\"Earth\""}], "]"}], 
+             "\"Entity[\\\"Planet\\\", \\\"Earth\\\"]\"", "\"planet\""}, 
+            "Entity"], "[", "\"EquatorialAngularVelocity\"", "]"}], 
+         Typeset`allassumptions$$ = {}, Typeset`assumptions$$ = {}, 
+         Typeset`open$$ = {1}, Typeset`querystate$$ = {
+         "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+          0.5073535`7.1568556542160895, "Messages" -> {}}}, 
+         DynamicBox[ToBoxes[
+           AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+            Dynamic[Typeset`query$$], 
+            Dynamic[Typeset`boxes$$], 
+            Dynamic[Typeset`allassumptions$$], 
+            Dynamic[Typeset`assumptions$$], 
+            Dynamic[Typeset`open$$], 
+            Dynamic[Typeset`querystate$$]], StandardForm],
+          ImageSizeCache->{259., {10., 26.}},
+          
+          TrackedSymbols:>{
+           Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+            Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+         DynamicModuleValues:>{},
+         UndoTrackedVariables:>{Typeset`open$$}],
+        BaseStyle->{"Deploy"},
+        DeleteWithContents->True,
+        Editable->False,
+        SelectWithContents->True], "/", 
+       RowBox[{
+        NamespaceBox["LinguisticAssistant",
+         DynamicModuleBox[{Typeset`query$$ = "radius of earth", 
+          Typeset`boxes$$ = RowBox[{
+            TemplateBox[{"\"Earth\"", 
+              RowBox[{"Entity", "[", 
+                RowBox[{"\"Planet\"", ",", "\"Earth\""}], "]"}], 
+              "\"Entity[\\\"Planet\\\", \\\"Earth\\\"]\"", "\"planet\""}, 
+             "Entity"], "[", "\"Radius\"", "]"}], 
+          Typeset`allassumptions$$ = {{
+           "type" -> "MultiClash", "word" -> "", "template" -> 
+            "Assuming ${word1} is referring to ${desc1}. Use \"${word2}\" as \
+${desc2}.", "count" -> "2", 
+            "Values" -> {{
+              "name" -> "Planet", "word" -> "earth", "desc" -> "a planet", 
+               "input" -> "*MC.%7E-_*Planet-"}, {
+              "name" -> "Unit", "word" -> "", "desc" -> "a unit", "input" -> 
+               "*MC.%7E-_*Unit-"}}}}, Typeset`assumptions$$ = {}, 
+          Typeset`open$$ = {1}, Typeset`querystate$$ = {
+          "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+           0.6291531`7.250301334322046, "Messages" -> {}}}, 
+          DynamicBox[ToBoxes[
+            AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+             Dynamic[Typeset`query$$], 
+             Dynamic[Typeset`boxes$$], 
+             Dynamic[Typeset`allassumptions$$], 
+             Dynamic[Typeset`assumptions$$], 
+             Dynamic[Typeset`open$$], 
+             Dynamic[Typeset`querystate$$]], StandardForm],
+           ImageSizeCache->{169., {10., 26.}},
+           
+           TrackedSymbols:>{
+            Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+             Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+          DynamicModuleValues:>{},
+          UndoTrackedVariables:>{Typeset`open$$}],
+         BaseStyle->{"Deploy"},
+         DeleteWithContents->True,
+         Editable->False,
+         SelectWithContents->True], "^", "3"}]}], "/", 
+      RowBox[{
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+         "\"SpeedOfLight\""},
+        "Quantity"], "^", "2"}]}]}], " ", ",", 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],
+      RowBox[{"\[InvisibleSpace]", "\"\\\"\""}],
+      RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}],
+      "arc seconds per year",FractionBox["\"ArcSeconds\"", "\"Years\""]},
+     "QuantityUnitPostfix"]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "0.1320752010868597785`4.031672590011527",
+   RowBox[{"\[InvisibleSpace]", "\"\\\"\""}],
+   RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}],
+   "arc seconds per year",FractionBox["\"ArcSeconds\"", "\"Years\""]},
+  "QuantityUnitPostfix"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Time taken for one rotation", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", " ", "fE"}], "==", 
+     TemplateBox[{
+      "360",RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}],"degrees",
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]}], ",", "t"}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ",", "1"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"t", "\[Rule]", 
+  TemplateBox[{
+   "3.09449886607564`3.7306425943475463*^14","\"s\"","seconds","\"Seconds\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Angular rotation rate for fastest pulsar", "Subsection"],
+
+Cell["\<\
+The fastest pulsar is PSR J1748-2446ad according to Google. Assuming it is a \
+uniform sphere of 2 solar mass and 16km radius.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fP", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+       "\"G\"", Italic, StripOnInput -> False],
+       "Newtonian gravitational constants","\"GravitationalConstant\""},
+      "Quantity"], 
+     RowBox[{"2", "/", "5"}], " ", 
+     TemplateBox[{"2",SubscriptBox[
+        StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+       "solar masses","\"SolarMass\""},
+      "Quantity"], 
+     RowBox[{
+      TemplateBox[{"16","\"km\"","kilometers","\"Kilometers\""},
+       "Quantity"], "^", "2"}], " ", 
+     RowBox[{
+      RowBox[{
+       NamespaceBox["LinguisticAssistant",
+        DynamicModuleBox[{Typeset`query$$ = 
+         "angular velocity of PSR J1748-2446ad", Typeset`boxes$$ = RowBox[{
+           TemplateBox[{"\"PSR J1748-2446ad\"", 
+             RowBox[{"Entity", "[", 
+               RowBox[{"\"Pulsar\"", ",", "\"PSRJ1748Minus2446ad\""}], "]"}], 
+             "\"Entity[\\\"Pulsar\\\", \\\"PSRJ1748Minus2446ad\\\"]\"", 
+             "\"pulsar\""}, "Entity"], "[", 
+           TemplateBox[{"\"equatorial angular velocity\"", 
+             RowBox[{"EntityProperty", "[", 
+               RowBox[{"\"Pulsar\"", ",", "\"EquatorialAngularVelocity\""}], 
+               "]"}], "\"EntityProperty[\\\"Pulsar\\\", \
+\\\"EquatorialAngularVelocity\\\"]\""}, "EntityProperty"], "]"}], 
+         Typeset`allassumptions$$ = {}, Typeset`assumptions$$ = {}, 
+         Typeset`open$$ = {1}, Typeset`querystate$$ = {
+         "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+          1.293942`7.563459803333688, "Messages" -> {}}}, 
+         DynamicBox[ToBoxes[
+           AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+            Dynamic[Typeset`query$$], 
+            Dynamic[Typeset`boxes$$], 
+            Dynamic[Typeset`allassumptions$$], 
+            Dynamic[Typeset`assumptions$$], 
+            Dynamic[Typeset`open$$], 
+            Dynamic[Typeset`querystate$$]], StandardForm],
+          ImageSizeCache->{402., {10., 26.}},
+          
+          TrackedSymbols:>{
+           Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+            Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+         DynamicModuleValues:>{},
+         UndoTrackedVariables:>{Typeset`open$$}],
+        BaseStyle->{"Deploy"},
+        DeleteWithContents->True,
+        Editable->False,
+        SelectWithContents->True], "/", 
+       RowBox[{
+        TemplateBox[{"16","\"km\"","kilometers","\"Kilometers\""},
+         "Quantity"], "^", "3"}]}], "/", 
+      RowBox[{
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+         "\"SpeedOfLight\""},
+        "Quantity"], "^", "2"}]}]}], " ", ",", 
+    RowBox[{
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],"\"rev\"","revolutions",
+       "\"Revolutions\""},
+      "Quantity"], "/", 
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],"\"s\"","seconds",
+       "\"Seconds\""},
+      "Quantity"]}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "52.8883528357962272117`4.031485769963554",
+   RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     "\"s\""}],"revolutions per second",FractionBox[
+   "\"Revolutions\"", "\"Seconds\""]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Time taken for one rotation", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", " ", "fP"}], "==", 
+     TemplateBox[{
+      "360",RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}],"degrees",
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]}], ",", "t"}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ",", "1"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"t", "\[Rule]", 
+  TemplateBox[{
+   "0.0189077546639564414`3.7304557742995725","\"s\"","seconds","\"Seconds\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Finding mass from constants", "Subsection"],
+
+Cell["\<\
+Finding dimensions of each constant, raising them to the powers x, y, z \
+respectively and then solving for values giving units of mass.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mS", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+       "\"G\"", Italic, StripOnInput -> False],
+       "Newtonian gravitational constants","\"GravitationalConstant\""},
+      "Quantity"], "^", "x"}], 
+    RowBox[{
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+       "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+       "\"SpeedOfLight\""},
+      "Quantity"], "^", "y"}], 
+    RowBox[{
+     TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1],"\"\[HBar]\"",
+       "reduced Planck constants","\"ReducedPlanckConstant\""},
+      "Quantity"], "^", "z"}]}], "/.", 
+   RowBox[{"First", "@", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Exponent", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Times", "@@", 
+             RowBox[{"MapThread", "[", 
+              RowBox[{"Power", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"Times", "@@@", 
+                  RowBox[{"Apply", "[", 
+                   RowBox[{"Power", ",", 
+                    RowBox[{"UnitDimensions", "/@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    TemplateBox[{
+                    InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+                    "\"G\"", Italic, StripOnInput -> False],
+                    "Newtonian gravitational constants",
+                    "\"GravitationalConstant\""},
+                    "Quantity"], ",", 
+                    
+                    TemplateBox[{
+                    InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+                    "\"c\"", Italic, StripOnInput -> False],
+                    "speed of light in vacuum","\"SpeedOfLight\""},
+                    "Quantity"], ",", 
+                    
+                    TemplateBox[{
+                    InterpretationBox["\[InvisibleSpace]", 1],"\"\[HBar]\"",
+                    "reduced Planck constants","\"ReducedPlanckConstant\""},
+                    "Quantity"]}], "}"}]}], ",", 
+                    RowBox[{"{", "2", "}"}]}], "]"}]}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "}"}]}], 
+              "]"}]}], "//", "PowerExpand"}], ",", "#"}], "]"}], "&"}], "/@", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<LengthUnit\>\"", ",", "\"\<MassUnit\>\"", ",", 
+          "\"\<TimeUnit\>\""}], "}"}]}], "\[Equal]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"1",RowBox[{
+     SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+     SqrtBox[
+      StyleBox["\"c\"", Italic, StripOnInput -> False]], 
+     "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SqrtBox[
+      StyleBox["\"G\"", Italic, StripOnInput -> False]]}],
+   "square root reduced Planck constant square root speed of light in vacuum \
+per square root Newtonian gravitational constant",FractionBox[
+    RowBox[{
+      SqrtBox["\"ReducedPlanckConstant\""], " ", 
+      SqrtBox["\"SpeedOfLight\""]}], 
+    SqrtBox["\"GravitationalConstant\""]]},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["(Need to report bug in the built-in \
+DimensionalCombinations function...)",
+ FontSlant->"Italic"]], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Evaluating numerically", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mS", "//", "UnitConvert"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "2.176470119128465639122742668256`4.332613202290151*^-8","\"kg\"",
+   "kilograms","\"Kilograms\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rS", "=", 
+  RowBox[{
+   RowBox[{"FormulaData", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<BlackHoleEventHorizonRadius\>\"", ",", " ", "\"\<Standard\>\""}], 
+      "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"\"\<M\>\"", " ", "\[Rule]", "mS"}], "}"}]}], "]"}], "//", 
+   "Last"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "3.232456632536754646320133924572348132502987`15.954589770191005*^-35",
+   "\"m\"","meters","\"Meters\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rS", "/", 
+   TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+     "\"c\"", Italic, StripOnInput -> False],"speed of light in vacuum",
+     "\"SpeedOfLight\""},
+    "Quantity"]}], "//", "UnitConvert"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "1.0782314718993880247381453220455427`15.954589770191005*^-43","\"s\"",
+   "seconds","\"Seconds\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Solving for separation in terms of period", "Subsection"],
+
+Cell["Let M be the total mass of the system.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sa", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"P", "[", "t", "]"}], "^", "2"}], "/", 
+       RowBox[{"a", "^", "3"}]}], "\[Equal]", 
+      RowBox[{"4", 
+       RowBox[{
+        RowBox[{"\[Pi]", "^", "2"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"G", " ", "M"}], ")"}]}]}]}], ",", "a"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"a", "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["G", 
+     RowBox[{"1", "/", "3"}]], " ", 
+    SuperscriptBox["M", 
+     RowBox[{"1", "/", "3"}]], " ", 
+    SuperscriptBox[
+     RowBox[{"P", "[", "t", "]"}], 
+     RowBox[{"2", "/", "3"}]]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"2", " ", "\[Pi]"}], ")"}], 
+    RowBox[{"2", "/", "3"}]]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Equation of mass transfer", "Subsection"],
+
+Cell["From the lecture notes we have:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqM", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{
+      RowBox[{"a", "[", "t", "]"}], ",", "t"}], "]"}], "/", "a"}], "\[Equal]", 
+   RowBox[{"2", " ", "M1dot", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"M1", "-", "M2"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"M1", " ", "M2"}], ")"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["a", "\[Prime]",
+     MultilineFunction->None], "[", "t", "]"}], "a"], "\[Equal]", 
+  FractionBox[
+   RowBox[{"2", " ", "M1dot", " ", 
+    RowBox[{"(", 
+     RowBox[{"M1", "-", "M2"}], ")"}]}], 
+   RowBox[{"M1", " ", "M2"}]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituting for a from the first equation", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"eqM", "/.", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "'"}], "[", "t", "]"}], "\[Rule]", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"a", "/.", "sa"}], ",", "t"}], "]"}]}]}], "/.", "sa"}], "//", 
+  "FullSimplify"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"3", " ", "M1dot", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "M1"]}], "+", 
+     FractionBox["1", "M2"]}], ")"}]}], "\[Equal]", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["P", "\[Prime]",
+     MultilineFunction->None], "[", "t", "]"}], 
+   RowBox[{"P", "[", "t", "]"}]]}]], "Output"]
+}, Open  ]],
+
+Cell["This is identical to the given equation.", "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell["Approximating derivatives up to first order:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"1", "/", "P"}], "  ", 
+       RowBox[{"\[CapitalDelta]P", "/", "\[CapitalDelta]t"}]}], " ", 
+      "\[Equal]", " ", 
+      RowBox[{"3", " ", "M1dot", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"M1", " ", "-", " ", "M2"}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"M1", " ", "M2"}], ")"}]}]}]}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"P", "->", 
+        TemplateBox[{"2.49","\"days\"","days","\"Days\""},
+         "Quantity"]}], ",", 
+       RowBox[{"\[CapitalDelta]P", "\[Rule]", 
+        TemplateBox[{"20","\"s\"","seconds","\"Seconds\""},
+         "Quantity"]}], ",", 
+       RowBox[{"\[CapitalDelta]t", "->", 
+        TemplateBox[{"100","\"yr\"","years","\"Years\""},
+         "Quantity"]}], ",", 
+       RowBox[{"M1", "->", 
+        TemplateBox[{"2.9",SubscriptBox[
+           StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+          "solar masses","\"SolarMass\""},
+         "Quantity"]}], ",", 
+       RowBox[{"M2", "->", 
+        TemplateBox[{"1.4",SubscriptBox[
+           StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+          "solar masses","\"SolarMass\""},
+         "Quantity"]}]}], "}"}]}], ",", "M1dot"}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ",", "1"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"M1dot", "\[Rule]", 
+  TemplateBox[{
+   "5.288532990115646`*^16",
+    RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+      "\"s\""}],"kilograms per second",FractionBox[
+    "\"Kilograms\"", "\"Seconds\""]},
+   "Quantity"]}]], "Output"]
+}, Open  ]],
+
+Cell["This is positive. Therefore, M1 is gaining mass.", "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q4)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Kepler\[CloseCurlyQuote]s law", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sa", "=", 
+  RowBox[{"a", "\[Rule]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"2", 
+       RowBox[{"\[Pi]", "/", "\[CapitalOmega]"}]}], ")"}], "^", "2"}], " ", 
+    "G", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"M1", "+", "M2"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"4", 
+       RowBox[{"\[Pi]", "^", "2"}]}], ")"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"a", "\[Rule]", 
+  FractionBox[
+   RowBox[{"G", " ", 
+    RowBox[{"(", 
+     RowBox[{"M1", "+", "M2"}], ")"}]}], 
+   SuperscriptBox["\[CapitalOmega]", "2"]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituting this in the equation", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sJ", "=", 
+  RowBox[{
+   RowBox[{"Jorb", " ", "->", " ", 
+    RowBox[{"M1", " ", 
+     RowBox[{"M2", " ", "/", 
+      RowBox[{"(", 
+       RowBox[{"M1", "+", "M2"}], ")"}]}], " ", 
+     RowBox[{"a", "^", "2"}], " ", "\[CapitalOmega]"}]}], " ", "/.", 
+   "sa"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Jorb", "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["G", "2"], " ", "M1", " ", "M2", " ", 
+    RowBox[{"(", 
+     RowBox[{"M1", "+", "M2"}], ")"}]}], 
+   SuperscriptBox["\[CapitalOmega]", "3"]]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "This is the required relation. The constant of proportionality is: ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["G", "2"], " ", "M1", " ", "M2", " ", 
+   RowBox[{"(", 
+    RowBox[{"M1", "+", "M2"}], ")"}]}]]]
+}], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Equation for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["I", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sI", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"I1", " ", "\[CapitalOmega]"}], " ", "+", " ", "Jorb"}], 
+       "\[Equal]", "Jtot"}], "/.", "sJ"}], ",", "I1"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"I1", "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["G", "2"]}], " ", 
+     SuperscriptBox["M1", "2"], " ", "M2"}], "-", 
+    RowBox[{
+     SuperscriptBox["G", "2"], " ", "M1", " ", 
+     SuperscriptBox["M2", "2"]}], "+", 
+    RowBox[{"Jtot", " ", 
+     SuperscriptBox["\[CapitalOmega]", "3"]}]}], 
+   SuperscriptBox["\[CapitalOmega]", "4"]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Maximizing over \[CapitalOmega]", "Subsection"],
+
+Cell["Finding the point where derivative is zero.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[CapitalOmega]", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"I1", "/.", "sI"}], ",", "\[CapitalOmega]"}], "]"}], 
+      "\[Equal]", "0"}], ",", "\[CapitalOmega]"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[CapitalOmega]", "\[Rule]", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["2", 
+     RowBox[{"2", "/", "3"}]], " ", 
+    SuperscriptBox["G", 
+     RowBox[{"2", "/", "3"}]], " ", 
+    SuperscriptBox["M2", 
+     RowBox[{"1", "/", "3"}]], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["M1", "2"], "+", 
+       RowBox[{"M1", " ", "M2"}]}], ")"}], 
+     RowBox[{"1", "/", "3"}]]}], 
+   SuperscriptBox["Jtot", 
+    RowBox[{"1", "/", "3"}]]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  SubscriptBox["J", "1"], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Subsection"],
+
+Cell["Substituting this value in the above equation.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"J1", "==", 
+       RowBox[{"I1", " ", "\[CapitalOmega]"}]}], "/.", "sI"}], "/.", 
+     "s\[CapitalOmega]"}], "/.", "sJ"}], "/.", 
+   RowBox[{"Jtot", "\[Rule]", 
+    RowBox[{"J1", "+", "Jorb"}]}]}], "//", "Simplify"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"J1", "\[Equal]", 
+  RowBox[{"3", " ", "Jorb"}]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q5)", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Energy released per kg of iron", "Subsection"],
+
+Cell["\<\
+Assuming mass of iron produced is approximately same as mass burned.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EperKg", "=", 
+  RowBox[{
+   TemplateBox[{RowBox[{"7.3", " ", 
+       SuperscriptBox["10", "13"]}],"\"J\"","joules","\"Joules\""},
+    "Quantity"], "/", 
+   TemplateBox[{"1","\"kg\"","kilograms","\"Kilograms\""},
+    "Quantity"]}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "7.3`*^13",
+   RowBox[{"\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     "\"kg\""}],"joules per kilogram",FractionBox[
+   "\"Joules\"", "\"Kilograms\""]},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Potential energy of star", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PE", "=", 
+   TemplateBox[{RowBox[{
+       RowBox[{"-", "5.1"}], " ", 
+       SuperscriptBox["10", "43"]}],"\"J\"","joules","\"Joules\""},
+    "Quantity"]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Initial thermal energy of the star", "Subsection"],
+
+Cell["Assuming virial equilibrium.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"thermalE", "=", 
+  RowBox[{
+   RowBox[{"-", "PE"}], "/", "2"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"2.55`*^43","\"J\"","joules","\"Joules\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["For gravitationally unbound system", "Subsection"],
+
+Cell["The net energy must be zero. This implies:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sE", "=", " ", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"thermalE", "+", "PE", "+", "releasedE"}], "\[Equal]", "0"}], 
+     ",", "releasedE"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"releasedE", "\[Rule]", 
+  TemplateBox[{"2.55`*^43","\"J\"","joules","\"Joules\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Mass of iron that must burn", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"releasedE", "/", "EperKg"}], "/.", "sE"}], ",", 
+   "\"\<SolarMass\>\""}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"0.17567336548247775`",SubscriptBox[
+    StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar masses","\"SolarMass\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Energy of ejecta", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ejectaE", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"1", "/", "2"}], 
+     TemplateBox[{"1.38",SubscriptBox[
+        StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+       "solar masses","\"SolarMass\""},
+      "Quantity"], 
+     RowBox[{
+      TemplateBox[{
+       "5000",RowBox[{
+         "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"s\""}],"kilometers per second",FractionBox[
+        "\"Kilometers\"", "\"Seconds\""]},
+       "Quantity"], "^", "2"}]}], ",", "\"\<Joules\>\""}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"3.4300503749999996`*^43","\"J\"","joules","\"Joules\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Mass of additional iron burned", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"ejectaE", "/", "EperKg"}], ",", "\"\<SolarMass\>\""}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"0.2363013698630137`",SubscriptBox[
+    StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar masses","\"SolarMass\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1584, 815},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PrintingMargins"->{{36, 36}, {54, 54}}},
+Magnification:>1.6 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 312, 11, 192, "Title"],
+Cell[895, 35, 328, 10, 127, "Chapter"],
+Cell[CellGroupData[{
+Cell[1248, 49, 22, 0, 94, "Chapter"],
+Cell[CellGroupData[{
+Cell[1295, 53, 21, 0, 112, "Section"],
+Cell[1319, 55, 114, 3, 47, "Text"],
+Cell[CellGroupData[{
+Cell[1458, 62, 397, 10, 109, "Input"],
+Cell[1858, 74, 1307, 31, 98, "Output"]
+}, Open  ]],
+Cell[3180, 108, 126, 3, 47, "Text"],
+Cell[CellGroupData[{
+Cell[3331, 115, 83, 2, 48, "Input"],
+Cell[3417, 119, 1132, 25, 89, "Output"]
+}, Open  ]],
+Cell[4564, 147, 110, 3, 47, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4711, 155, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[4757, 159, 53, 0, 77, "Subsection"],
+Cell[4813, 161, 71, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[4909, 165, 7678, 164, 66, "Input"],
+Cell[12590, 331, 285, 6, 58, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12924, 343, 49, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[12998, 347, 351, 11, 58, "Input"],
+Cell[13352, 360, 163, 4, 60, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13576, 371, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[13622, 375, 62, 0, 77, "Subsection"],
+Cell[13687, 377, 150, 3, 47, "Text"],
+Cell[CellGroupData[{
+Cell[13862, 384, 3161, 73, 66, "Input"],
+Cell[17026, 459, 266, 6, 56, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17341, 471, 49, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[17415, 475, 351, 11, 58, "Input"],
+Cell[17769, 488, 164, 4, 54, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18006, 500, 22, 0, 114, "Chapter"],
+Cell[CellGroupData[{
+Cell[18053, 504, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[18099, 508, 49, 0, 77, "Subsection"],
+Cell[18151, 510, 160, 3, 47, "Text"],
+Cell[CellGroupData[{
+Cell[18336, 517, 2782, 70, 224, "Input"],
+Cell[21121, 589, 611, 14, 65, "Output"]
+}, Open  ]],
+Cell[21747, 606, 132, 2, 48, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21916, 613, 44, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[21985, 617, 61, 1, 48, "Input"],
+Cell[22049, 620, 156, 4, 63, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22266, 631, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[22312, 635, 344, 11, 48, "Input"],
+Cell[22659, 648, 163, 4, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22871, 658, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[22917, 662, 269, 7, 51, "Input"],
+Cell[23189, 671, 157, 4, 60, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23407, 682, 22, 0, 114, "Chapter"],
+Cell[CellGroupData[{
+Cell[23454, 686, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[23500, 690, 63, 0, 77, "Subsection"],
+Cell[23566, 692, 54, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[23645, 696, 477, 16, 48, "Input"],
+Cell[24125, 714, 403, 14, 78, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24577, 734, 47, 0, 77, "Subsection"],
+Cell[24627, 736, 47, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[24699, 740, 366, 12, 48, "Input"],
+Cell[25068, 754, 308, 10, 69, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25425, 770, 64, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[25514, 774, 288, 10, 48, "Input"],
+Cell[25805, 786, 357, 12, 72, "Output"]
+}, Open  ]],
+Cell[26177, 801, 56, 0, 47, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26282, 807, 21, 0, 112, "Section"],
+Cell[26306, 809, 60, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[26391, 813, 1399, 38, 94, "Input"],
+Cell[27793, 853, 281, 7, 63, "Output"]
+}, Open  ]],
+Cell[28089, 863, 64, 0, 47, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28202, 869, 22, 0, 114, "Chapter"],
+Cell[CellGroupData[{
+Cell[28249, 873, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[28295, 877, 51, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[28371, 881, 397, 14, 48, "Input"],
+Cell[28771, 897, 193, 6, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29013, 909, 55, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[29093, 913, 297, 9, 48, "Input"],
+Cell[29393, 924, 244, 7, 74, "Output"]
+}, Open  ]],
+Cell[29652, 934, 240, 7, 48, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29941, 947, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[29987, 951, 156, 6, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[30168, 961, 344, 11, 48, "Input"],
+Cell[30515, 974, 424, 13, 74, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30988, 993, 53, 0, 77, "Subsection"],
+Cell[31044, 995, 59, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[31128, 999, 359, 11, 48, "Input"],
+Cell[31490, 1012, 510, 17, 80, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32049, 1035, 130, 3, 77, "Subsection"],
+Cell[32182, 1040, 62, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[32269, 1044, 316, 10, 48, "Input"],
+Cell[32588, 1056, 84, 2, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32745, 1066, 22, 0, 114, "Chapter"],
+Cell[CellGroupData[{
+Cell[32792, 1070, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[32838, 1074, 52, 0, 77, "Subsection"],
+Cell[32893, 1076, 92, 2, 47, "Text"],
+Cell[CellGroupData[{
+Cell[33010, 1082, 267, 7, 65, "Input"],
+Cell[33280, 1091, 227, 6, 63, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33556, 1103, 46, 0, 77, "Subsection"],
+Cell[33605, 1105, 209, 6, 60, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33851, 1116, 56, 0, 77, "Subsection"],
+Cell[33910, 1118, 44, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[33979, 1122, 99, 3, 48, "Input"],
+Cell[34081, 1127, 97, 2, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34227, 1135, 56, 0, 77, "Subsection"],
+Cell[34286, 1137, 58, 0, 47, "Text"],
+Cell[CellGroupData[{
+Cell[34369, 1141, 290, 9, 48, "Input"],
+Cell[34662, 1152, 135, 3, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34846, 1161, 49, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[34920, 1165, 171, 5, 48, "Input"],
+Cell[35094, 1172, 195, 4, 57, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35350, 1183, 21, 0, 112, "Section"],
+Cell[CellGroupData[{
+Cell[35396, 1187, 38, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[35459, 1191, 604, 16, 58, "Input"],
+Cell[36066, 1209, 111, 2, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36226, 1217, 52, 0, 77, "Subsection"],
+Cell[CellGroupData[{
+Cell[36303, 1221, 141, 4, 48, "Input"],
+Cell[36447, 1227, 194, 4, 57, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

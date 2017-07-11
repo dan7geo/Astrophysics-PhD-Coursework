@@ -1,0 +1,1511 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     45342,       1503]
+NotebookOptionsPosition[     38116,       1241]
+NotebookOutlinePosition[     38715,       1264]
+CellTagsIndexPosition[     38672,       1261]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["HW 7 - ASTR540\n",
+  FontFamily->"Arial",
+  FontSize->56,
+  FontWeight->"Bold"],
+ StyleBox["Created with Wolfram Mathematica 11.0 on December 13, 2016",
+  FontFamily->"Arial",
+  FontSize->10,
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]]
+}], "Title"],
+
+Cell[TextData[{
+ StyleBox["Daniel George - ",
+  FontSize->18],
+ StyleBox[ButtonBox["dgeorge5@illinois.edu\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:dgeorge5@illinois.edu"], None},
+  ButtonNote->"mailto:dgeorge5@illinois.edu"],
+  FontSize->18,
+  FontColor->RGBColor[0., 0., 0.6078431372549019]]
+}], "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Q1", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell["Integrating and equating to given mass:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sa", "=", 
+  RowBox[{"First", "@", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"Integrate", "[", " ", 
+      RowBox[{
+       RowBox[{"m", "*", "a", " ", 
+        RowBox[{"m", "^", 
+         RowBox[{"-", "2.35"}]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"m", ",", ".1", ",", "20"}], "}"}]}], "]"}], "\[Equal]", 
+     RowBox[{"10", "^", "6"}]}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", "\[Rule]", "185355.8012405478`"}], "}"}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Luminosity", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Integrate", "[", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"m", "^", "4"}], "*", "a", " ", 
+      RowBox[{"m", "^", 
+       RowBox[{"-", "2.35"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", ".1", ",", "20"}], "}"}]}], "]"}], 
+   TemplateBox[{"1",SubsuperscriptBox[
+      StyleBox["\"L\"", Italic, StripOnInput -> False], "\"N\"", 
+      "\"\[Sun]\""],"nominal solar luminosities","\"NominalSolarLuminosity\""},
+    "Quantity"]}], "/.", "sa"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"1.9610535403317964`*^8",SubsuperscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"N\"", "\"\[Sun]\""],
+   "nominal solar luminosities","\"NominalSolarLuminosity\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fraction", "Subsection"],
+
+Cell["Integrating with different limits and dividing:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Divide", "@@", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Integrate", "[", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"m", "^", "4"}], "*", "a", " ", 
+        RowBox[{"m", "^", 
+         RowBox[{"-", "2.35"}]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"m", ",", "#", ",", "20"}], "}"}]}], "]"}], "&"}], "/@", 
+    RowBox[{"{", 
+     RowBox[{"5", ",", ".1"}], "}"}]}], ")"}]}]], "Input"],
+
+Cell[BoxData["0.9746178908383527`"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell["Total mass divided by number of stars:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"10", "^", "6"}], "/", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"a", " ", 
+      RowBox[{"m", "^", 
+       RowBox[{"-", "2.35"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", ".1", ",", "20"}], "}"}]}], "]"}]}], "/.", 
+  "sa"}]], "Input"],
+
+Cell[BoxData["0.3255874466772328`"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Max mass", "Subsection"],
+
+Cell["Solving for age equal to one:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mMax", "=", 
+  RowBox[{"m", "/.", 
+   RowBox[{"First", "@", 
+    RowBox[{"NSolve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"10", " ", 
+        RowBox[{"m", "^", 
+         RowBox[{"-", "2.5"}]}]}], "\[Equal]", "1"}], ",", "m"}], 
+     "]"}]}]}]}]], "Input"],
+
+Cell[BoxData["2.5118864315095775`"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Luminosity", "Subsection"],
+
+Cell["Substituting the above into luminosity equation:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Integrate", "[", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"m", "^", "4"}], "*", "a", " ", 
+      RowBox[{"m", "^", 
+       RowBox[{"-", "2.35"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", ".1", ",", "mMax"}], "}"}]}], "]"}], 
+   TemplateBox[{"1",SubsuperscriptBox[
+      StyleBox["\"L\"", Italic, StripOnInput -> False], "\"N\"", 
+      "\"\[Sun]\""],"nominal solar luminosities","\"NominalSolarLuminosity\""},
+    "Quantity"]}], "/.", "sa"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"802926.1828858327`",SubsuperscriptBox[
+    StyleBox["\"L\"", Italic, StripOnInput -> False], "\"N\"", "\"\[Sun]\""],
+   "nominal solar luminosities","\"NominalSolarLuminosity\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Finding constant", "Subsection"],
+
+Cell["Integrating and equating to total number:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sa2", "=", 
+  RowBox[{"First", "@", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"Integrate", "[", " ", 
+      RowBox[{
+       RowBox[{"a", " ", 
+        RowBox[{"m", "^", 
+         RowBox[{"-", "2.35"}]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"m", ",", ".4", ",", "100"}], "}"}]}], "]"}], "\[Equal]", 
+     RowBox[{"10", "^", "11"}]}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", "\[Rule]", "3.920724670917254`*^10"}], "}"}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ratio", "Subsection"],
+
+Cell["Integrating with different limits and dividing:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ratio", "=", 
+  RowBox[{"Divide", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Integrate", "[", " ", 
+       RowBox[{
+        RowBox[{"a", " ", 
+         RowBox[{"m", "^", 
+          RowBox[{"-", "2.35"}]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"m", ",", "#", ",", "100"}], "}"}]}], "]"}], "&"}], "/@", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", ".4"}], "}"}]}], ")"}]}]}]], "Input"],
+
+Cell[BoxData["0.016953724113050392`"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Total number", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nT", "=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", " ", 
+    RowBox[{
+     RowBox[{"a", " ", 
+      RowBox[{"m", "^", 
+       RowBox[{"-", "2.35"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", "8", ",", "100"}], "}"}]}], "]"}], "/.", 
+   "sa2"}]}]], "Input"],
+
+Cell[BoxData["1.6953724113050394`*^9"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Mass of remnants", "Subsection"],
+
+Cell["Assuming mass of black-hole/neutron star = 1.4 solar mass", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nT", " ", 
+  TemplateBox[{"1.4",SubscriptBox[
+     StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+    "solar masses","\"SolarMass\""},
+   "Quantity"]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"2.373521375827055`*^9",SubscriptBox[
+    StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+   "solar masses","\"SolarMass\""},
+  "Quantity"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell["\<\
+Total mass of stars times mass of ejecta divided by mass of galaxy (assuming \
+mass of milky way is 5*10^10 solar mass)\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nT", " ", 
+  RowBox[{".05", "/", 
+   RowBox[{"(", 
+    RowBox[{"5", " ", 
+     RowBox[{"10", "^", "10"}]}], ")"}]}]}]], "Input"],
+
+Cell[BoxData["0.0016953724113050394`"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell["\<\
+Probability of a star being in a binary times the probability of it having \
+mass greater than 8 solar mass \
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"p", "=", 
+  RowBox[{
+   RowBox[{"1", "/", "2"}], " ", "ratio"}]}]], "Input"],
+
+Cell[BoxData["0.008476862056525196`"], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Probability of both stars satisfying the above conditions times total number \
+of stars\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nS", "=", 
+  RowBox[{
+   RowBox[{"p", "^", "2"}], " ", 
+   RowBox[{"10", "^", "11"}]}]}]], "Input"],
+
+Cell[BoxData["7.185719032535657`*^6"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sr", "=", 
+  RowBox[{"First", "@", 
+   RowBox[{"Quiet", "@", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"PE", "\[Equal]", "KE"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"PE", "\[Rule]", 
+           RowBox[{
+            
+            TemplateBox[{
+             InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+              "\"G\"", Italic, StripOnInput -> False],
+              "Newtonian gravitational constants","\"GravitationalConstant\""},
+             "Quantity"], " ", "M", " ", 
+            RowBox[{"M", "/", "r"}]}]}], ",", 
+          RowBox[{"KE", "\[Rule]", 
+           RowBox[{
+            RowBox[{"1", "/", "2"}], 
+            RowBox[{"(", 
+             RowBox[{"2", "m"}], ")"}], 
+            RowBox[{"v", "^", "2"}]}]}]}], "}"}]}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"M", "->", 
+          TemplateBox[{"8",SubscriptBox[
+             StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+            "solar masses","\"SolarMass\""},
+           "Quantity"]}], ",", 
+         RowBox[{"m", "->", 
+          TemplateBox[{"1.4",SubscriptBox[
+             StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+            "solar masses","\"SolarMass\""},
+           "Quantity"]}], ",", 
+         RowBox[{"v", "->", 
+          
+          TemplateBox[{
+           "500",RowBox[{
+             "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+              "\"s\""}],"kilometers per second",FractionBox[
+            "\"Kilometers\"", "\"Seconds\""]},
+           "Quantity"]}]}], "}"}]}], ",", "r"}], "]"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"r", "\[Rule]", 
+   TemplateBox[{"2.4266924369920002`*^10","\"m\"","meters","\"Meters\""},
+    "Quantity"]}], "}"}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["e)", "Section"],
+
+Cell["\<\
+Multiply the number in c) with the probability of distance being lesser than \
+above:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nS", " ", 
+   RowBox[{"r", "/", 
+    TemplateBox[{"0.01","\"pc\"","parsecs","\"Parsecs\""},
+     "Quantity"]}]}], "/.", "sr"}]], "Input"],
+
+Cell[BoxData["565.1118618268756`"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Equation of relaxation", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqR", "=", 
+  RowBox[{"relaxationTime", "==", 
+   RowBox[{"k", " ", 
+    RowBox[{
+     RowBox[{"v", "^", "3"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"M", " ", "\[Rho]"}], ")"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"relaxationTime", "\[Equal]", 
+  FractionBox[
+   RowBox[{"k", " ", 
+    SuperscriptBox["v", "3"]}], 
+   RowBox[{"M", " ", "\[Rho]"}]]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finding constant", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sk", "=", 
+   RowBox[{"First", "@", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"eqR", "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"relaxationTime", "\[Rule]", 
+          TemplateBox[{RowBox[{".95", " ", 
+              SuperscriptBox["10", "10"]}],"\"yr\"","years","\"Years\""},
+           "Quantity"]}], ",", 
+         RowBox[{"v", "->", 
+          
+          TemplateBox[{
+           "200",RowBox[{
+             "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+              "\"s\""}],"kilometers per second",FractionBox[
+            "\"Kilometers\"", "\"Seconds\""]},
+           "Quantity"]}], ",", 
+         RowBox[{"\[Rho]", "->", 
+          RowBox[{
+           TemplateBox[{RowBox[{"1", " ", 
+               SuperscriptBox["10", "6"]}],SubscriptBox[
+              StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+             "solar masses","\"SolarMass\""},
+            "Quantity"], "/", 
+           TemplateBox[{"1",RowBox[{
+               SuperscriptBox["\"pc\"", "3"]}],"parsecs cubed",SuperscriptBox[
+             "\"Parsecs\"", "3"]},
+            "Quantity"]}]}], ",", 
+         RowBox[{"M", "->", 
+          TemplateBox[{"1",SubscriptBox[
+             StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+            "solar masses","\"SolarMass\""},
+           "Quantity"]}]}], "}"}]}], ",", "k"}], "]"}]}]}], 
+  "\[IndentingNewLine]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"k", "\[Rule]", 
+   TemplateBox[{"5.095478337633112`*^-12",RowBox[{
+       SuperscriptBox["\"kg\"", "2"], "\[InvisibleSpace]", 
+       SuperscriptBox["\"yr\"", "4"], "\[NegativeMediumSpace]", "\"/\"", 
+       "\[InvisibleSpace]", 
+       SuperscriptBox["\"m\"", "6"]}],
+     "kilogram squared years to the fourth per meter to the 6",FractionBox[
+      RowBox[{
+        SuperscriptBox["\"Kilograms\"", "2"], " ", 
+        SuperscriptBox["\"Years\"", "4"]}], 
+      SuperscriptBox["\"Meters\"", "6"]]},
+    "Quantity"]}], "}"}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqR", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"v", "->", 
+      TemplateBox[{
+       "1",RowBox[{
+         "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"s\""}],"kilometers per second",FractionBox[
+        "\"Kilometers\"", "\"Seconds\""]},
+       "Quantity"]}], ",", 
+     RowBox[{"M", "->", 
+      TemplateBox[{"1",SubscriptBox[
+         StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+        "solar masses","\"SolarMass\""},
+       "Quantity"]}], ",", 
+     RowBox[{"\[Rho]", "->", 
+      RowBox[{
+       TemplateBox[{"150",SubscriptBox[
+          StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+         "solar masses","\"SolarMass\""},
+        "Quantity"], "/", 
+       RowBox[{
+        TemplateBox[{"2","\"pc\"","parsecs","\"Parsecs\""},
+         "Quantity"], "^", "3"}]}]}]}], "}"}]}], "/.", "sk"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"relaxationTime", "\[Equal]", 
+  TemplateBox[{"6.333333333333332`*^7","\"yr\"","years","\"Years\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell["Using values from Wikipedia:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqR", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"v", "->", 
+      TemplateBox[{
+       "200",RowBox[{
+         "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"s\""}],"kilometers per second",FractionBox[
+        "\"Kilometers\"", "\"Seconds\""]},
+       "Quantity"]}], ",", 
+     RowBox[{"M", "->", 
+      TemplateBox[{RowBox[{"10", "^", "10"}],SubscriptBox[
+         StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+        "solar masses","\"SolarMass\""},
+       "Quantity"]}], ",", 
+     RowBox[{"\[Rho]", "->", 
+      RowBox[{
+       TemplateBox[{RowBox[{"10", "^", "13"}],SubscriptBox[
+          StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+         "solar masses","\"SolarMass\""},
+        "Quantity"], "/", 
+       RowBox[{
+        TemplateBox[{"1.5","\"Mpc\"","megaparsecs","\"Megaparsecs\""},
+         "Quantity"], "^", "3"}]}]}]}], "}"}]}], "/.", "sk"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"relaxationTime", "\[Equal]", 
+  TemplateBox[{"3.2062500000000006`*^11","\"yr\"","years","\"Years\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell["Assuming only 1% total mass of galaxy is matter:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqR", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"v", "->", 
+      TemplateBox[{
+       "200",RowBox[{
+         "\"km\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"s\""}],"kilometers per second",FractionBox[
+        "\"Kilometers\"", "\"Seconds\""]},
+       "Quantity"]}], ",", 
+     RowBox[{"M", "->", 
+      TemplateBox[{RowBox[{"10", "^", "10"}],SubscriptBox[
+         StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+        "solar masses","\"SolarMass\""},
+       "Quantity"]}], ",", 
+     RowBox[{"\[Rho]", "->", 
+      RowBox[{
+       TemplateBox[{RowBox[{"10", "^", "11"}],SubscriptBox[
+          StyleBox["\"M\"", Italic, StripOnInput -> False], "\"\[Sun]\""],
+         "solar masses","\"SolarMass\""},
+        "Quantity"], "/", 
+       RowBox[{
+        TemplateBox[{"1.5","\"Mpc\"","megaparsecs","\"Megaparsecs\""},
+         "Quantity"], "^", "3"}]}]}]}], "}"}]}], "/.", "sk"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"relaxationTime", "\[Equal]", 
+  TemplateBox[{"3.20625`*^13","\"yr\"","years","\"Years\""},
+   "Quantity"]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q4", "Chapter"],
+
+Cell[TextData[StyleBox["We are defining \[Xi] H \[Rule] H",
+ FontWeight->"Bold"]], "Text"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+    "], {{0, 679}, {1393, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->{343.7904761904763, Automatic},
+  ImageSizeRaw->{1393, 679},
+  PlotRange->{{0, 1393}, {0, 679}}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["a)", "Section"],
+
+Cell["From the figure:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Theta]", "=", 
+  RowBox[{
+   RowBox[{"\[Theta]", "\[Rule]", 
+    RowBox[{
+     RowBox[{"\[Pi]", "/", "2"}], "-", "\[Phi]", "+", "\[Alpha]"}]}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Alpha]", "\[Rule]", 
+      RowBox[{"ArcTan", "[", 
+       RowBox[{"H", "/", "R"}], "]"}]}], ",", 
+     RowBox[{"\[Phi]", "\[Rule]", 
+      RowBox[{"ArcTan", "[", 
+       RowBox[{
+        RowBox[{"H", "'"}], "[", "R", "]"}], "]"}]}]}], "}"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Theta]", "\[Rule]", 
+  RowBox[{
+   FractionBox["\[Pi]", "2"], "+", 
+   RowBox[{"ArcTan", "[", 
+    FractionBox["H", "R"], "]"}], "-", 
+   RowBox[{"ArcTan", "[", 
+    RowBox[{
+     SuperscriptBox["H", "\[Prime]",
+      MultilineFunction->None], "[", "R", "]"}], "]"}]}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{"\[PartialD]", "H"}], 
+   RowBox[{"\[PartialD]", "R"}],
+   MultilineFunction->None], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Substituting p = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[PartialD]", 
+      RowBox[{"log", "(", "H", ")"}]}], 
+     RowBox[{"\[PartialD]", 
+      RowBox[{"log", "(", "R", ")"}]}],
+     MultilineFunction->None], ",", " ", 
+    RowBox[{
+     RowBox[{"with", " ", 
+      FractionBox[
+       RowBox[{"\[PartialD]", "H"}], 
+       RowBox[{"\[PartialD]", "R"}],
+       MultilineFunction->None]}], "=", 
+     RowBox[{
+      FractionBox["H", "R"], 
+      FractionBox[
+       RowBox[{"\[PartialD]", 
+        RowBox[{"log", "(", "H", ")"}]}], 
+       RowBox[{"\[PartialD]", 
+        RowBox[{"log", "(", "R", ")"}]}],
+       MultilineFunction->None]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and expanding a Taylor series up to first order in H."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Theta]2", "=", 
+  RowBox[{"\[Theta]", "\[Rule]", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Series", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"s\[Theta]", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"H", "'"}], "[", "R", "]"}], "\[Rule]", 
+          RowBox[{"p", " ", 
+           RowBox[{"H", "/", "R"}]}]}], "}"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"H", ",", "0", ",", "1"}], "}"}]}], "]"}], "//", "Normal"}], 
+    ")"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Theta]", "\[Rule]", 
+  RowBox[{
+   FractionBox["\[Pi]", "2"], "+", 
+   FractionBox[
+    RowBox[{"H", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "p"}], ")"}]}], "R"]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["b)", "Section"],
+
+Cell["The heating is given by:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "/", 
+    RowBox[{"(", 
+     RowBox[{"4", " ", "\[Pi]", " ", 
+      RowBox[{"R", "^", "2"}]}], ")"}]}], 
+   RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "/.", "s\[Theta]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"4", " ", "\[Pi]", " ", 
+     SuperscriptBox["R", "2"]}]], 
+   RowBox[{"L", " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{
+      RowBox[{"ArcTan", "[", 
+       FractionBox["H", "R"], "]"}], "-", 
+      RowBox[{"ArcTan", "[", 
+       RowBox[{
+        SuperscriptBox["H", "\[Prime]",
+         MultilineFunction->None], "[", "R", "]"}], "]"}]}], 
+     "]"}]}]}]}]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+This is zero when R approaches zero with H/R a constant since the derivative \
+is approximately H/R for small H and R.\
+\>", "Text"],
+
+Cell["Using the approximation gives:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "/", 
+    RowBox[{"(", 
+     RowBox[{"4", " ", "\[Pi]", " ", 
+      RowBox[{"R", "^", "2"}]}], ")"}]}], 
+   RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "/.", "s\[Theta]2"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"L", " ", 
+    RowBox[{"Sin", "[", 
+     FractionBox[
+      RowBox[{"H", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}]}], "R"], "]"}]}], 
+   RowBox[{"4", " ", "\[Pi]", " ", 
+    SuperscriptBox["R", "2"]}]]}]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+This is clearly zero when p approaches 1 with H/R a constant.\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c)", "Section"],
+
+Cell["Cooling rate is given by", "Text"],
+
+Cell[BoxData[
+ RowBox[{"\[Sigma]", " ", 
+  RowBox[{"T", "^", "4", " "}]}]], "Input"],
+
+Cell["Where T is the effective temperature.", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["d)", "Section"],
+
+Cell["Distance from the center to the point at height z is", "Text"],
+
+Cell[BoxData[
+ SqrtBox[
+  RowBox[{
+   SuperscriptBox["R", "2"], "+", 
+   SuperscriptBox["z", "2"]}]]], "Output"],
+
+Cell["This implies the gravitational potential is", "Text"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"G", " ", "M"}], 
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["R", "2"], "+", 
+     SuperscriptBox["z", "2"]}]]]}]], "Input"],
+
+Cell["Performing a Taylor expansion around z", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Series", "[", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"G", " ", "M"}], 
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["R", "2"], "+", 
+         SuperscriptBox["z", "2"]}]]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", "2"}], "}"}]}], "]"}], "//", "Normal"}], "//",
+   "PowerExpand"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"G", " ", "M"}], "R"]}], "+", 
+  FractionBox[
+   RowBox[{"G", " ", "M", " ", 
+    SuperscriptBox["z", "2"]}], 
+   RowBox[{"2", " ", 
+    SuperscriptBox["R", "3"]}]]}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "This is equivalent to the required expression, since \[CapitalOmega] = ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    RowBox[{"G", " ", 
+     RowBox[{"M", "/", 
+      SuperscriptBox["R", "3"]}]}]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["e)", "Section"],
+
+Cell["Since P is \[Rho] cs^2:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Rho]", "=", 
+  RowBox[{
+   RowBox[{"DSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"1", "/", 
+          RowBox[{"\[Rho]", "[", "z", "]"}]}], " ", 
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"cs", "^", "2"}], " ", 
+            RowBox[{"\[Rho]", "[", "z", "]"}]}], ",", "z"}], "]"}]}], 
+        "\[Equal]", 
+        RowBox[{"-", 
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"1", "/", "2"}], "  ", 
+            RowBox[{"\[CapitalOmega]", "^", "2"}], " ", 
+            RowBox[{"z", "^", "2"}]}], ",", "z"}], "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"\[Rho]", "[", "0", "]"}], "\[Equal]", "\[Rho]0"}]}], "}"}], 
+     ",", 
+     RowBox[{"\[Rho]", "[", "z", "]"}], ",", "z"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Rho]", "[", "z", "]"}], "\[Rule]", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["z", "2"], " ", 
+       SuperscriptBox["\[CapitalOmega]", "2"]}], 
+      RowBox[{"2", " ", 
+       SuperscriptBox["cs", "2"]}]]}]], " ", "\[Rho]0"}]}]], "Output"]
+}, Open  ]],
+
+Cell["Using H = cs/\[CapitalOmega]", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"s\[Rho]", "/.", 
+  RowBox[{"cs", "\[Rule]", 
+   RowBox[{"H", " ", "\[CapitalOmega]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Rho]", "[", "z", "]"}], "\[Rule]", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["z", "2"], 
+      RowBox[{"2", " ", 
+       SuperscriptBox["H", "2"]}]]}]], " ", "\[Rho]0"}]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+Evaluator->"Alternate",
+WindowSize->{798, 818},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PrintingMargins"->{{36., 36.}, {50.4, 50.4}}},
+Magnification:>1.05 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 310, 11, 129, "Title"],
+Cell[893, 35, 328, 10, 85, "Chapter"],
+Cell[CellGroupData[{
+Cell[1246, 49, 21, 0, 65, "Chapter"],
+Cell[CellGroupData[{
+Cell[1292, 53, 21, 0, 72, "Section"],
+Cell[1316, 55, 55, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[1396, 59, 404, 12, 32, "Input"],
+Cell[1803, 73, 96, 2, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1948, 81, 21, 0, 72, "Section"],
+Cell[CellGroupData[{
+Cell[1994, 85, 32, 0, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[2051, 89, 515, 14, 46, "Input"],
+Cell[2569, 105, 238, 4, 46, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2856, 115, 30, 0, 51, "Subsection"],
+Cell[2889, 117, 63, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[2977, 121, 438, 14, 32, "Input"],
+Cell[3418, 137, 46, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3525, 144, 21, 0, 72, "Section"],
+Cell[3549, 146, 54, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[3628, 150, 308, 11, 32, "Input"],
+Cell[3939, 163, 46, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4034, 169, 21, 0, 72, "Section"],
+Cell[CellGroupData[{
+Cell[4080, 173, 30, 0, 51, "Subsection"],
+Cell[4113, 175, 45, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[4183, 179, 290, 10, 32, "Input"],
+Cell[4476, 191, 46, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4571, 197, 32, 0, 51, "Subsection"],
+Cell[4606, 199, 64, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[4695, 203, 517, 14, 46, "Input"],
+Cell[5215, 219, 234, 4, 46, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5522, 231, 21, 0, 77, "Chapter"],
+Cell[CellGroupData[{
+Cell[5568, 235, 21, 0, 72, "Section"],
+Cell[CellGroupData[{
+Cell[5614, 239, 38, 0, 51, "Subsection"],
+Cell[5655, 241, 57, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[5737, 245, 397, 12, 32, "Input"],
+Cell[6137, 259, 100, 2, 35, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6286, 267, 27, 0, 51, "Subsection"],
+Cell[6316, 269, 63, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[6404, 273, 439, 14, 32, "Input"],
+Cell[6846, 289, 48, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6943, 295, 34, 0, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[7002, 299, 291, 10, 32, "Input"],
+Cell[7296, 311, 49, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7394, 317, 38, 0, 51, "Subsection"],
+Cell[7435, 319, 73, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[7533, 323, 204, 5, 41, "Input"],
+Cell[7740, 330, 196, 4, 45, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7997, 341, 21, 0, 72, "Section"],
+Cell[8021, 343, 143, 3, 52, "Text"],
+Cell[CellGroupData[{
+Cell[8189, 350, 152, 5, 32, "Input"],
+Cell[8344, 357, 49, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8442, 363, 21, 0, 72, "Section"],
+Cell[8466, 365, 132, 3, 31, "Text"],
+Cell[CellGroupData[{
+Cell[8623, 372, 100, 3, 32, "Input"],
+Cell[8726, 377, 48, 0, 32, "Output"]
+}, Open  ]],
+Cell[8789, 380, 111, 3, 31, "Text"],
+Cell[CellGroupData[{
+Cell[8925, 387, 123, 4, 32, "Input"],
+Cell[9051, 393, 48, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9148, 399, 21, 0, 72, "Section"],
+Cell[CellGroupData[{
+Cell[9194, 403, 1685, 45, 120, "Input"],
+Cell[10882, 450, 166, 4, 46, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11097, 460, 21, 0, 72, "Section"],
+Cell[11121, 462, 109, 3, 31, "Text"],
+Cell[CellGroupData[{
+Cell[11255, 469, 172, 5, 41, "Input"],
+Cell[11430, 476, 45, 0, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11536, 483, 21, 0, 77, "Chapter"],
+Cell[CellGroupData[{
+Cell[11582, 487, 44, 0, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[11651, 491, 221, 7, 32, "Input"],
+Cell[11875, 500, 170, 5, 50, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12094, 511, 38, 0, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[12157, 515, 1466, 37, 146, "Input"],
+Cell[13626, 554, 576, 13, 46, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14251, 573, 21, 0, 72, "Section"],
+Cell[CellGroupData[{
+Cell[14297, 577, 924, 25, 43, "Input"],
+Cell[15224, 604, 152, 3, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15425, 613, 21, 0, 72, "Section"],
+Cell[15449, 615, 44, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[15518, 619, 979, 25, 43, "Input"],
+Cell[16500, 646, 154, 3, 45, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16703, 655, 21, 0, 72, "Section"],
+Cell[16727, 657, 64, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[16816, 661, 979, 25, 43, "Input"],
+Cell[17798, 688, 143, 3, 45, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18002, 698, 21, 0, 77, "Chapter"],
+Cell[18026, 700, 90, 1, 32, "Text"],
+Cell[18119, 703, 11792, 197, 191, "Input"],
+Cell[CellGroupData[{
+Cell[29936, 904, 21, 0, 72, "Section"],
+Cell[29960, 906, 32, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[30017, 910, 479, 14, 32, "Input"],
+Cell[30499, 926, 308, 9, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30844, 940, 162, 5, 54, "Input"],
+Cell[31009, 947, 56, 1, 31, "Output"]
+}, Open  ]],
+Cell[31080, 951, 820, 27, 42, "Text"],
+Cell[CellGroupData[{
+Cell[31925, 982, 576, 18, 32, "Input"],
+Cell[32504, 1002, 212, 7, 46, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32765, 1015, 21, 0, 72, "Section"],
+Cell[32789, 1017, 40, 0, 31, "Text"],
+Cell[CellGroupData[{
+Cell[32854, 1021, 230, 7, 54, "Input"],
+Cell[33087, 1030, 443, 15, 92, "Output"]
+}, Open  ]],
+Cell[33545, 1048, 142, 3, 88, "Text"],
+Cell[33690, 1053, 46, 0, 53, "Text"],
+Cell[CellGroupData[{
+Cell[33761, 1057, 231, 7, 54, "Input"],
+Cell[33995, 1066, 294, 10, 92, "Output"]
+}, Open  ]],
+Cell[34304, 1079, 85, 2, 53, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34426, 1086, 21, 0, 129, "Section"],
+Cell[34450, 1088, 40, 0, 53, "Text"],
+Cell[34493, 1090, 84, 2, 54, "Input"],
+Cell[34580, 1094, 53, 0, 53, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34670, 1099, 21, 0, 129, "Section"],
+Cell[34694, 1101, 68, 0, 53, "Text"],
+Cell[34765, 1103, 112, 4, 71, "Output"],
+Cell[34880, 1109, 59, 0, 53, "Text"],
+Cell[34942, 1111, 181, 7, 96, "Input"],
+Cell[35126, 1120, 54, 0, 53, "Text"],
+Cell[CellGroupData[{
+Cell[35205, 1124, 396, 14, 136, "Input"],
+Cell[35604, 1140, 246, 9, 86, "Output"]
+}, Open  ]],
+Cell[35865, 1152, 277, 9, 131, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36179, 1166, 21, 0, 129, "Section"],
+Cell[36203, 1168, 39, 0, 53, "Text"],
+Cell[CellGroupData[{
+Cell[36267, 1172, 941, 29, 159, "Input"],
+Cell[37211, 1203, 357, 11, 77, "Output"]
+}, Open  ]],
+Cell[37583, 1217, 44, 0, 53, "Text"],
+Cell[CellGroupData[{
+Cell[37652, 1221, 124, 3, 54, "Input"],
+Cell[37779, 1226, 285, 9, 77, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
