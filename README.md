@@ -1,2 +1,2 @@
 # Coursework
-Mathematica notebooks from graduate courses at UIUC
+My Mathematica notebooks from graduate courses at UIUC
