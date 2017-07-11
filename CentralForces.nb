@@ -1,0 +1,301 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11921,        293]
+NotebookOptionsPosition[     11185,        266]
+NotebookOutlinePosition[     11557,        282]
+CellTagsIndexPosition[     11514,        279]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Central Forces", "Title",
+ CellChangeTimes->{{3.6784656825889015`*^9, 3.678465685735505*^9}, 
+   3.678467840110546*^9}],
+
+Cell[CellGroupData[{
+
+Cell[" Daniel George", "Chapter",
+ CellChangeTimes->{{3.6784656936631355`*^9, 3.678465695504001*^9}, 
+   3.678517271083438*^9},
+ FontSize->24],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Module", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "k", ",", "r", ",", "xy"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"k", "=", "1.1"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"r", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "[", "t", "]"}], ",", 
+       RowBox[{"y", "[", "t", "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"a", "=", 
+     RowBox[{"FromPolarCoordinates", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "k"}], "/", 
+         RowBox[{
+          RowBox[{"Norm", "@", "r"}], "^", "n"}]}], ",", 
+        RowBox[{"ArcTan", "@@", "r"}]}], "}"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"xy", "=", 
+     RowBox[{"ParametricNDSolveValue", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x", "''"}], "[", "t", "]"}], ",", 
+            RowBox[{
+             RowBox[{"y", "''"}], "[", "t", "]"}]}], "}"}], "\[Equal]", "a"}],
+          ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "0", "]"}], "\[Equal]", 
+          RowBox[{"-", "1"}]}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "0", "]"}], "\[Equal]", "1"}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "\[Equal]", "1"}], ",", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "1000"}], "}"}], ",", 
+       RowBox[{"{", "n", "}"}], ",", 
+       RowBox[{"Method", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<ParametricSensitivity\>\"", "\[Rule]", "None"}], 
+         "}"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "=", 
+           RowBox[{
+            RowBox[{"xy", "[", "n", "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+          RowBox[{"y", "=", 
+           RowBox[{
+            RowBox[{"xy", "[", "n", "]"}], "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}]}], "}"}], ",", 
+        RowBox[{"ParametricPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"x", "[", "t", "]"}], ",", 
+            RowBox[{"y", "[", "t", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "T"}], "}"}], ",", 
+          RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+          RowBox[{"PerformanceGoal", "\[Rule]", "\"\<Quality\>\""}], ",", 
+          RowBox[{"ColorFunction", "\[Rule]", "\"\<Rainbow\>\""}], ",", 
+          RowBox[{"Frame", "\[Rule]", "True"}]}], 
+         RowBox[{"(*", 
+          RowBox[{",", 
+           RowBox[{"PlotRange", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "}"}]}]}], "*)"}], 
+         "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"n", ",", "2"}], "}"}], ",", 
+        RowBox[{"-", "2"}], ",", "2", ",", ".1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"T", ",", "100"}], "}"}], ",", "1", ",", "1000"}], "}"}], 
+      ",", 
+      RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]}]}], 
+  "]"}]], "Input",ExpressionUUID->"6e47237a-123d-4983-93ef-766dbf678517"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 2, $CellContext`T$$ = 100, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 2}, -2, 2, 0.1}, {{
+       Hold[$CellContext`T$$], 100}, 1, 1000}}, Typeset`size$$ = {
+    468., {227., 234.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`n$35682450$$ = 
+    0, $CellContext`T$35682451$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 2, $CellContext`T$$ = 100}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$35682450$$, 0], 
+        Hold[$CellContext`T$$, $CellContext`T$35682451$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> With[{$CellContext`x$ = Part[
+           $CellContext`xy$35682144[$CellContext`n$$], 1], $CellContext`y$ = 
+         Part[
+           $CellContext`xy$35682144[$CellContext`n$$], 2]}, 
+        ParametricPlot[{
+          $CellContext`x$[$CellContext`t], 
+          $CellContext`y$[$CellContext`t]}, {$CellContext`t, 
+          0, $CellContext`T$$}, AspectRatio -> 1, PerformanceGoal -> 
+         "Quality", ColorFunction -> "Rainbow", Frame -> True]], 
+      "Specifications" :> {{{$CellContext`n$$, 2}, -2, 2, 
+         0.1}, {{$CellContext`T$$, 100}, 1, 1000}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{531., {330., 338.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({
+      Attributes[$CellContext`xy$35682144] = {
+        Temporary}, $CellContext`xy$35682144 = ParametricFunction[1, 
+         Internal`Bag[{
+           Hold[
+            ParametricNDSolveValue[{{
+                Derivative[2][$CellContext`x][$CellContext`t], 
+                Derivative[
+                2][$CellContext`y][$CellContext`t]} == {((-1.1) \
+$CellContext`x[$CellContext`t])/((Abs[
+                    $CellContext`x[$CellContext`t]]^2 + Abs[
+                    $CellContext`y[$CellContext`t]]^2)^($CellContext`n$$/2) 
+                Sqrt[$CellContext`x[$CellContext`t]^2 + \
+$CellContext`y[$CellContext`t]^2]), ((-1.1) $CellContext`y[$CellContext`t])/((
+                  Abs[
+                    $CellContext`x[$CellContext`t]]^2 + Abs[
+                    $CellContext`y[$CellContext`t]]^2)^($CellContext`n$$/2) 
+                Sqrt[$CellContext`x[$CellContext`t]^2 + \
+$CellContext`y[$CellContext`t]^2])}, Derivative[1][$CellContext`x][0] == -1, 
+              Derivative[1][$CellContext`y][0] == 1, $CellContext`x[0] == 
+              1, $CellContext`y[0] == 
+              0}, {$CellContext`x, $CellContext`y}, {$CellContext`t, 0, 
+              1000}, {$CellContext`n$$}, 
+             Method -> {"ParametricSensitivity" -> None}]]}, 1, 1], 0, 
+         1, {{$CellContext`n$35682439}, 
+          System`Utilities`HashTable[
+          1, {{"Output", {$CellContext`x, $CellContext`y}}, \
+{$CellContext`n$35682439, $CellContext`n$$}}], {}, {}, {1}, {0, 3, 0}}, {
+         NDSolve`base$35682448, 
+          NDSolve`NDSolveParametricFunction[0, {ParametricNDSolveValue, 
+            
+            Internal`Bag[{{$CellContext`t$35682440, $CellContext`n$35682439}, \
+{$CellContext`t, $CellContext`n$$}}, 1, 2], None, ParametricNDSolveValue}, {{{
+            2, 0, 0, 2, 0, 0, 0, 1, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0}}, {
+            0, {#& , #& , #& }, {
+             0, {$CellContext`t$35682440}}, {{$CellContext`x, \
+$CellContext`y}, {$CellContext`x, $CellContext`y}, {$CellContext`x, \
+$CellContext`y}}}, None, {{{$CellContext`n$35682439}, 
+              System`Utilities`HashTable[
+              1, {{"Output", {$CellContext`x, $CellContext`y}}, \
+{$CellContext`n$35682439, $CellContext`n$$}}], {}, {}, {1}, {0, 3, 0}}, {
+             Automatic}, None, {}}}, {$CellContext`x, $CellContext`y}, {{
+            Derivative[
+              2][$CellContext`x][$CellContext`t$35682440] == ((-1.1) \
+$CellContext`x[$CellContext`t$35682440])/((Abs[
+                   $CellContext`x[$CellContext`t$35682440]]^2 + Abs[
+                   $CellContext`y[$CellContext`t$35682440]]^2)^($CellContext`\
+n$35682439/2) 
+              Sqrt[$CellContext`x[$CellContext`t$35682440]^2 + \
+$CellContext`y[$CellContext`t$35682440]^2]), 
+             Derivative[
+              2][$CellContext`y][$CellContext`t$35682440] == ((-1.1) \
+$CellContext`y[$CellContext`t$35682440])/((Abs[
+                   $CellContext`x[$CellContext`t$35682440]]^2 + Abs[
+                   $CellContext`y[$CellContext`t$35682440]]^2)^($CellContext`\
+n$35682439/2) 
+              Sqrt[$CellContext`x[$CellContext`t$35682440]^2 + \
+$CellContext`y[$CellContext`t$35682440]^2]), 
+             Derivative[1][$CellContext`x][0] == -1, 
+             Derivative[1][$CellContext`y][0] == 1, $CellContext`x[0] == 
+             1, $CellContext`y[0] == 0}, {}, {}, {}, {}}, {{0, 1000}}, {
+           Automatic, Automatic, MachinePrecision, Automatic, Automatic, 
+            Automatic, {"ParametricSensitivity" -> None}, None, None, 
+            Automatic, Automatic, Automatic, Automatic, 1/10, 1, Automatic, 
+            Automatic, {}, Automatic, Automatic, None, None, None, Automatic, 
+            Automatic, Automatic}, {
+           "Cache" -> True, "CacheTableLength" -> 19, "CacheTableWidth" -> 7, 
+            "CacheKeyMaxBytes" -> 1000000, "CacheResultMaxBytes" -> 1000000, 
+            "KeyComparison" -> None, "ResultComparison" -> LessEqual}, {}, 
+           All]}], Attributes[$CellContext`n$35682439] = {Temporary}, 
+       Attributes[NDSolve`base$35682448] = {Temporary}, 
+       Attributes[$CellContext`t$35682440] = {Temporary}, 
+       Attributes[Derivative] = {NHoldAll, ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",ExpressionUUID->"25e7b114-\
+0bf5-4a4f-acd9-dd7523b57f43"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1584, 827},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 27, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 125, 2, 131, "Title", "ExpressionUUID" -> \
+"7e08363b-b78d-442c-9e69-0c9e9a5e4c0d"],
+Cell[CellGroupData[{
+Cell[730, 28, 142, 3, 77, "Chapter", "ExpressionUUID" -> \
+"d3ec311f-e3fb-48dc-ad96-072dbbd0f4fa"],
+Cell[CellGroupData[{
+Cell[897, 35, 3754, 105, 216, "Input", "ExpressionUUID" -> \
+"6e47237a-123d-4983-93ef-766dbf678517"],
+Cell[4654, 142, 6491, 119, 690, "Output", "ExpressionUUID" -> \
+"25e7b114-0bf5-4a4f-acd9-dd7523b57f43"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
